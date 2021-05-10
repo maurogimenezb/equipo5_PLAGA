@@ -33,12 +33,13 @@ namespace Juego_de_la_Plaga
             this.btnMP = new System.Windows.Forms.Button();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtCOLUMNA = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtFILA = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +52,7 @@ namespace Juego_de_la_Plaga
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(148, 32);
             this.btnMP.TabIndex = 3;
-            this.btnMP.Text = "Atrás";
+            this.btnMP.Text = "Volver al Menu";
             this.btnMP.UseVisualStyleBackColor = true;
             this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
             // 
@@ -63,6 +64,7 @@ namespace Juego_de_la_Plaga
             this.minimizar.Size = new System.Drawing.Size(28, 27);
             this.minimizar.TabIndex = 13;
             this.minimizar.TabStop = false;
+            this.minimizar.Click += new System.EventHandler(this.minimizar_Click);
             // 
             // salir
             // 
@@ -72,15 +74,7 @@ namespace Juego_de_la_Plaga
             this.salir.Size = new System.Drawing.Size(28, 27);
             this.salir.TabIndex = 12;
             this.salir.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(60, 600);
-            this.panel1.TabIndex = 14;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
             // txtCOLUMNA
             // 
@@ -128,25 +122,49 @@ namespace Juego_de_la_Plaga
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
-            // JuegoCvH
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(12, 600);
+            this.panel1.TabIndex = 22;
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAtras.Location = new System.Drawing.Point(557, 530);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(148, 32);
+            this.btnAtras.TabIndex = 23;
+            this.btnAtras.Text = "Atràs";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
+            // 
+            // TABJuegoCvH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCOLUMNA);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtFILA);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.minimizar);
             this.Controls.Add(this.salir);
             this.Controls.Add(this.btnMP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "JuegoCvH";
+            this.Name = "TABJuegoCvH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
@@ -159,11 +177,12 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Button btnMP;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox salir;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtCOLUMNA;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtFILA;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnAtras;
     }
 }

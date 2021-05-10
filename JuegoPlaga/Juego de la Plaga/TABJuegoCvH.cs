@@ -17,11 +17,40 @@ namespace Juego_de_la_Plaga
             InitializeComponent();
         }
 
+
+        // PARA TRABAJAR CON LOS BOTONES CREADOS
+
+        void button_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+            btn.Text = "0";
+           
+        }
+
+        // PARA VOLVER AL MENU PRINCIPAL
+        private void btnMP_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+
+            /*this.Close();
+            th = new Thread(atras);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();*/
+
+        }
+
+        private void atras(object obj)
+        {
+            Application.Run(new Niveles());
+        }
+
         int count = 1;
         int fila = 1;
         int columna = 1;
 
-        private void btnAgregar_Click(object sender, EventArgs e)
+        private void btnAgregar_Click_1(object sender, EventArgs e)
         {
             for (int i = 1; i <= fila; i++)
             {
@@ -50,26 +79,22 @@ namespace Juego_de_la_Plaga
             fila++;
         }
 
-        // PARA TRABAJAR CON LOS BOTONES CREADOS
-
-        void button_Click (object sender, EventArgs e)
+        private void salir_Click(object sender, EventArgs e)
         {
-             Button btn = sender as Button;
-             btn.Text = "0";
+            Application.Exit();
         }
 
-        // PARA VOLVER AL MENU PRINCIPAL
-        private void btnMP_Click(object sender, EventArgs e)
+        private void minimizar_Click(object sender, EventArgs e)
         {
-            this.Close();
-            th = new Thread(atras);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            this.WindowState = FormWindowState.Minimized;
         }
 
-        private void atras(object obj)
+        private void btnAtras_Click(object sender, EventArgs e)
         {
-            Application.Run(new MenuPrincipal());
+            this.Hide();
+            Niveles nivel = new Niveles();
+            nivel.Show();
+
         }
     }
 }

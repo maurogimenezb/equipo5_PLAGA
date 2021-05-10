@@ -127,6 +127,7 @@ namespace Juego_de_la_Plaga
             this.btnFACIL.TabIndex = 22;
             this.btnFACIL.Text = "F A C I L";
             this.btnFACIL.UseVisualStyleBackColor = true;
+            this.btnFACIL.Click += new System.EventHandler(this.btnFACIL_Click);
             // 
             // btnNORMAL
             // 
@@ -137,6 +138,7 @@ namespace Juego_de_la_Plaga
             this.btnNORMAL.TabIndex = 23;
             this.btnNORMAL.Text = "N O R M A L";
             this.btnNORMAL.UseVisualStyleBackColor = true;
+            this.btnNORMAL.Click += new System.EventHandler(this.btnNORMAL_Click);
             // 
             // btnDIFICIL
             // 
@@ -147,6 +149,7 @@ namespace Juego_de_la_Plaga
             this.btnDIFICIL.TabIndex = 24;
             this.btnDIFICIL.Text = "D I F I C I L";
             this.btnDIFICIL.UseVisualStyleBackColor = true;
+            this.btnDIFICIL.Click += new System.EventHandler(this.btnDIFICIL_Click);
             // 
             // Niveles
             // 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.Media;
 
 namespace Juego_de_la_Plaga
 {
@@ -41,8 +42,10 @@ namespace Juego_de_la_Plaga
 
         private void btnsalir_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             MsjSalir salir = new MsjSalir();
+            //SystemSounds.Exclamation();
             salir.Show();
         }
 

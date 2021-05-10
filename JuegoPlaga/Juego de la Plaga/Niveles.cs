@@ -63,5 +63,27 @@ namespace Juego_de_la_Plaga
             mod.Show();
 
         }
+
+        private void btnFACIL_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TABJuegoCvH game = new TABJuegoCvH();
+            game.Show();
+
+        }
+
+        private void btnNORMAL_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TABJuegoCvH game = new TABJuegoCvH();
+            game.Show();
+        }
+
+        private void btnDIFICIL_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TABJuegoCvH game = new TABJuegoCvH();
+            game.Show();
+        }
     }
 }

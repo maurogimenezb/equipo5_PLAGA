@@ -65,6 +65,7 @@ namespace Juego_de_la_Plaga
             this.btnSgte.TabIndex = 29;
             this.btnSgte.Text = "Siguiente";
             this.btnSgte.UseVisualStyleBackColor = true;
+            this.btnSgte.Click += new System.EventHandler(this.btnSgte_Click);
             // 
             // btnAtras
             // 
@@ -79,6 +80,7 @@ namespace Juego_de_la_Plaga
             this.btnAtras.TabIndex = 28;
             this.btnAtras.Text = "Atràs";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // txtJ1HvH
             // 
@@ -122,6 +124,7 @@ namespace Juego_de_la_Plaga
             this.minimizar.Size = new System.Drawing.Size(28, 27);
             this.minimizar.TabIndex = 33;
             this.minimizar.TabStop = false;
+            this.minimizar.Click += new System.EventHandler(this.minimizar_Click);
             // 
             // salir
             // 
@@ -131,6 +134,7 @@ namespace Juego_de_la_Plaga
             this.salir.Size = new System.Drawing.Size(28, 27);
             this.salir.TabIndex = 32;
             this.salir.TabStop = false;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
             // J1J2HvH
             // 
@@ -147,7 +151,9 @@ namespace Juego_de_la_Plaga
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "J1J2HvH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "J1J2HvH";
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();

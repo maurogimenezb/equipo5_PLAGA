@@ -49,6 +49,7 @@ namespace Juego_de_la_Plaga
             count++;
             fila++;
         }
+
         // PARA TRABAJAR CON LOS BOTONES CREADOS
         void button_Click(object sender, EventArgs e)
         {
@@ -60,10 +61,15 @@ namespace Juego_de_la_Plaga
 
         private void btnMP_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+
+            /*this.Close();
             th = new Thread(atras);
             th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            th.Start();*/
+
         }
         private void atras(object obj)
         {
@@ -78,6 +84,14 @@ namespace Juego_de_la_Plaga
         private void salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Niveles nivel = new Niveles();
+            nivel.Show();
 
         }
     }

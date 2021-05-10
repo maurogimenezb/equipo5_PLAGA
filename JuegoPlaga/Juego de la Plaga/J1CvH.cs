@@ -14,5 +14,30 @@ namespace Juego_de_la_Plaga
         {
             InitializeComponent();
         }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Modos mod = new Modos();
+            mod.Show();
+        }
+
+        private void minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnSgte_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Niveles nivel = new Niveles();
+            nivel.Show();
+
+        }
     }
 }

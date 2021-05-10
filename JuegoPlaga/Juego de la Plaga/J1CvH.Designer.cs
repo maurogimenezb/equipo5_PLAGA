@@ -48,6 +48,7 @@
             this.minimizar.Size = new System.Drawing.Size(28, 27);
             this.minimizar.TabIndex = 11;
             this.minimizar.TabStop = false;
+            this.minimizar.Click += new System.EventHandler(this.minimizar_Click);
             // 
             // salir
             // 
@@ -57,6 +58,7 @@
             this.salir.Size = new System.Drawing.Size(28, 27);
             this.salir.TabIndex = 10;
             this.salir.TabStop = false;
+            this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
             // panel1
             // 
@@ -97,6 +99,7 @@
             this.btnAtras.TabIndex = 24;
             this.btnAtras.Text = "Atràs";
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnSgte
             // 
@@ -111,8 +114,9 @@
             this.btnSgte.TabIndex = 25;
             this.btnSgte.Text = "Siguiente";
             this.btnSgte.UseVisualStyleBackColor = true;
+            this.btnSgte.Click += new System.EventHandler(this.btnSgte_Click);
             // 
-            // Form1
+            // J1CvH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +130,8 @@
             this.Controls.Add(this.salir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "J1CvH";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();

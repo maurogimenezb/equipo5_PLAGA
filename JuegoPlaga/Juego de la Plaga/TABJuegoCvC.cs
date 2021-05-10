@@ -34,13 +34,13 @@ namespace Juego_de_la_Plaga
                 b.Click += new EventHandler(this.button_Click); // NUEVO
 
             }
-            if (fila == int.Parse(label1.Text))
+            if (fila == int.Parse(txtFILA.Text))
             {
                 fila = 0;
                 columna++;
             }
 
-            if (count == int.Parse(label1.Text) * int.Parse(label2.Text))
+            if (count == int.Parse(txtFILA.Text) * int.Parse(txtCOLUMNA.Text))
             {
                 btnAgregar.Enabled = false;
 
@@ -49,6 +49,7 @@ namespace Juego_de_la_Plaga
             count++;
             fila++;
         }
+
         // PARA TRABAJAR CON LOS BOTONES CREADOS
         void button_Click(object sender, EventArgs e)
         {
@@ -60,15 +61,39 @@ namespace Juego_de_la_Plaga
 
         private void btnMP_Click_1(object sender, EventArgs e)
         {
-                this.Close();
-                th = new Thread(atras);
-                th.SetApartmentState(ApartmentState.STA);
-                th.Start();
-            }
+            this.Hide();
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.Show();
+
+            /*this.Close();
+            th = new Thread(atras);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();*/
+
+        }
         private void atras(object obj)
         {
             Application.Run(new MenuPrincipal());
         }
+
+        private void minimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Niveles nivel = new Niveles();
+            nivel.Show();
+
+        }
+
 
     }
 }

@@ -21,8 +21,8 @@ namespace Juego_de_la_Plaga
         private void btnCvH_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Niveles nivel = new Niveles();
-            nivel.Show();
+            J1CvH jugador = new J1CvH();
+            jugador.Show();
 
         }
 
@@ -47,8 +47,8 @@ namespace Juego_de_la_Plaga
         private void btnHvH_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Niveles nivel = new Niveles();
-            nivel.Show();
+            J1J2HvH jugador = new J1J2HvH();
+            jugador.Show();
 
         }
 
