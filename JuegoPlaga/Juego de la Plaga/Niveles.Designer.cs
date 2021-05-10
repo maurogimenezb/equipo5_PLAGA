@@ -112,11 +112,11 @@ namespace Juego_de_la_Plaga
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(430, 92);
+            this.label1.Location = new System.Drawing.Point(386, 104);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.Size = new System.Drawing.Size(190, 23);
             this.label1.TabIndex = 21;
-            this.label1.Text = "Niveles";
+            this.label1.Text = "Nivel de Dificultad";
             // 
             // btnFACIL
             // 
@@ -140,6 +140,7 @@ namespace Juego_de_la_Plaga
             // 
             // btnDIFICIL
             // 
+            this.btnDIFICIL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnDIFICIL.Location = new System.Drawing.Point(184, 341);
             this.btnDIFICIL.Name = "btnDIFICIL";
             this.btnDIFICIL.Size = new System.Drawing.Size(590, 45);
