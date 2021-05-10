@@ -36,6 +36,10 @@ namespace Juego_de_la_Plaga
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnATR = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnFACIL = new System.Windows.Forms.Button();
+            this.btnNORMAL = new System.Windows.Forms.Button();
+            this.btnDIFICIL = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -104,11 +108,54 @@ namespace Juego_de_la_Plaga
             this.btnATR.UseVisualStyleBackColor = true;
             this.btnATR.Click += new System.EventHandler(this.btnATR_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(430, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Niveles";
+            // 
+            // btnFACIL
+            // 
+            this.btnFACIL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnFACIL.Location = new System.Drawing.Point(184, 188);
+            this.btnFACIL.Name = "btnFACIL";
+            this.btnFACIL.Size = new System.Drawing.Size(590, 45);
+            this.btnFACIL.TabIndex = 22;
+            this.btnFACIL.Text = "F A C I L";
+            this.btnFACIL.UseVisualStyleBackColor = true;
+            // 
+            // btnNORMAL
+            // 
+            this.btnNORMAL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnNORMAL.Location = new System.Drawing.Point(184, 265);
+            this.btnNORMAL.Name = "btnNORMAL";
+            this.btnNORMAL.Size = new System.Drawing.Size(590, 45);
+            this.btnNORMAL.TabIndex = 23;
+            this.btnNORMAL.Text = "N O R M A L";
+            this.btnNORMAL.UseVisualStyleBackColor = true;
+            // 
+            // btnDIFICIL
+            // 
+            this.btnDIFICIL.Location = new System.Drawing.Point(184, 341);
+            this.btnDIFICIL.Name = "btnDIFICIL";
+            this.btnDIFICIL.Size = new System.Drawing.Size(590, 45);
+            this.btnDIFICIL.TabIndex = 24;
+            this.btnDIFICIL.Text = "D I F I C I L";
+            this.btnDIFICIL.UseVisualStyleBackColor = true;
+            // 
             // Niveles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.btnDIFICIL);
+            this.Controls.Add(this.btnNORMAL);
+            this.Controls.Add(this.btnFACIL);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnATR);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
@@ -126,6 +173,7 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -137,5 +185,9 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnATR;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnFACIL;
+        private System.Windows.Forms.Button btnNORMAL;
+        private System.Windows.Forms.Button btnDIFICIL;
     }
 }
