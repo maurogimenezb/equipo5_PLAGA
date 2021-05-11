@@ -11,7 +11,9 @@ namespace Juego_de_la_Plaga
 {
     public partial class TABJuegoCvC : Form
     {
+        bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
         Thread th; // NUEVO
+
         public TABJuegoCvC()
         {
             InitializeComponent();
@@ -54,21 +56,36 @@ namespace Juego_de_la_Plaga
         void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            btn.Text = "0";
+            /*if (turno)
+            {
+                btn.BackColor = Color.Red;
+                btn.BackColor = Color.Red;
+            }
+            else
+                btn.BackColor = Color.Black;
+
+            turno = !turno;
+            btn.Enabled = false; */
+
+            if (btn.BackColor == Color.Red)
+            {
+                MessageBox.Show("Elije una celda vacia");
+            }
+            else
+            {
+                btn.BackColor = Color.Red;
+            }
         }
 
         // PARA VOLVER AL MENU PRINCIPAL
 
         private void btnMP_Click_1(object sender, EventArgs e)
         {
-            this.Hide();
-            MenuPrincipal menu = new MenuPrincipal();
-            menu.Show();
 
-            /*this.Close();
+            this.Close();
             th = new Thread(atras);
             th.SetApartmentState(ApartmentState.STA);
-            th.Start();*/
+            th.Start();
 
         }
         private void atras(object obj)
@@ -88,10 +105,16 @@ namespace Juego_de_la_Plaga
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Niveles nivel = new Niveles();
-            nivel.Show();
+            this.Close();
+            th = new Thread(atras1);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
 
+        }
+
+        private void atras1(object obj)
+        {
+            Application.Run(new Niveles());
         }
 
 

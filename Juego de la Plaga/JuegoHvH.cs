@@ -11,7 +11,8 @@ namespace Juego_de_la_Plaga
 {
     public partial class JuegoHvH : Form
     {
-        Thread th; // NUEVO
+        bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
+        Thread th; // PARA PASAR DE UN FORM A OTRO
         public JuegoHvH()
         {
             InitializeComponent();
@@ -26,10 +27,9 @@ namespace Juego_de_la_Plaga
             for (int i = 1; i <= fila; i++)
             {
                 Button b = new Button();
-                b.Text = count.ToString();
                 b.Name = count.ToString();
                 b.Size = new Size(35, 35);
-                b.Location = new Point(40 * (i + 1), 40 * columna);
+                b.Location = new Point (40 * (i + 1), 40 * columna);
                 Controls.Add(b);
                 b.Click += new EventHandler(this.button_Click); // NUEVO
 
@@ -53,7 +53,16 @@ namespace Juego_de_la_Plaga
         void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            btn.Text = "0";
+            if (turno)
+            {
+                btn.BackColor = Color.Red;
+                btn.BackColor = Color.Red;
+            }
+            else
+                btn.BackColor = Color.Black;
+
+            turno = !turno;
+            btn.Enabled = false;
         }
 
         // PARA VOLVER AL MENU PRINCIPAL

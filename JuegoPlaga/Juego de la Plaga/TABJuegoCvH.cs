@@ -11,6 +11,7 @@ namespace Juego_de_la_Plaga
 {
     public partial class TABJuegoCvH : Form
     {
+        bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
         Thread th; // NUEVO
         public TABJuegoCvH()
         {
@@ -23,8 +24,26 @@ namespace Juego_de_la_Plaga
         void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            btn.Text = "0";
-           
+
+            /* if (turno)
+            {
+                btn.BackColor = Color.Red;
+                btn.BackColor = Color.Red;
+            }
+            else
+                btn.BackColor = Color.Black;
+
+            turno = !turno;
+            btn.Enabled = false; */
+            if (btn.BackColor == Color.Red)
+            {
+                MessageBox.Show("Elije una celda vacia");
+            }
+            else
+            {
+                btn.BackColor = Color.Red;
+            }
+
         }
 
         // PARA VOLVER AL MENU PRINCIPAL
