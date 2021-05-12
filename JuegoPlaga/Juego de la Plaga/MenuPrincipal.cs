@@ -44,6 +44,8 @@ namespace Juego_de_la_Plaga
         {
             
             this.Hide();
+            SystemSounds.Exclamation.Play();
+            //Console.Beep();
             MsjSalir salir = new MsjSalir();
             //SystemSounds.Exclamation();
             salir.Show();
