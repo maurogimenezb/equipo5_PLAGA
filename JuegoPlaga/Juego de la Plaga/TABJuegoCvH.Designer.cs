@@ -68,7 +68,7 @@ namespace Juego_de_la_Plaga
             // btnMP
             // 
             this.btnMP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMP.Location = new System.Drawing.Point(215, 539);
+            this.btnMP.Location = new System.Drawing.Point(227, 544);
             this.btnMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(148, 32);
@@ -157,7 +157,7 @@ namespace Juego_de_la_Plaga
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAtras.Location = new System.Drawing.Point(50, 539);
+            this.btnAtras.Location = new System.Drawing.Point(60, 544);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 32);
@@ -315,9 +315,10 @@ namespace Juego_de_la_Plaga
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(405, 520);
+            this.pictureBox3.Location = new System.Drawing.Point(404, 495);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(78, 68);
+            this.pictureBox3.Size = new System.Drawing.Size(100, 93);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 26;
             this.pictureBox3.TabStop = false;
             // 
@@ -325,7 +326,7 @@ namespace Juego_de_la_Plaga
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(914, 600);
+            this.ClientSize = new System.Drawing.Size(913, 600);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
