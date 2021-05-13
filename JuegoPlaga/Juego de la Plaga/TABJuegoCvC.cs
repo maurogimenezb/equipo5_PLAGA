@@ -114,7 +114,7 @@ namespace Juego_de_la_Plaga
 
         private void atras1(object obj)
         {
-            Application.Run(new Niveles());
+            Application.Run(new Nivel1());
         }
 
 

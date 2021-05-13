@@ -62,7 +62,7 @@ namespace Juego_de_la_Plaga
 
         private void atras(object obj)
         {
-            Application.Run(new Niveles());
+            Application.Run(new Nivel1());
         }
 
         int count = 1;
@@ -111,7 +111,7 @@ namespace Juego_de_la_Plaga
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Niveles nivel = new Niveles();
+            Nivel1 nivel = new Nivel1();
             nivel.Show();
 
         }

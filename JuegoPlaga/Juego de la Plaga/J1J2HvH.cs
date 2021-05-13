@@ -26,7 +26,7 @@ namespace Juego_de_la_Plaga
         {
             this.Hide();
             TABJuegoHvH tab = new TABJuegoHvH();
-            Niveles nivel = new Niveles();
+            Nivel2 nivel = new Nivel2();
             nivel.Show();
         }
 

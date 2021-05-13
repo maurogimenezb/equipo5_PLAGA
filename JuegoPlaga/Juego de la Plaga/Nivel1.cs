@@ -9,10 +9,10 @@ using System.Threading;
 
 namespace Juego_de_la_Plaga
 {
-    public partial class Niveles : Form
+    public partial class Nivel1 : Form
     {
         Thread th;
-        public Niveles()
+        public Nivel1()
         {
             InitializeComponent();
         }

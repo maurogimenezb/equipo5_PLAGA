@@ -1,7 +1,7 @@
 ﻿
 namespace Juego_de_la_Plaga
 {
-    partial class Niveles
+    partial class Nivel1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Juego_de_la_Plaga
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Niveles));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Nivel1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.PictureBox();
@@ -112,7 +112,7 @@ namespace Juego_de_la_Plaga
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(386, 104);
+            this.label1.Location = new System.Drawing.Point(385, 135);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(190, 23);
             this.label1.TabIndex = 21;
@@ -121,7 +121,7 @@ namespace Juego_de_la_Plaga
             // btnFACIL
             // 
             this.btnFACIL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnFACIL.Location = new System.Drawing.Point(184, 188);
+            this.btnFACIL.Location = new System.Drawing.Point(183, 219);
             this.btnFACIL.Name = "btnFACIL";
             this.btnFACIL.Size = new System.Drawing.Size(590, 45);
             this.btnFACIL.TabIndex = 22;
@@ -132,7 +132,7 @@ namespace Juego_de_la_Plaga
             // btnNORMAL
             // 
             this.btnNORMAL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnNORMAL.Location = new System.Drawing.Point(184, 265);
+            this.btnNORMAL.Location = new System.Drawing.Point(183, 296);
             this.btnNORMAL.Name = "btnNORMAL";
             this.btnNORMAL.Size = new System.Drawing.Size(590, 45);
             this.btnNORMAL.TabIndex = 23;
@@ -143,7 +143,7 @@ namespace Juego_de_la_Plaga
             // btnDIFICIL
             // 
             this.btnDIFICIL.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDIFICIL.Location = new System.Drawing.Point(184, 341);
+            this.btnDIFICIL.Location = new System.Drawing.Point(183, 372);
             this.btnDIFICIL.Name = "btnDIFICIL";
             this.btnDIFICIL.Size = new System.Drawing.Size(590, 45);
             this.btnDIFICIL.TabIndex = 24;

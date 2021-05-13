@@ -111,7 +111,7 @@ namespace Juego_de_la_Plaga
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Niveles nivel = new Niveles();
+            Nivel1 nivel = new Nivel1();
             nivel.Show();
 
         }

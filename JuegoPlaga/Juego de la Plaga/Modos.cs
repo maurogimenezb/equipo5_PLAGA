@@ -28,7 +28,7 @@ namespace Juego_de_la_Plaga
 
         private void abrirniveles(object obj)
         {
-            Application.Run(new Niveles());
+            Application.Run(new Nivel1());
         }
 
         private void btnatras_Click(object sender, EventArgs e)
@@ -63,7 +63,7 @@ namespace Juego_de_la_Plaga
         private void btnCvC_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Niveles nivel = new Niveles();
+            Nivel3 nivel = new Nivel3();
             nivel.Show();
         }
         private void abrirjuegoCvC(object obj)
