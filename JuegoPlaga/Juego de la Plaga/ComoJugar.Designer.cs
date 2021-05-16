@@ -35,8 +35,10 @@ namespace Juego_de_la_Plaga
             this.minimizarCJ = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnATR = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.salirCJ)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarCJ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -93,11 +95,22 @@ namespace Juego_de_la_Plaga
             this.btnATR.UseVisualStyleBackColor = true;
             this.btnATR.Click += new System.EventHandler(this.btnNJ_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(373, 99);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(456, 402);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
             // ComoJugar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnATR);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.minimizarCJ);
@@ -111,6 +124,7 @@ namespace Juego_de_la_Plaga
             this.Load += new System.EventHandler(this.ComoJugar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salirCJ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarCJ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,5 +136,6 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.PictureBox minimizarCJ;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnATR;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
