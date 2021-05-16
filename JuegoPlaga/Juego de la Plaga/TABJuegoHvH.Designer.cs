@@ -31,30 +31,30 @@ namespace Juego_de_la_Plaga
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TABJuegoHvH));
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.txtFILA = new System.Windows.Forms.TextBox();
             this.btnMP = new System.Windows.Forms.Button();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCOLUMNA = new System.Windows.Forms.TextBox();
+            this.txtY = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtJ2 = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.rbtnJ2O = new System.Windows.Forms.RadioButton();
+            this.rbtnJ2X = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtJ1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rbtnJ1O = new System.Windows.Forms.RadioButton();
+            this.rbtnJ1X = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnGO = new System.Windows.Forms.PictureBox();
+            this.txtX = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -62,7 +62,7 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGO)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAgregar
@@ -75,15 +75,7 @@ namespace Juego_de_la_Plaga
             this.btnAgregar.TabIndex = 0;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
-            // 
-            // txtFILA
-            // 
-            this.txtFILA.Location = new System.Drawing.Point(722, 43);
-            this.txtFILA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtFILA.Name = "txtFILA";
-            this.txtFILA.Size = new System.Drawing.Size(71, 27);
-            this.txtFILA.TabIndex = 1;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnMP
             // 
@@ -146,13 +138,13 @@ namespace Juego_de_la_Plaga
             this.label2.TabIndex = 15;
             this.label2.Text = "Cant. Columnas:";
             // 
-            // txtCOLUMNA
+            // txtY
             // 
-            this.txtCOLUMNA.Location = new System.Drawing.Point(722, 87);
-            this.txtCOLUMNA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCOLUMNA.Name = "txtCOLUMNA";
-            this.txtCOLUMNA.Size = new System.Drawing.Size(71, 27);
-            this.txtCOLUMNA.TabIndex = 16;
+            this.txtY.Location = new System.Drawing.Point(722, 87);
+            this.txtY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtY.Name = "txtY";
+            this.txtY.Size = new System.Drawing.Size(71, 27);
+            this.txtY.TabIndex = 16;
             // 
             // btnAtras
             // 
@@ -168,12 +160,13 @@ namespace Juego_de_la_Plaga
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtJ2);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pictureBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtJ1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pictureBox1);
@@ -194,44 +187,44 @@ namespace Juego_de_la_Plaga
             this.label5.TabIndex = 37;
             this.label5.Text = "VS";
             // 
-            // textBox2
+            // txtJ2
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 405);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 36;
+            this.txtJ2.Location = new System.Drawing.Point(107, 405);
+            this.txtJ2.Name = "txtJ2";
+            this.txtJ2.Size = new System.Drawing.Size(125, 27);
+            this.txtJ2.TabIndex = 36;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton4);
+            this.groupBox3.Controls.Add(this.rbtnJ2O);
+            this.groupBox3.Controls.Add(this.rbtnJ2X);
             this.groupBox3.Location = new System.Drawing.Point(107, 344);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(130, 55);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             // 
-            // radioButton3
+            // rbtnJ2O
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(84, 23);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 24);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Y";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbtnJ2O.AutoSize = true;
+            this.rbtnJ2O.Location = new System.Drawing.Point(84, 23);
+            this.rbtnJ2O.Name = "rbtnJ2O";
+            this.rbtnJ2O.Size = new System.Drawing.Size(41, 24);
+            this.rbtnJ2O.TabIndex = 1;
+            this.rbtnJ2O.TabStop = true;
+            this.rbtnJ2O.Text = "O";
+            this.rbtnJ2O.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // rbtnJ2X
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(19, 23);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(39, 24);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "X";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbtnJ2X.AutoSize = true;
+            this.rbtnJ2X.Location = new System.Drawing.Point(19, 23);
+            this.rbtnJ2X.Name = "rbtnJ2X";
+            this.rbtnJ2X.Size = new System.Drawing.Size(39, 24);
+            this.rbtnJ2X.TabIndex = 0;
+            this.rbtnJ2X.TabStop = true;
+            this.rbtnJ2X.Text = "X";
+            this.rbtnJ2X.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -253,44 +246,44 @@ namespace Juego_de_la_Plaga
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // txtJ1
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 32;
+            this.txtJ1.Location = new System.Drawing.Point(110, 179);
+            this.txtJ1.Name = "txtJ1";
+            this.txtJ1.Size = new System.Drawing.Size(125, 27);
+            this.txtJ1.TabIndex = 32;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
+            this.groupBox2.Controls.Add(this.rbtnJ1O);
+            this.groupBox2.Controls.Add(this.rbtnJ1X);
             this.groupBox2.Location = new System.Drawing.Point(110, 118);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(130, 55);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             // 
-            // radioButton2
+            // rbtnJ1O
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(84, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Y";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbtnJ1O.AutoSize = true;
+            this.rbtnJ1O.Location = new System.Drawing.Point(84, 23);
+            this.rbtnJ1O.Name = "rbtnJ1O";
+            this.rbtnJ1O.Size = new System.Drawing.Size(41, 24);
+            this.rbtnJ1O.TabIndex = 1;
+            this.rbtnJ1O.TabStop = true;
+            this.rbtnJ1O.Text = "O";
+            this.rbtnJ1O.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // rbtnJ1X
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(19, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "X";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rbtnJ1X.AutoSize = true;
+            this.rbtnJ1X.Location = new System.Drawing.Point(19, 23);
+            this.rbtnJ1X.Name = "rbtnJ1X";
+            this.rbtnJ1X.Size = new System.Drawing.Size(39, 24);
+            this.rbtnJ1X.TabIndex = 0;
+            this.rbtnJ1X.TabStop = true;
+            this.rbtnJ1X.Text = "X";
+            this.rbtnJ1X.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -312,32 +305,41 @@ namespace Juego_de_la_Plaga
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox3
+            // btnGO
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(404, 495);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 93);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 28;
-            this.pictureBox3.TabStop = false;
+            this.btnGO.Image = ((System.Drawing.Image)(resources.GetObject("btnGO.Image")));
+            this.btnGO.Location = new System.Drawing.Point(404, 495);
+            this.btnGO.Name = "btnGO";
+            this.btnGO.Size = new System.Drawing.Size(100, 93);
+            this.btnGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnGO.TabIndex = 28;
+            this.btnGO.TabStop = false;
+            this.btnGO.Click += new System.EventHandler(this.btnGO_Click);
+            // 
+            // txtX
+            // 
+            this.txtX.Location = new System.Drawing.Point(722, 39);
+            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(71, 27);
+            this.txtX.TabIndex = 29;
             // 
             // TABJuegoHvH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.txtX);
+            this.Controls.Add(this.btnGO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtCOLUMNA);
+            this.Controls.Add(this.txtY);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.minimizar);
             this.Controls.Add(this.salir);
             this.Controls.Add(this.btnMP);
-            this.Controls.Add(this.txtFILA);
             this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -355,7 +357,7 @@ namespace Juego_de_la_Plaga
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,29 +366,29 @@ namespace Juego_de_la_Plaga
         #endregion
 
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.TextBox txtFILA;
         private System.Windows.Forms.Button btnMP;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox salir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCOLUMNA;
+        private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtJ2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbtnJ2O;
+        private System.Windows.Forms.RadioButton rbtnJ2X;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtJ1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnJ1O;
+        private System.Windows.Forms.RadioButton rbtnJ1X;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnGO;
+        private System.Windows.Forms.TextBox txtX;
     }
 }

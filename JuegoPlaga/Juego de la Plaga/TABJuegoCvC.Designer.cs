@@ -33,35 +33,35 @@ namespace Juego_de_la_Plaga
             this.btnMP = new System.Windows.Forms.Button();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.PictureBox();
-            this.txtCOLUMNA = new System.Windows.Forms.TextBox();
+            this.txtY = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtFILA = new System.Windows.Forms.TextBox();
+            this.txtX = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtras = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtIA2 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbtnIA2Y = new System.Windows.Forms.RadioButton();
+            this.rbtnIA2X = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtIA1 = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbtnIA1Y = new System.Windows.Forms.RadioButton();
+            this.rbtnIA1X = new System.Windows.Forms.RadioButton();
+            this.label3 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -97,19 +97,19 @@ namespace Juego_de_la_Plaga
             this.salir.TabStop = false;
             this.salir.Click += new System.EventHandler(this.salir_Click);
             // 
-            // txtCOLUMNA
+            // txtY
             // 
-            this.txtCOLUMNA.Location = new System.Drawing.Point(715, 89);
-            this.txtCOLUMNA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCOLUMNA.Name = "txtCOLUMNA";
-            this.txtCOLUMNA.Size = new System.Drawing.Size(71, 27);
-            this.txtCOLUMNA.TabIndex = 26;
+            this.txtY.Location = new System.Drawing.Point(715, 89);
+            this.txtY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtY.Name = "txtY";
+            this.txtY.Size = new System.Drawing.Size(71, 27);
+            this.txtY.TabIndex = 26;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(559, 91);
+            this.label2.Location = new System.Drawing.Point(559, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 21);
             this.label2.TabIndex = 25;
@@ -119,19 +119,19 @@ namespace Juego_de_la_Plaga
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(608, 47);
+            this.label1.Location = new System.Drawing.Point(608, 91);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 24;
             this.label1.Text = "Cant. Filas:";
             // 
-            // txtFILA
+            // txtX
             // 
-            this.txtFILA.Location = new System.Drawing.Point(715, 45);
-            this.txtFILA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtFILA.Name = "txtFILA";
-            this.txtFILA.Size = new System.Drawing.Size(71, 27);
-            this.txtFILA.TabIndex = 23;
+            this.txtX.Location = new System.Drawing.Point(715, 45);
+            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(71, 27);
+            this.txtX.TabIndex = 23;
             // 
             // btnAgregar
             // 
@@ -143,6 +143,7 @@ namespace Juego_de_la_Plaga
             this.btnAgregar.TabIndex = 22;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // panel1
             // 
@@ -167,13 +168,14 @@ namespace Juego_de_la_Plaga
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtIA2);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtIA1);
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -184,110 +186,16 @@ namespace Juego_de_la_Plaga
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  Introduzca los nombres de los jugadores:";
             // 
-            // label5
+            // pictureBox2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(156, 219);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 20);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "VS";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(107, 405);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(125, 27);
-            this.textBox2.TabIndex = 36;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.radioButton3);
-            this.groupBox3.Controls.Add(this.radioButton4);
-            this.groupBox3.Location = new System.Drawing.Point(107, 344);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(130, 55);
-            this.groupBox3.TabIndex = 35;
-            this.groupBox3.TabStop = false;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(84, 23);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(39, 24);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Y";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(19, 23);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(39, 24);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "X";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(135, 321);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Jugador 2";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(110, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(125, 27);
-            this.textBox1.TabIndex = 32;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Location = new System.Drawing.Point(110, 118);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(130, 55);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(84, 23);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(39, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Y";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(19, 23);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(39, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "X";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(138, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Jugador 1";
+            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(138, 252);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(67, 66);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 39;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox4
             // 
@@ -300,16 +208,110 @@ namespace Juego_de_la_Plaga
             this.pictureBox4.TabIndex = 38;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox2
+            // label5
             // 
-            this.pictureBox2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.ErrorImage")));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(138, 252);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(67, 66);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 39;
-            this.pictureBox2.TabStop = false;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(156, 219);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(27, 20);
+            this.label5.TabIndex = 37;
+            this.label5.Text = "VS";
+            // 
+            // txtIA2
+            // 
+            this.txtIA2.Location = new System.Drawing.Point(107, 405);
+            this.txtIA2.Name = "txtIA2";
+            this.txtIA2.Size = new System.Drawing.Size(125, 27);
+            this.txtIA2.TabIndex = 36;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbtnIA2Y);
+            this.groupBox3.Controls.Add(this.rbtnIA2X);
+            this.groupBox3.Location = new System.Drawing.Point(107, 344);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(130, 55);
+            this.groupBox3.TabIndex = 35;
+            this.groupBox3.TabStop = false;
+            // 
+            // rbtnIA2Y
+            // 
+            this.rbtnIA2Y.AutoSize = true;
+            this.rbtnIA2Y.Location = new System.Drawing.Point(84, 23);
+            this.rbtnIA2Y.Name = "rbtnIA2Y";
+            this.rbtnIA2Y.Size = new System.Drawing.Size(39, 24);
+            this.rbtnIA2Y.TabIndex = 1;
+            this.rbtnIA2Y.TabStop = true;
+            this.rbtnIA2Y.Text = "Y";
+            this.rbtnIA2Y.UseVisualStyleBackColor = true;
+            // 
+            // rbtnIA2X
+            // 
+            this.rbtnIA2X.AutoSize = true;
+            this.rbtnIA2X.Location = new System.Drawing.Point(19, 23);
+            this.rbtnIA2X.Name = "rbtnIA2X";
+            this.rbtnIA2X.Size = new System.Drawing.Size(39, 24);
+            this.rbtnIA2X.TabIndex = 0;
+            this.rbtnIA2X.TabStop = true;
+            this.rbtnIA2X.Text = "X";
+            this.rbtnIA2X.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(135, 321);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(77, 20);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Jugador 2";
+            // 
+            // txtIA1
+            // 
+            this.txtIA1.Location = new System.Drawing.Point(110, 179);
+            this.txtIA1.Name = "txtIA1";
+            this.txtIA1.Size = new System.Drawing.Size(125, 27);
+            this.txtIA1.TabIndex = 32;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtnIA1Y);
+            this.groupBox2.Controls.Add(this.rbtnIA1X);
+            this.groupBox2.Location = new System.Drawing.Point(110, 118);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(130, 55);
+            this.groupBox2.TabIndex = 30;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbtnIA1Y
+            // 
+            this.rbtnIA1Y.AutoSize = true;
+            this.rbtnIA1Y.Location = new System.Drawing.Point(84, 23);
+            this.rbtnIA1Y.Name = "rbtnIA1Y";
+            this.rbtnIA1Y.Size = new System.Drawing.Size(39, 24);
+            this.rbtnIA1Y.TabIndex = 1;
+            this.rbtnIA1Y.TabStop = true;
+            this.rbtnIA1Y.Text = "Y";
+            this.rbtnIA1Y.UseVisualStyleBackColor = true;
+            // 
+            // rbtnIA1X
+            // 
+            this.rbtnIA1X.AutoSize = true;
+            this.rbtnIA1X.Location = new System.Drawing.Point(19, 23);
+            this.rbtnIA1X.Name = "rbtnIA1X";
+            this.rbtnIA1X.Size = new System.Drawing.Size(39, 24);
+            this.rbtnIA1X.TabIndex = 0;
+            this.rbtnIA1X.TabStop = true;
+            this.rbtnIA1X.Text = "X";
+            this.rbtnIA1X.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(138, 95);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.TabIndex = 26;
+            this.label3.Text = "Jugador 1";
             // 
             // pictureBox3
             // 
@@ -330,10 +332,10 @@ namespace Juego_de_la_Plaga
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtCOLUMNA);
+            this.Controls.Add(this.txtY);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtFILA);
+            this.Controls.Add(this.txtX);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.minimizar);
             this.Controls.Add(this.salir);
@@ -347,12 +349,12 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -363,24 +365,24 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Button btnMP;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox salir;
-        private System.Windows.Forms.TextBox txtCOLUMNA;
+        private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtFILA;
+        private System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtIA2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton rbtnIA2Y;
+        private System.Windows.Forms.RadioButton rbtnIA2X;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtIA1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rbtnIA1Y;
+        private System.Windows.Forms.RadioButton rbtnIA1X;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;

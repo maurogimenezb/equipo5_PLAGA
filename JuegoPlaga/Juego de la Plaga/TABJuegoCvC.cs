@@ -36,13 +36,13 @@ namespace Juego_de_la_Plaga
                 b.Click += new EventHandler(this.button_Click); // NUEVO
 
             }
-            if (fila == int.Parse(txtFILA.Text))
+            if (fila == int.Parse(txtX.Text))
             {
                 fila = 0;
                 columna++;
             }
 
-            if (count == int.Parse(txtFILA.Text) * int.Parse(txtCOLUMNA.Text))
+            if (count == int.Parse(txtX.Text) * int.Parse(txtY.Text))
             {
                 btnAgregar.Enabled = false;
 
@@ -117,6 +117,38 @@ namespace Juego_de_la_Plaga
             Application.Run(new Nivel1());
         }
 
+        /*private void TABJuegoCvC_Load(object sender, EventArgs e)
+        {
+            OnOffBtn(false);
+        }*/
 
+
+        int cont = 1;
+        int x = 1;
+        int y = 1;
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            for (int i=1; i<=x; i++)
+            {
+                Button b = new Button();
+                b.Text = "";
+                b.Name = cont.ToString();
+                b.Size = new Size(35, 35);
+                b.Location = new Point(40 * (i + 1), 40 * y);
+                Controls.Add(b);
+            }
+            if (x == int.Parse(txtX.Text))
+            {
+                x = 0;
+                y++;
+            }
+            if (cont==int.Parse(txtX.Text) * int.Parse(txtY.Text))
+            {
+                btnAgregar.Enabled = false;
+            }
+            cont++;
+            x++;
+        }
     }
 }

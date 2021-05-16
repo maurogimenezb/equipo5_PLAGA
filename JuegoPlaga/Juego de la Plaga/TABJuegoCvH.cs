@@ -13,11 +13,11 @@ namespace Juego_de_la_Plaga
     {
         bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
         Thread th; // NUEVO
+
         public TABJuegoCvH()
         {
             InitializeComponent();
         }
-
 
         // PARA TRABAJAR CON LOS BOTONES CREADOS
 
@@ -25,7 +25,9 @@ namespace Juego_de_la_Plaga
         {
             Button btn = sender as Button;
 
-            /* if (turno)
+            btn.Text = " ";
+
+            if (turno)
             {
                 btn.BackColor = Color.Red;
                 btn.BackColor = Color.Red;
@@ -34,7 +36,8 @@ namespace Juego_de_la_Plaga
                 btn.BackColor = Color.Black;
 
             turno = !turno;
-            btn.Enabled = false; */
+            btn.Enabled = false; 
+
             if (btn.BackColor == Color.Red)
             {
                 MessageBox.Show("Elije una celda vacia");
@@ -65,39 +68,6 @@ namespace Juego_de_la_Plaga
             Application.Run(new Nivel1());
         }
 
-        int count = 1;
-        int fila = 1;
-        int columna = 1;
-
-        private void btnAgregar_Click_1(object sender, EventArgs e)
-        {
-            for (int i = 1; i <= fila; i++)
-            {
-                Button b = new Button();
-                b.Text = count.ToString();
-                b.Name = count.ToString();
-                b.Size = new Size(35, 35);
-                b.Location = new Point(40 * (i + 1), 40 * columna);
-                Controls.Add(b);
-                b.Click += new EventHandler(this.button_Click); // NUEVO
-
-            }
-            if (fila == int.Parse(txtFILA.Text))
-            {
-                fila = 0;
-                columna++;
-            }
-
-            if (count == int.Parse(txtFILA.Text) * int.Parse(txtCOLUMNA.Text))
-            {
-                btnAgregar.Enabled = false;
-
-            }
-
-            count++;
-            fila++;
-        }
-
         private void salir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -114,6 +84,44 @@ namespace Juego_de_la_Plaga
             Nivel1 nivel = new Nivel1();
             nivel.Show();
 
+        }
+
+        private void TABJuegoCvH_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFILA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        int cont = 1;
+        int x = 1;
+        int y = 1;
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= x; i++)
+            {
+                Button b = new Button();
+                b.Text = "";
+                b.Name = cont.ToString();
+                b.Size = new Size(35, 35);
+                b.Location = new Point(40 * (i + 1), 40 * y);
+                Controls.Add(b);
+            }
+            if (x == int.Parse(txtX.Text))
+            {
+                x = 0;
+                y++;
+            }
+            if (cont == int.Parse(txtX.Text) * int.Parse(txtY.Text))
+            {
+                btnAgregar.Enabled = false;
+            }
+            cont++;
+            x++;
         }
     }
 }
