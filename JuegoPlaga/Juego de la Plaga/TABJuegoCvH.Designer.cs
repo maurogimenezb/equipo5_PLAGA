@@ -55,6 +55,7 @@ namespace Juego_de_la_Plaga
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnReiniciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -68,7 +69,7 @@ namespace Juego_de_la_Plaga
             // btnMP
             // 
             this.btnMP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMP.Location = new System.Drawing.Point(227, 544);
+            this.btnMP.Location = new System.Drawing.Point(225, 523);
             this.btnMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(148, 32);
@@ -158,7 +159,7 @@ namespace Juego_de_la_Plaga
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAtras.Location = new System.Drawing.Point(60, 544);
+            this.btnAtras.Location = new System.Drawing.Point(58, 523);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 32);
@@ -324,11 +325,23 @@ namespace Juego_de_la_Plaga
             this.pictureBox3.TabIndex = 26;
             this.pictureBox3.TabStop = false;
             // 
+            // btnReiniciar
+            // 
+            this.btnReiniciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnReiniciar.Location = new System.Drawing.Point(143, 563);
+            this.btnReiniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnReiniciar.Name = "btnReiniciar";
+            this.btnReiniciar.Size = new System.Drawing.Size(148, 32);
+            this.btnReiniciar.TabIndex = 27;
+            this.btnReiniciar.Text = "Reiniciar Juego";
+            this.btnReiniciar.UseVisualStyleBackColor = true;
+            // 
             // TABJuegoCvH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(913, 600);
+            this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
@@ -390,5 +403,6 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Button btnReiniciar;
     }
 }
