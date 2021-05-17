@@ -1,7 +1,7 @@
 ﻿
 namespace Juego_de_la_Plaga
 {
-    partial class Form1
+    partial class Prueba
     {
         /// <summary>
         /// Required designer variable.

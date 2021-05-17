@@ -334,6 +334,7 @@ namespace Juego_de_la_Plaga
             this.btnReiniciar.TabIndex = 31;
             this.btnReiniciar.Text = "Reiniciar Juego";
             this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // TABJuegoCvC
             // 

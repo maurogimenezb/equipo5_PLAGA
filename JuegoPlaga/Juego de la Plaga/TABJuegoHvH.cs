@@ -164,5 +164,10 @@ namespace Juego_de_la_Plaga
             cont++;
             x++;
         }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

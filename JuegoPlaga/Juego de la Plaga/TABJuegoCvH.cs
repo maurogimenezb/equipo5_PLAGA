@@ -86,11 +86,6 @@ namespace Juego_de_la_Plaga
 
         }
 
-        private void TABJuegoCvH_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtFILA_TextChanged(object sender, EventArgs e)
         {
 
@@ -102,7 +97,7 @@ namespace Juego_de_la_Plaga
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i <= x; i++)
+            for (int i = 1; i <= y; i++)
             {
                 Button b = new Button();
                 b.Text = "";
@@ -122,6 +117,11 @@ namespace Juego_de_la_Plaga
             }
             cont++;
             x++;
+        }
+
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

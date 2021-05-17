@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Juego_de_la_Plaga
 {
-    public partial class Form1 : Form
+    public partial class Prueba : Form
     {
-        public Form1()
+        public Prueba()
         {
             InitializeComponent();
         }

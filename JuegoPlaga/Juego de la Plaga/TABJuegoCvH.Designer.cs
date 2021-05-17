@@ -335,6 +335,7 @@ namespace Juego_de_la_Plaga
             this.btnReiniciar.TabIndex = 27;
             this.btnReiniciar.Text = "Reiniciar Juego";
             this.btnReiniciar.UseVisualStyleBackColor = true;
+            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // TABJuegoCvH
             // 
@@ -360,7 +361,6 @@ namespace Juego_de_la_Plaga
             this.Name = "TABJuegoCvH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
-            this.Load += new System.EventHandler(this.TABJuegoCvH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
             this.groupBox1.ResumeLayout(false);
