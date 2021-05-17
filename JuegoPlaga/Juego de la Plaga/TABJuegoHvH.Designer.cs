@@ -123,7 +123,7 @@ namespace Juego_de_la_Plaga
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(615, 45);
+            this.label1.Location = new System.Drawing.Point(615, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 21);
             this.label1.TabIndex = 14;
@@ -133,7 +133,7 @@ namespace Juego_de_la_Plaga
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(566, 93);
+            this.label2.Location = new System.Drawing.Point(566, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(150, 21);
             this.label2.TabIndex = 15;

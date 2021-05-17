@@ -97,7 +97,7 @@ namespace Juego_de_la_Plaga
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i <= y; i++)
+            for (int i = 1; i <= x; i++)
             {
                 Button b = new Button();
                 b.Text = "";

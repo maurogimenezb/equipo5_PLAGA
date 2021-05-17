@@ -122,14 +122,13 @@ namespace Juego_de_la_Plaga
             OnOffBtn(false);
         }*/
 
-
         int cont = 1;
         int x = 1;
         int y = 1;
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            for (int i=1; i<=x; i++)
+            for (int i = 1; i <= x; i++)
             {
                 Button b = new Button();
                 b.Text = "";
@@ -143,7 +142,7 @@ namespace Juego_de_la_Plaga
                 x = 0;
                 y++;
             }
-            if (cont==int.Parse(txtX.Text) * int.Parse(txtY.Text))
+            if (cont == int.Parse(txtX.Text) * int.Parse(txtY.Text))
             {
                 btnAgregar.Enabled = false;
             }
