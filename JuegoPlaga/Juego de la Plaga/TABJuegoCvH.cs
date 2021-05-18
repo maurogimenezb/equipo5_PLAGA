@@ -134,51 +134,51 @@ namespace Juego_de_la_Plaga
 
         private void Iniciar()
         {
-            if (txtJ1.Text == "" && txtJ2.Text == "")
+            if (txtJug.Text == "" && txtIA.Text == "")
             {
                 MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                if (txtJ1.Text == "")
+                if (txtJug.Text == "")
                 {
                     MessageBox.Show("El nombre del jugador 1 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                if (txtJ2.Text == "")
+                if (txtIA.Text == "")
                 {
                     MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
-            if (txtJ1.Text != "" && txtJ2.Text != "")
+            if (txtJug.Text != "" && txtIA.Text != "")
             {
-                if (rbtnJ1R.Checked && rbtnJ2A.Checked)
+                if (rbtnJR.Checked && rbtnIAA.Checked)
                 {
-                    jugador1 = txtJ1.Text;
-                    jugador2 = txtJ2.Text;
-                    rbtnJ1A.Enabled = false;
-                    rbtnJ2R.Enabled = false;
+                    jugador1 = txtJug.Text;
+                    jugador2 = txtIA.Text;
+                    rbtnJA.Enabled = false;
+                    rbtnIAR.Enabled = false;
 
                 }
-                if (rbtnJ1A.Checked && rbtnJ2R.Checked)
+                if (rbtnJA.Checked && rbtnIAR.Checked)
                 {
-                    jugador1 = txtJ2.Text;
-                    jugador2 = txtJ1.Text;
-                    rbtnJ1R.Enabled = false;
-                    rbtnJ2A.Enabled = false;
+                    jugador1 = txtIA.Text;
+                    jugador2 = txtJug.Text;
+                    rbtnJR.Enabled = false;
+                    rbtnIAA.Enabled = false;
 
                 }
-                if (rbtnJ1R.Checked && rbtnJ2R.Checked)
-                {
-                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                }
-                if (rbtnJ1A.Checked && rbtnJ2A.Checked)
+                if (rbtnJR.Checked && rbtnIAR.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
-                if (rbtnJ1R.Checked == false && rbtnJ1A.Checked == false || rbtnJ2R.Checked == false && rbtnJ2A.Checked == false)
+                if (rbtnJA.Checked && rbtnIAA.Checked)
+                {
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                if (rbtnJR.Checked == false && rbtnJA.Checked == false || rbtnIAR.Checked == false && rbtnIAA.Checked == false)
                 {
                     MessageBox.Show("Cada jugador puede escoger solamente una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
