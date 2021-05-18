@@ -23,12 +23,12 @@ namespace Juego_de_la_Plaga
         int fila = 1;
         int columna = 1;
 
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
             for (int i = 1; i <= fila; i++)
             {
                 Button b = new Button();
-                b.Text = count.ToString();
+                b.Text = "";
                 b.Name = count.ToString();
                 b.Size = new Size(35, 35);
                 b.Location = new Point(40 * (i + 1), 40 * columna);
@@ -56,25 +56,25 @@ namespace Juego_de_la_Plaga
         void button_Click(object sender, EventArgs e)
         {
             Button btn = sender as Button;
-            /*if (turno)
+            if (turno)
             {
                 btn.BackColor = Color.Red;
-                btn.BackColor = Color.Red;
+
             }
             else
-                btn.BackColor = Color.Black;
+                btn.BackColor = Color.Blue;
 
             turno = !turno;
-            btn.Enabled = false; */
+            btn.Enabled = false; 
 
-            if (btn.BackColor == Color.Red)
+            /*if (btn.BackColor == Color.Red)
             {
                 MessageBox.Show("Elije una celda vacia");
             }
             else
             {
                 btn.BackColor = Color.Red;
-            }
+            }*/
         }
 
         // PARA VOLVER AL MENU PRINCIPAL
@@ -122,33 +122,7 @@ namespace Juego_de_la_Plaga
             OnOffBtn(false);
         }*/
 
-        int cont = 1;
-        int x = 1;
-        int y = 1;
 
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            for (int i = 1; i <= x; i++)
-            {
-                Button b = new Button();
-                b.Text = "";
-                b.Name = cont.ToString();
-                b.Size = new Size(35, 35);
-                b.Location = new Point(40 * (i + 1), 40 * y);
-                Controls.Add(b);
-            }
-            if (x == int.Parse(txtX.Text))
-            {
-                x = 0;
-                y++;
-            }
-            if (cont == int.Parse(txtX.Text) * int.Parse(txtY.Text))
-            {
-                btnAgregar.Enabled = false;
-            }
-            cont++;
-            x++;
-        }
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {

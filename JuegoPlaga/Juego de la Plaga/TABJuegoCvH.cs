@@ -21,33 +21,7 @@ namespace Juego_de_la_Plaga
 
         // PARA TRABAJAR CON LOS BOTONES CREADOS
 
-        void button_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
 
-            btn.Text = " ";
-
-            if (turno)
-            {
-                btn.BackColor = Color.Red;
-                btn.BackColor = Color.Red;
-            }
-            else
-                btn.BackColor = Color.Black;
-
-            turno = !turno;
-            btn.Enabled = false; 
-
-            if (btn.BackColor == Color.Red)
-            {
-                MessageBox.Show("Elije una celda vacia");
-            }
-            else
-            {
-                btn.BackColor = Color.Red;
-            }
-
-        }
 
         // PARA VOLVER AL MENU PRINCIPAL
         private void btnMP_Click(object sender, EventArgs e)
@@ -105,6 +79,7 @@ namespace Juego_de_la_Plaga
                 b.Size = new Size(35, 35);
                 b.Location = new Point(40 * (i + 1), 40 * y);
                 Controls.Add(b);
+                b.Click += new EventHandler(this.button_Click);
             }
             if (x == int.Parse(txtX.Text))
             {
@@ -119,6 +94,31 @@ namespace Juego_de_la_Plaga
             x++;
         }
 
+        void button_Click(object sender, EventArgs e)
+        {
+            Button btn = sender as Button;
+
+            if (turno)
+            {
+                btn.BackColor = Color.Red;
+            }
+            else
+                btn.BackColor = Color.Blue;
+
+            turno = !turno;
+            btn.Enabled = false;
+
+            /*if (btn.BackColor == Color.Red)
+            {
+                MessageBox.Show("Elije una celda vacia");
+            }
+            else
+            {
+                btn.BackColor = Color.Red;
+            }*/
+
+        }
+
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             Application.Restart();
@@ -128,6 +128,8 @@ namespace Juego_de_la_Plaga
         {
             Iniciar();
         }
+
+
 
         string jugador1 = " ";
         string jugador2 = " ";
