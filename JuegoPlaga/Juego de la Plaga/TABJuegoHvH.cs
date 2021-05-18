@@ -85,54 +85,64 @@ namespace Juego_de_la_Plaga
 
         }
 
-        string jugX = " ";
-        string jugY = " ";
-
         private void btnGO_Click(object sender, EventArgs e)
         {
-            if (txtJ1.Text == " ")
+            Iniciar();
+        }
+
+        string jugador1 = " ";
+        string jugador2 = " ";
+
+        private void Iniciar()
+        {
+            if (txtJ1.Text == "" && txtJ2.Text == "")
             {
-                MessageBox.Show("El nombre de los jugadores no debe estar vacio", "Nombre no valido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                if (txtJ2.Text == " ")
+                if (txtJ1.Text == "")
                 {
-                    MessageBox.Show("El nombre de los jugadores no debe estar vacio", "Nombre no valido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El nombre del jugador 1 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                else
+                if (txtJ2.Text == "")
                 {
-                    if (txtJ1.Text != " " && txtJ2.Text != " ")
-                    {
-                        if (rbtnJ1X.Checked && rbtnJ1O.Checked)
-                        {
-                            jugX = txtJ1.Text;
-                            jugY = txtJ2.Text;
-                            rbtnJ1O.Enabled = false;
-                            rbtnJ1X.Enabled = false;
-                        }
-                        if (rbtnJ1O.Checked && rbtnJ1X.Checked)
-                        {
-                            jugX = txtJ2.Text;
-                            jugY = txtJ1.Text;
-                            rbtnJ1X.Enabled = false;
-                            rbtnJ1O.Enabled = false;
-                        }
-                        if (rbtnJ1X.Checked && rbtnJ1X.Checked)
-                        {
-                            MessageBox.Show("Solo un jugador puede seleccionar la letra X", " Vuelva a escoger la letra", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        if (rbtnJ1O.Checked && rbtnJ1O.Checked)
-                        {
-                            MessageBox.Show("Solo un jugador puede seleccionar la letra X", " Vuelva a escoger la letra", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                        if (rbtnJ1X.Checked == false && rbtnJ1O.Checked == false || rbtnJ2X.Checked == false && rbtnJ2O.Checked == false)
-                        {
-                            MessageBox.Show("Cada jugador puede seleccionar unicamente una letra", " Vuelva a escoger la letra", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                    MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
 
+            }
+            if (txtJ1.Text != "" && txtJ2.Text != "")
+            {
+                if (rbtnJ1R.Checked && rbtnJ2A.Checked)
+                {
+                    jugador1 = txtJ1.Text;
+                    jugador2 = txtJ2.Text;
+                    rbtnJ1A.Enabled = false;
+                    rbtnJ2R.Enabled = false;
 
-                    }
+                }
+                if (rbtnJ1A.Checked && rbtnJ2R.Checked)
+                {
+                    jugador1 = txtJ2.Text;
+                    jugador2 = txtJ1.Text;
+                    rbtnJ1R.Enabled = false;
+                    rbtnJ2A.Enabled = false;
+
+                }
+                if (rbtnJ1R.Checked && rbtnJ2R.Checked)
+                {
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                if (rbtnJ1A.Checked && rbtnJ2A.Checked)
+                {
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                if (rbtnJ1R.Checked == false && rbtnJ1A.Checked == false || rbtnJ2R.Checked == false && rbtnJ2A.Checked == false)
+                {
+                    MessageBox.Show("Cada jugador puede escoger solamente una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
             }
         }
@@ -169,5 +179,6 @@ namespace Juego_de_la_Plaga
         {
             Application.Restart();
         }
+
     }
 }

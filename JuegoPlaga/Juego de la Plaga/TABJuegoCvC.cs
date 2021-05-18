@@ -154,5 +154,10 @@ namespace Juego_de_la_Plaga
         {
             Application.Restart();
         }
+
+        private void btnGO_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

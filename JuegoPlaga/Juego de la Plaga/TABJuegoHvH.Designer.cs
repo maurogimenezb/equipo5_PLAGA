@@ -40,17 +40,17 @@ namespace Juego_de_la_Plaga
             this.txtY = new System.Windows.Forms.TextBox();
             this.btnAtras = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.rbtnJ2A = new System.Windows.Forms.RadioButton();
+            this.rbtnJ2R = new System.Windows.Forms.RadioButton();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbtnJ1A = new System.Windows.Forms.RadioButton();
+            this.rbtnJ1R = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtJ2 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbtnJ2O = new System.Windows.Forms.RadioButton();
-            this.rbtnJ2X = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtJ1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbtnJ1O = new System.Windows.Forms.RadioButton();
-            this.rbtnJ1X = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGO = new System.Windows.Forms.PictureBox();
@@ -60,8 +60,8 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).BeginInit();
             this.SuspendLayout();
@@ -162,13 +162,13 @@ namespace Juego_de_la_Plaga
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtJ2);
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.txtJ1);
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -178,6 +178,70 @@ namespace Juego_de_la_Plaga
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  Introduzca los nombres de los jugadores:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rbtnJ2A);
+            this.groupBox3.Controls.Add(this.rbtnJ2R);
+            this.groupBox3.Location = new System.Drawing.Point(107, 344);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(130, 55);
+            this.groupBox3.TabIndex = 39;
+            this.groupBox3.TabStop = false;
+            // 
+            // rbtnJ2A
+            // 
+            this.rbtnJ2A.AutoSize = true;
+            this.rbtnJ2A.Location = new System.Drawing.Point(65, 23);
+            this.rbtnJ2A.Name = "rbtnJ2A";
+            this.rbtnJ2A.Size = new System.Drawing.Size(60, 24);
+            this.rbtnJ2A.TabIndex = 1;
+            this.rbtnJ2A.TabStop = true;
+            this.rbtnJ2A.Text = "Azul";
+            this.rbtnJ2A.UseVisualStyleBackColor = true;
+            // 
+            // rbtnJ2R
+            // 
+            this.rbtnJ2R.AutoSize = true;
+            this.rbtnJ2R.Location = new System.Drawing.Point(6, 23);
+            this.rbtnJ2R.Name = "rbtnJ2R";
+            this.rbtnJ2R.Size = new System.Drawing.Size(61, 24);
+            this.rbtnJ2R.TabIndex = 0;
+            this.rbtnJ2R.TabStop = true;
+            this.rbtnJ2R.Text = "Rojo";
+            this.rbtnJ2R.UseVisualStyleBackColor = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtnJ1A);
+            this.groupBox2.Controls.Add(this.rbtnJ1R);
+            this.groupBox2.Location = new System.Drawing.Point(110, 118);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(130, 55);
+            this.groupBox2.TabIndex = 38;
+            this.groupBox2.TabStop = false;
+            // 
+            // rbtnJ1A
+            // 
+            this.rbtnJ1A.AutoSize = true;
+            this.rbtnJ1A.Location = new System.Drawing.Point(65, 23);
+            this.rbtnJ1A.Name = "rbtnJ1A";
+            this.rbtnJ1A.Size = new System.Drawing.Size(60, 24);
+            this.rbtnJ1A.TabIndex = 1;
+            this.rbtnJ1A.TabStop = true;
+            this.rbtnJ1A.Text = "Azul";
+            this.rbtnJ1A.UseVisualStyleBackColor = true;
+            // 
+            // rbtnJ1R
+            // 
+            this.rbtnJ1R.AutoSize = true;
+            this.rbtnJ1R.Location = new System.Drawing.Point(6, 23);
+            this.rbtnJ1R.Name = "rbtnJ1R";
+            this.rbtnJ1R.Size = new System.Drawing.Size(61, 24);
+            this.rbtnJ1R.TabIndex = 0;
+            this.rbtnJ1R.TabStop = true;
+            this.rbtnJ1R.Text = "Rojo";
+            this.rbtnJ1R.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -194,38 +258,6 @@ namespace Juego_de_la_Plaga
             this.txtJ2.Name = "txtJ2";
             this.txtJ2.Size = new System.Drawing.Size(125, 27);
             this.txtJ2.TabIndex = 36;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbtnJ2O);
-            this.groupBox3.Controls.Add(this.rbtnJ2X);
-            this.groupBox3.Location = new System.Drawing.Point(107, 344);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(130, 55);
-            this.groupBox3.TabIndex = 35;
-            this.groupBox3.TabStop = false;
-            // 
-            // rbtnJ2O
-            // 
-            this.rbtnJ2O.AutoSize = true;
-            this.rbtnJ2O.Location = new System.Drawing.Point(84, 23);
-            this.rbtnJ2O.Name = "rbtnJ2O";
-            this.rbtnJ2O.Size = new System.Drawing.Size(41, 24);
-            this.rbtnJ2O.TabIndex = 1;
-            this.rbtnJ2O.TabStop = true;
-            this.rbtnJ2O.Text = "O";
-            this.rbtnJ2O.UseVisualStyleBackColor = true;
-            // 
-            // rbtnJ2X
-            // 
-            this.rbtnJ2X.AutoSize = true;
-            this.rbtnJ2X.Location = new System.Drawing.Point(19, 23);
-            this.rbtnJ2X.Name = "rbtnJ2X";
-            this.rbtnJ2X.Size = new System.Drawing.Size(39, 24);
-            this.rbtnJ2X.TabIndex = 0;
-            this.rbtnJ2X.TabStop = true;
-            this.rbtnJ2X.Text = "X";
-            this.rbtnJ2X.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -253,38 +285,6 @@ namespace Juego_de_la_Plaga
             this.txtJ1.Name = "txtJ1";
             this.txtJ1.Size = new System.Drawing.Size(125, 27);
             this.txtJ1.TabIndex = 32;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbtnJ1O);
-            this.groupBox2.Controls.Add(this.rbtnJ1X);
-            this.groupBox2.Location = new System.Drawing.Point(110, 118);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(130, 55);
-            this.groupBox2.TabIndex = 30;
-            this.groupBox2.TabStop = false;
-            // 
-            // rbtnJ1O
-            // 
-            this.rbtnJ1O.AutoSize = true;
-            this.rbtnJ1O.Location = new System.Drawing.Point(84, 23);
-            this.rbtnJ1O.Name = "rbtnJ1O";
-            this.rbtnJ1O.Size = new System.Drawing.Size(41, 24);
-            this.rbtnJ1O.TabIndex = 1;
-            this.rbtnJ1O.TabStop = true;
-            this.rbtnJ1O.Text = "O";
-            this.rbtnJ1O.UseVisualStyleBackColor = true;
-            // 
-            // rbtnJ1X
-            // 
-            this.rbtnJ1X.AutoSize = true;
-            this.rbtnJ1X.Location = new System.Drawing.Point(19, 23);
-            this.rbtnJ1X.Name = "rbtnJ1X";
-            this.rbtnJ1X.Size = new System.Drawing.Size(39, 24);
-            this.rbtnJ1X.TabIndex = 0;
-            this.rbtnJ1X.TabStop = true;
-            this.rbtnJ1X.Text = "X";
-            this.rbtnJ1X.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -367,9 +367,9 @@ namespace Juego_de_la_Plaga
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).EndInit();
             this.ResumeLayout(false);
@@ -391,19 +391,19 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtJ2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbtnJ2O;
-        private System.Windows.Forms.RadioButton rbtnJ2X;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtJ1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbtnJ1O;
-        private System.Windows.Forms.RadioButton rbtnJ1X;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnGO;
         private System.Windows.Forms.TextBox txtX;
         private System.Windows.Forms.Button btnReiniciar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton rbtnJ2A;
+        private System.Windows.Forms.RadioButton rbtnJ2R;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbtnJ1A;
+        private System.Windows.Forms.RadioButton rbtnJ1R;
     }
 }

@@ -41,29 +41,29 @@ namespace Juego_de_la_Plaga
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnAtras = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIA2 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbtnIA2Y = new System.Windows.Forms.RadioButton();
-            this.rbtnIA2X = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtIA1 = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbtnIA1Y = new System.Windows.Forms.RadioButton();
             this.rbtnIA1X = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.btnGO = new System.Windows.Forms.PictureBox();
             this.btnReiniciar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGO)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMP
@@ -170,11 +170,11 @@ namespace Juego_de_la_Plaga
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.pictureBox4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtIA2);
-            this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtIA1);
             this.groupBox1.Controls.Add(this.groupBox2);
@@ -186,6 +186,38 @@ namespace Juego_de_la_Plaga
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  Introduzca los nombres de los jugadores:";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.radioButton1);
+            this.groupBox3.Controls.Add(this.radioButton2);
+            this.groupBox3.Location = new System.Drawing.Point(110, 344);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(130, 55);
+            this.groupBox3.TabIndex = 40;
+            this.groupBox3.TabStop = false;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(67, 23);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(60, 24);
+            this.radioButton1.TabIndex = 1;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Azul";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(6, 23);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(61, 24);
+            this.radioButton2.TabIndex = 0;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Rojo";
+            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -220,42 +252,10 @@ namespace Juego_de_la_Plaga
             // 
             // txtIA2
             // 
-            this.txtIA2.Location = new System.Drawing.Point(107, 405);
+            this.txtIA2.Location = new System.Drawing.Point(110, 405);
             this.txtIA2.Name = "txtIA2";
             this.txtIA2.Size = new System.Drawing.Size(125, 27);
             this.txtIA2.TabIndex = 36;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.rbtnIA2Y);
-            this.groupBox3.Controls.Add(this.rbtnIA2X);
-            this.groupBox3.Location = new System.Drawing.Point(107, 344);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(130, 55);
-            this.groupBox3.TabIndex = 35;
-            this.groupBox3.TabStop = false;
-            // 
-            // rbtnIA2Y
-            // 
-            this.rbtnIA2Y.AutoSize = true;
-            this.rbtnIA2Y.Location = new System.Drawing.Point(84, 23);
-            this.rbtnIA2Y.Name = "rbtnIA2Y";
-            this.rbtnIA2Y.Size = new System.Drawing.Size(39, 24);
-            this.rbtnIA2Y.TabIndex = 1;
-            this.rbtnIA2Y.TabStop = true;
-            this.rbtnIA2Y.Text = "Y";
-            this.rbtnIA2Y.UseVisualStyleBackColor = true;
-            // 
-            // rbtnIA2X
-            // 
-            this.rbtnIA2X.AutoSize = true;
-            this.rbtnIA2X.Location = new System.Drawing.Point(19, 23);
-            this.rbtnIA2X.Name = "rbtnIA2X";
-            this.rbtnIA2X.Size = new System.Drawing.Size(39, 24);
-            this.rbtnIA2X.TabIndex = 0;
-            this.rbtnIA2X.TabStop = true;
-            this.rbtnIA2X.Text = "X";
-            this.rbtnIA2X.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -286,23 +286,23 @@ namespace Juego_de_la_Plaga
             // rbtnIA1Y
             // 
             this.rbtnIA1Y.AutoSize = true;
-            this.rbtnIA1Y.Location = new System.Drawing.Point(84, 23);
+            this.rbtnIA1Y.Location = new System.Drawing.Point(67, 23);
             this.rbtnIA1Y.Name = "rbtnIA1Y";
-            this.rbtnIA1Y.Size = new System.Drawing.Size(39, 24);
+            this.rbtnIA1Y.Size = new System.Drawing.Size(60, 24);
             this.rbtnIA1Y.TabIndex = 1;
             this.rbtnIA1Y.TabStop = true;
-            this.rbtnIA1Y.Text = "Y";
+            this.rbtnIA1Y.Text = "Azul";
             this.rbtnIA1Y.UseVisualStyleBackColor = true;
             // 
             // rbtnIA1X
             // 
             this.rbtnIA1X.AutoSize = true;
-            this.rbtnIA1X.Location = new System.Drawing.Point(19, 23);
+            this.rbtnIA1X.Location = new System.Drawing.Point(6, 23);
             this.rbtnIA1X.Name = "rbtnIA1X";
-            this.rbtnIA1X.Size = new System.Drawing.Size(39, 24);
+            this.rbtnIA1X.Size = new System.Drawing.Size(61, 24);
             this.rbtnIA1X.TabIndex = 0;
             this.rbtnIA1X.TabStop = true;
-            this.rbtnIA1X.Text = "X";
+            this.rbtnIA1X.Text = "Rojo";
             this.rbtnIA1X.UseVisualStyleBackColor = true;
             // 
             // label3
@@ -314,15 +314,16 @@ namespace Juego_de_la_Plaga
             this.label3.TabIndex = 26;
             this.label3.Text = "Jugador 1";
             // 
-            // pictureBox3
+            // btnGO
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(404, 495);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 93);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 30;
-            this.pictureBox3.TabStop = false;
+            this.btnGO.Image = ((System.Drawing.Image)(resources.GetObject("btnGO.Image")));
+            this.btnGO.Location = new System.Drawing.Point(404, 495);
+            this.btnGO.Name = "btnGO";
+            this.btnGO.Size = new System.Drawing.Size(100, 93);
+            this.btnGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.btnGO.TabIndex = 30;
+            this.btnGO.TabStop = false;
+            this.btnGO.Click += new System.EventHandler(this.btnGO_Click);
             // 
             // btnReiniciar
             // 
@@ -342,7 +343,7 @@ namespace Juego_de_la_Plaga
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
             this.Controls.Add(this.btnReiniciar);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.btnGO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.panel1);
@@ -364,13 +365,13 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnGO)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -390,9 +391,6 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtIA2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton rbtnIA2Y;
-        private System.Windows.Forms.RadioButton rbtnIA2X;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIA1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -401,7 +399,10 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox btnGO;
         private System.Windows.Forms.Button btnReiniciar;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
     }
 }
