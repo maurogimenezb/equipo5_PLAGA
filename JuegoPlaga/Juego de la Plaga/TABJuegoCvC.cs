@@ -117,13 +117,6 @@ namespace Juego_de_la_Plaga
             Application.Run(new Nivel1());
         }
 
-        /*private void TABJuegoCvC_Load(object sender, EventArgs e)
-        {
-            OnOffBtn(false);
-        }*/
-
-
-
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             Application.Restart();

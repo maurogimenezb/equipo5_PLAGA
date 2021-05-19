@@ -11,6 +11,8 @@ namespace Juego_de_la_Plaga
 {
     public partial class TABJuegoHvH : Form
     {
+
+        Button[,] btn = new Button[50, 50];
         bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
         Thread th; // NUEVO
         public TABJuegoHvH()
@@ -128,33 +130,77 @@ namespace Juego_de_la_Plaga
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            for (int i = 1; i <= x; i++)
+
+            int i = int.Parse(txtX.Text);
+            int j = int.Parse(txtY.Text);
+
+            for (int y = 0; y < j; y++)
             {
-                Button b = new Button();
-                b.Text = "";
-                b.Name = cont.ToString();
-                b.Size = new Size(35, 35);
-                b.Location = new Point(40 * (i + 1), 40 * y);
-                Controls.Add(b);
-                b.Click += new EventHandler(this.button_Click);
+                for (int x = 0; x < i; x++)
+                {
+                    btn[x, y] = new Button();
+                    btn[x, y].Size = new Size(50, 50);
+                    btn[x, y].Name = "btn" + x + "" + y;
+                    btn[x, y].Location = new Point(60 * x, 60 * y);
+                    btn[x, y].Click += new EventHandler(button_Click);
+                    Controls.Add(btn[x, y]);
+                }
             }
-            if (x == int.Parse(txtX.Text))
-            {
-                x = 0;
-                y++;
-            }
-            if (cont == int.Parse(txtX.Text) * int.Parse(txtY.Text))
-            {
-                btnAgregar.Enabled = false;
-            }
-            cont++;
-            x++;
+            btnAgregar.Enabled = false;
+            /* for (int i = 1; i <= x; i++)
+             {
+                 Button b = new Button();
+                 b.Text = "";
+                 b.Name = cont.ToString();
+                 b.Size = new Size(35, 35);
+                 b.Location = new Point(40 * (i + 1), 40 * y);
+                 Controls.Add(b);
+                 b.Click += new EventHandler(this.button_Click);
+             }
+             if (x == int.Parse(txtX.Text))
+             {
+                 x = 0;
+                 y++;
+             }
+             if (cont == int.Parse(txtX.Text) * int.Parse(txtY.Text))
+             {
+                 btnAgregar.Enabled = false;
+             }
+             cont++;
+             x++;
+            */
         }
 
         // PARA TRABAJAR CON LOS BOTONES CREADOS
+        int a = 0;
         void button_Click(object sender, EventArgs e)
         {
-            Button btn = sender as Button;
+            int y = 0;
+            int x = 0;
+            Button b = (Button)sender;
+            //btn.Text = "0";
+            if (a == 0)
+            {
+                b.BackColor = Color.Red;
+
+                a = 1;
+            }
+            else
+            {
+                b.BackColor = Color.Blue;
+                a = 0;
+            }
+
+
+            // REGLAS
+
+            if (btn [x,y].BackColor == btn[x+1, y+1].BackColor)
+            {
+                MessageBox.Show("Gano");
+            }
+
+
+            /* Button btn = sender as Button;
             
              if (turno)
              {
@@ -167,7 +213,7 @@ namespace Juego_de_la_Plaga
              btn.Enabled = false;
             
 
-           /* if (btn.BackColor == Color.Red)
+            if (btn.BackColor == Color.Red)
             {
                 MessageBox.Show("Elije una celda vacia");
             }

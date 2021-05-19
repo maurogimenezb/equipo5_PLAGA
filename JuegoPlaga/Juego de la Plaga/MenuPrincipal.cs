@@ -44,8 +44,8 @@ namespace Juego_de_la_Plaga
         {
             
             this.Hide();
-            SystemSounds.Question.Play();
-            //Console.Beep();
+           // SystemSounds.Question.Play();
+            // Console.Beep();
             MsjSalir salir = new MsjSalir();
             salir.Show();
         }
