@@ -134,9 +134,9 @@ namespace Juego_de_la_Plaga
             int Xtxt = int.Parse(txtX.Text);
             int Ytxt = int.Parse(txtY.Text);
 
-            for (int i = 1; i < Xtxt; i++)
+            for (int i = 1; i <= Xtxt; i++)
             {
-                for (int j = 1; j < Ytxt; j++)
+                for (int j = 1; j <= Ytxt; j++)
                 {
                     btn[i, j] = new Button()
                     {
@@ -152,6 +152,10 @@ namespace Juego_de_la_Plaga
                 }
             }
             btnAgregar.Enabled = false;
+
+            // PINTO MIS BOTONES DE INICIALIZAR (ROJO Y AZUL)
+            btn[1, 1].BackColor = Color.Red;
+            btn[Xtxt, Ytxt].BackColor = Color.Blue;
 
         }
 
