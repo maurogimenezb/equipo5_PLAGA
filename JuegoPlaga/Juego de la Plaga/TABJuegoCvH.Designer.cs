@@ -31,8 +31,8 @@ namespace Juego_de_la_Plaga
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TABJuegoCvH));
             this.btnMP = new System.Windows.Forms.Button();
-            this.minimizar = new System.Windows.Forms.PictureBox();
-            this.salir = new System.Windows.Forms.PictureBox();
+            this.btnMinimizar = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.PictureBox();
             this.txtY = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,15 +49,15 @@ namespace Juego_de_la_Plaga
             this.rbtnJR = new System.Windows.Forms.RadioButton();
             this.label5 = new System.Windows.Forms.Label();
             this.txtIA = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblIA = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtJug = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblJug = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGO = new System.Windows.Forms.PictureBox();
             this.btnReiniciar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,25 +78,25 @@ namespace Juego_de_la_Plaga
             this.btnMP.UseVisualStyleBackColor = true;
             this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
             // 
-            // minimizar
+            // btnMinimizar
             // 
-            this.minimizar.Image = ((System.Drawing.Image)(resources.GetObject("minimizar.Image")));
-            this.minimizar.Location = new System.Drawing.Point(840, 12);
-            this.minimizar.Name = "minimizar";
-            this.minimizar.Size = new System.Drawing.Size(28, 27);
-            this.minimizar.TabIndex = 13;
-            this.minimizar.TabStop = false;
-            this.minimizar.Click += new System.EventHandler(this.minimizar_Click);
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(840, 12);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(28, 27);
+            this.btnMinimizar.TabIndex = 13;
+            this.btnMinimizar.TabStop = false;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // salir
+            // btnSalir
             // 
-            this.salir.Image = ((System.Drawing.Image)(resources.GetObject("salir.Image")));
-            this.salir.Location = new System.Drawing.Point(874, 12);
-            this.salir.Name = "salir";
-            this.salir.Size = new System.Drawing.Size(28, 27);
-            this.salir.TabIndex = 12;
-            this.salir.TabStop = false;
-            this.salir.Click += new System.EventHandler(this.salir_Click);
+            this.btnSalir.Image = ((System.Drawing.Image)(resources.GetObject("btnSalir.Image")));
+            this.btnSalir.Location = new System.Drawing.Point(874, 12);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(28, 27);
+            this.btnSalir.TabIndex = 12;
+            this.btnSalir.TabStop = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
             // 
             // txtY
             // 
@@ -133,7 +133,6 @@ namespace Juego_de_la_Plaga
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(71, 27);
             this.txtX.TabIndex = 18;
-            this.txtX.TextChanged += new System.EventHandler(this.txtFILA_TextChanged);
             // 
             // btnAgregar
             // 
@@ -175,10 +174,10 @@ namespace Juego_de_la_Plaga
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtIA);
-            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.lblIA);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.txtJug);
-            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lblJug);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(572, 135);
@@ -268,14 +267,14 @@ namespace Juego_de_la_Plaga
             this.txtIA.Size = new System.Drawing.Size(125, 27);
             this.txtIA.TabIndex = 36;
             // 
-            // label4
+            // lblIA
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(135, 321);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 20);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Jugador 2";
+            this.lblIA.AutoSize = true;
+            this.lblIA.Location = new System.Drawing.Point(135, 321);
+            this.lblIA.Name = "lblIA";
+            this.lblIA.Size = new System.Drawing.Size(77, 20);
+            this.lblIA.TabIndex = 33;
+            this.lblIA.Text = "Jugador 2";
             // 
             // pictureBox2
             // 
@@ -295,14 +294,14 @@ namespace Juego_de_la_Plaga
             this.txtJug.Size = new System.Drawing.Size(125, 27);
             this.txtJug.TabIndex = 32;
             // 
-            // label3
+            // lblJug
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(138, 95);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
-            this.label3.TabIndex = 26;
-            this.label3.Text = "Jugador 1";
+            this.lblJug.AutoSize = true;
+            this.lblJug.Location = new System.Drawing.Point(138, 95);
+            this.lblJug.Name = "lblJug";
+            this.lblJug.Size = new System.Drawing.Size(75, 20);
+            this.lblJug.TabIndex = 26;
+            this.lblJug.Text = "Jugador 1";
             // 
             // pictureBox1
             // 
@@ -318,7 +317,7 @@ namespace Juego_de_la_Plaga
             // btnGO
             // 
             this.btnGO.Image = ((System.Drawing.Image)(resources.GetObject("btnGO.Image")));
-            this.btnGO.Location = new System.Drawing.Point(404, 495);
+            this.btnGO.Location = new System.Drawing.Point(466, 507);
             this.btnGO.Name = "btnGO";
             this.btnGO.Size = new System.Drawing.Size(100, 93);
             this.btnGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,7 +335,6 @@ namespace Juego_de_la_Plaga
             this.btnReiniciar.TabIndex = 27;
             this.btnReiniciar.Text = "Reiniciar Juego";
             this.btnReiniciar.UseVisualStyleBackColor = true;
-            this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
             // TABJuegoCvH
             // 
@@ -353,8 +351,8 @@ namespace Juego_de_la_Plaga
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtX);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.minimizar);
-            this.Controls.Add(this.salir);
+            this.Controls.Add(this.btnMinimizar);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnMP);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -362,8 +360,8 @@ namespace Juego_de_la_Plaga
             this.Name = "TABJuegoCvH";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form3";
-            ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -380,8 +378,8 @@ namespace Juego_de_la_Plaga
 
         #endregion
         private System.Windows.Forms.Button btnMP;
-        private System.Windows.Forms.PictureBox minimizar;
-        private System.Windows.Forms.PictureBox salir;
+        private System.Windows.Forms.PictureBox btnMinimizar;
+        private System.Windows.Forms.PictureBox btnSalir;
         private System.Windows.Forms.TextBox txtY;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -392,10 +390,10 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtIA;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblIA;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox txtJug;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblJug;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox btnGO;
         private System.Windows.Forms.Button btnReiniciar;

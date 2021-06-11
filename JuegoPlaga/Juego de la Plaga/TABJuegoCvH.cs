@@ -12,18 +12,22 @@ namespace Juego_de_la_Plaga
     public partial class TABJuegoCvH : Form
     {
         bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
-        Thread th; // NUEVO
 
         public TABJuegoCvH()
         {
             InitializeComponent();
         }
 
-        // PARA TRABAJAR CON LOS BOTONES CREADOS
+        private void btnSalir_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
 
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
-
-        // PARA VOLVER AL MENU PRINCIPAL
         private void btnMP_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -37,21 +41,6 @@ namespace Juego_de_la_Plaga
 
         }
 
-        private void atras(object obj)
-        {
-            Application.Run(new Nivel1());
-        }
-
-        private void salir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -60,9 +49,9 @@ namespace Juego_de_la_Plaga
 
         }
 
-        private void txtFILA_TextChanged(object sender, EventArgs e)
+        private void btnReiniciar_Click_1(object sender, EventArgs e)
         {
-
+            Application.Restart();
         }
 
         int cont = 1;
@@ -119,17 +108,10 @@ namespace Juego_de_la_Plaga
 
         }
 
-        private void btnReiniciar_Click(object sender, EventArgs e)
-        {
-            Application.Restart();
-        }
-
         private void btnGO_Click(object sender, EventArgs e)
         {
             Iniciar();
         }
-
-
 
         string jugador1 = " ";
         string jugador2 = " ";
@@ -160,6 +142,7 @@ namespace Juego_de_la_Plaga
                     jugador2 = txtIA.Text;
                     rbtnJA.Enabled = false;
                     rbtnIAR.Enabled = false;
+                    PlayGame();
 
                 }
                 if (rbtnJA.Checked && rbtnIAR.Checked)
@@ -168,7 +151,7 @@ namespace Juego_de_la_Plaga
                     jugador2 = txtJug.Text;
                     rbtnJR.Enabled = false;
                     rbtnIAA.Enabled = false;
-
+                    PlayGame();
                 }
                 if (rbtnJR.Checked && rbtnIAR.Checked)
                 {
@@ -187,5 +170,14 @@ namespace Juego_de_la_Plaga
                 }
             }
         }
+
+        private void PlayGame()
+        {
+            lblJug.Text = txtJug.Text;
+            lblIA.Text = txtIA.Text;
+            groupBox1.Text = "Marcador";
+            
+        }
+
     }
 }

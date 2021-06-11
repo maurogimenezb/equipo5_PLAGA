@@ -17,23 +17,6 @@ namespace Juego_de_la_Plaga
             InitializeComponent();
         }
 
-        /*private void abrirniveles(object obj)
-        {
-            Application.Run(new TABJuegoCvH());
-        }
-
-        private void btnatras_Click_1(object sender, EventArgs e)
-        {
-            this.Close();
-            th = new Thread(atras);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-        private void atras(object obj)
-        {
-            Application.Run(new Modos());
-        }*/
-
         private void btnFACIL_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -73,5 +56,6 @@ namespace Juego_de_la_Plaga
             Modos mod = new Modos();
             mod.Show();
         }
+
     }
 }

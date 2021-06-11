@@ -14,12 +14,21 @@ namespace Juego_de_la_Plaga
 
         Button[,] btn = new Button[50, 50];
         int turno = 0; // PARA TRABAJAR CON LOS BOTONES CREADOS
-        Thread th; // NUEVO
+
         public TABJuegoHvH()
         {
             InitializeComponent();
         }
-        // PARA VOLVER AL MENU PRINCIPAL
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
 
         private void btnMP_Click_1(object sender, EventArgs e)
         {
@@ -33,26 +42,11 @@ namespace Juego_de_la_Plaga
             th.Start();*/
 
         }
-        private void atras(object obj)
-        {
-            Application.Run(new MenuPrincipal());
-        }
-
-        private void minimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void salir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-
-        }
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Nivel1 nivel = new Nivel1();
+            Nivel2 nivel = new Nivel2();
             nivel.Show();
 
         }
@@ -60,7 +54,6 @@ namespace Juego_de_la_Plaga
         private void btnGO_Click(object sender, EventArgs e)
         {
             Iniciar();
-
         }
 
         string jugador1 = " ";
@@ -92,7 +85,7 @@ namespace Juego_de_la_Plaga
                     jugador2 = txtJ2.Text;
                     rbtnJ1A.Enabled = false;
                     rbtnJ2R.Enabled = false;
-
+                    PlayGame();
                 }
                 if (rbtnJ1A.Checked && rbtnJ2R.Checked)
                 {
@@ -100,24 +93,28 @@ namespace Juego_de_la_Plaga
                     jugador2 = txtJ1.Text;
                     rbtnJ1R.Enabled = false;
                     rbtnJ2A.Enabled = false;
-
+                    PlayGame();
                 }
                 if (rbtnJ1R.Checked && rbtnJ2R.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 if (rbtnJ1A.Checked && rbtnJ2A.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 if (rbtnJ1R.Checked == false && rbtnJ1A.Checked == false || rbtnJ2R.Checked == false && rbtnJ2A.Checked == false)
                 {
                     MessageBox.Show("Cada jugador puede escoger solamente una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
+        }
+
+        private void PlayGame()
+        {
+            lblJ1.Text = txtJ1.Text;
+            lblJ2.Text = txtJ2.Text;
+            groupBox1.Text = "Marcador";
         }
 
         // int cont = 1;

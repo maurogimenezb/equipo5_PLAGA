@@ -15,24 +15,6 @@ namespace Juego_de_la_Plaga
             InitializeComponent();
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-
-        }
-
-        private void btnATR_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Modos mod = new Modos();
-            mod.Show();
-        }
-
         private void btnFACIL_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -52,6 +34,24 @@ namespace Juego_de_la_Plaga
             this.Hide();
             TABJuegoCvC game = new TABJuegoCvC();
             game.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Modos mod = new Modos();
+            mod.Show();
         }
     }
 }
