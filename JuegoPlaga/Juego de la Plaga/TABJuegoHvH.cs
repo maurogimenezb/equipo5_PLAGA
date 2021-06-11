@@ -167,8 +167,8 @@ namespace Juego_de_la_Plaga
 
             string[] split = b.Name.Split(new Char[] { ' ' });
 
-            int x = System.Convert.ToInt32(split[0]);
-            int y = System.Convert.ToInt32(split[1]);
+            int x = Convert.ToInt32(split[0]);
+            int y = Convert.ToInt32(split[1]);
 
             //PINTAR ADYACENTE
             if (turno == 0)
