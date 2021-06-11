@@ -172,7 +172,7 @@ namespace Juego_de_la_Plaga
             int x = 0;
             int y = 0;
             bool movimiento = false;
-            Valores(sender, ref x, ref y);
+           Valores(sender, ref x, ref y);
 
             //PINTAR ADYACENTE
             if (turno == 0)
@@ -510,7 +510,19 @@ namespace Juego_de_la_Plaga
 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            int Xtxt = int.Parse(txtX.Text);
+            int Ytxt = int.Parse(txtY.Text);
+
+            for (int i = 1; i <= Xtxt; i++)
+            {
+                for (int j = 1; j <= Ytxt; j++)
+                {
+                    btn[i, j].BackColor = Color.DarkGray;
+                }
+            }
+
+            btn[1, 1].BackColor = Color.Red;
+            btn[Xtxt, Ytxt].BackColor = Color.Blue;
         }
 
     }
