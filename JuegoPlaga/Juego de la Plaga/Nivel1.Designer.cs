@@ -35,7 +35,7 @@ namespace Juego_de_la_Plaga
             this.salir = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnATR = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnFACIL = new System.Windows.Forms.Button();
             this.btnNORMAL = new System.Windows.Forms.Button();
@@ -93,20 +93,20 @@ namespace Juego_de_la_Plaga
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // btnATR
+            // btnAtras
             // 
-            this.btnATR.FlatAppearance.BorderSize = 0;
-            this.btnATR.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnATR.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnATR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnATR.Location = new System.Drawing.Point(722, 530);
-            this.btnATR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnATR.Name = "btnATR";
-            this.btnATR.Size = new System.Drawing.Size(106, 30);
-            this.btnATR.TabIndex = 20;
-            this.btnATR.Text = "Atràs";
-            this.btnATR.UseVisualStyleBackColor = true;
-            this.btnATR.Click += new System.EventHandler(this.btnATR_Click);
+            this.btnAtras.FlatAppearance.BorderSize = 0;
+            this.btnAtras.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAtras.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
+            this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAtras.Location = new System.Drawing.Point(722, 530);
+            this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(106, 30);
+            this.btnAtras.TabIndex = 20;
+            this.btnAtras.Text = "Atràs";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // label1
             // 
@@ -160,7 +160,7 @@ namespace Juego_de_la_Plaga
             this.Controls.Add(this.btnNORMAL);
             this.Controls.Add(this.btnFACIL);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnATR);
+            this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.minimizar);
@@ -188,7 +188,7 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.PictureBox salir;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnATR;
+        private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnFACIL;
         private System.Windows.Forms.Button btnNORMAL;
