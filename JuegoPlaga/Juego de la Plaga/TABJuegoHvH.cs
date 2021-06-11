@@ -60,6 +60,7 @@ namespace Juego_de_la_Plaga
         private void btnGO_Click(object sender, EventArgs e)
         {
             Iniciar();
+
         }
 
         string jugador1 = " ";
