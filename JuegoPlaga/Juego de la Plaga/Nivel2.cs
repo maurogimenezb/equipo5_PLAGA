@@ -37,13 +37,6 @@ namespace Juego_de_la_Plaga
             game.Show();
         }
 
-        private void btnATR_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Modos mod = new Modos();
-            mod.Show();
-        }
-
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -53,6 +46,14 @@ namespace Juego_de_la_Plaga
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnAtras_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Modos mod = new Modos();
+            mod.Show();
+
         }
     }
 }

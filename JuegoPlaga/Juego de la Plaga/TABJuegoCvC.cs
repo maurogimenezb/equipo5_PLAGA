@@ -105,10 +105,9 @@ namespace Juego_de_la_Plaga
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            this.Close();
-            th = new Thread(atras1);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            this.Hide();
+            Nivel3 nivel = new Nivel3();
+            nivel.Show();
 
         }
 
