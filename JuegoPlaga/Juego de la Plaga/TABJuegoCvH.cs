@@ -116,8 +116,12 @@ namespace Juego_de_la_Plaga
         {
             lblJug.Text = txtJug.Text;
             lblIA.Text = txtIA.Text;
-            groupBox1.Text = "Marcador";
-            
+            txtJug.Visible = false;
+            txtIA.Visible = false;
+            gboxMarcador.Text = "Marcador";
+            gboxFichas.Visible = true;
+            gboxDimensiones.Visible = true;
+
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)

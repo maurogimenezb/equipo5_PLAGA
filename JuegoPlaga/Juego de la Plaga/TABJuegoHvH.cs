@@ -109,7 +109,12 @@ namespace Juego_de_la_Plaga
         {
             lblJ1.Text = txtJ1.Text;
             lblJ2.Text = txtJ2.Text;
-            groupBox1.Text = "Marcador";
+            txtJ1.Visible = false;
+            txtJ2.Visible = false;
+            gboxMarcador.Text = "Marcador";
+            gboxFichas.Visible = true;
+            gboxDimensiones.Visible = true;
+            
         }
 
         //int cont = 1;

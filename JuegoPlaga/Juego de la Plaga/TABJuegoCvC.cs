@@ -172,7 +172,12 @@ namespace Juego_de_la_Plaga
         {
             lblIA1.Text = txtIA1.Text;
             lblIA2.Text = txtIA2.Text;
-            groupBox1.Text = "Marcador";
+            txtIA1.Visible = false;
+            txtIA2.Visible = false;
+            gboxMarcador.Text = "Marcador";
+            gboxFichas.Visible = true;
+            gboxDimensiones.Visible = true;
+
         }
     }
 }
