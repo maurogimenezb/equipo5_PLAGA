@@ -36,11 +36,6 @@ namespace Juego_de_la_Plaga
             MenuPrincipal menu = new MenuPrincipal();
             menu.Show();
 
-            /*this.Close();
-            th = new Thread(atras);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();*/
-
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -172,162 +167,166 @@ namespace Juego_de_la_Plaga
            Valores(sender, ref x, ref y);
 
             //PINTAR ADYACENTE
-            if (turno == 0)
+            if (btn[x, y].BackColor == Color.DarkGray)
             {
-                // JUGADOR 1
+                if (turno == 0)
+                {
+                    // JUGADOR 1
 
-                // BOTON DERECHO
-                if (btn[x + 1, y] == null)
-                {
-                }
-                else if (btn[x + 1, y].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON DERECHO
+                    if (btn[x + 1, y] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON IZQUIERDO
+                    // BOTON IZQUIERDO
 
-                if (btn[x - 1, y] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    if (btn[x - 1, y] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
 
-                // BOTON ARRIBA
-                if (btn[x, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x, y - 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON ARRIBA
+                    if (btn[x, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON ABAJO
-                if (btn[x, y + 1] == null)
-                {
-                }
-                else if (btn[x, y + 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON ABAJO
+                    if (btn[x, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON SUPERIOR IZQUIERDO
-                if (btn[x - 1, y - 1] == btn[0, 0])
-                {
-                }
-                else if (btn[x - 1, y - 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
-                // BOTON SUPERIOR DERECHO
-                if (btn[x + 1, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x + 1, y - 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON SUPERIOR IZQUIERDO
+                    if (btn[x - 1, y - 1] == btn[0, 0])
+                    {
+                    }
+                    else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
+                    // BOTON SUPERIOR DERECHO
+                    if (btn[x + 1, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON INFERIOR IZQUIERDO
-                if (btn[x - 1, y + 1] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y + 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON INFERIOR IZQUIERDO
+                    if (btn[x - 1, y + 1] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON INFERIOR DERECHO
-                if (btn[x + 1, y + 1] == null)
-                {
+                    // BOTON INFERIOR DERECHO
+                    if (btn[x + 1, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
                 }
-                else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                // JUGADOR 2
+                else
                 {
-                    movimiento = true;
+                    // BOTON DERECHO
+                    if (btn[x + 1, y] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+                    // BOTON IZQUIERDO
+                    if (btn[x - 1, y] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON ARRIBA
+                    if (btn[x, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x, y - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON ABAJO
+                    if (btn[x, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x, y + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON SUPERIOR IZQUIERDO
+                    if (btn[x - 1, y - 1] == btn[0, 0])
+                    {
+                    }
+                    else if (btn[x - 1, y - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON SUPERIOR DERECHO
+                    if (btn[x + 1, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x + 1, y - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON INFERIOR IZQUIERDO
+                    if (btn[x - 1, y + 1] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON INFERIOR DERECHO
+                    if (btn[x + 1, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
                 }
             }
-            // JUGADOR 2
-            else
-            {
-                // BOTON DERECHO
-                if (btn[x + 1, y] == null)
-                {
-                }
-                else if (btn[x + 1, y].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-                // BOTON IZQUIERDO
-                if (btn[x - 1, y] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
 
-                // BOTON ARRIBA
-                if (btn[x, y - 1] == btn[x, 0])
+                if (movimiento == true)
                 {
+                    Jugadas(x, y, ref turno);
                 }
-                else if (btn[x, y - 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON ABAJO
-                if (btn[x, y + 1] == null)
-                {
-                }
-                else if (btn[x, y + 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON SUPERIOR IZQUIERDO
-                if (btn[x - 1, y - 1] == btn[0, 0])
-                {
-                }
-                else if (btn[x - 1, y - 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON SUPERIOR DERECHO
-                if (btn[x + 1, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x + 1, y - 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON INFERIOR IZQUIERDO
-                if (btn[x - 1, y + 1] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y + 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON INFERIOR DERECHO
-                if (btn[x + 1, y + 1] == null)
-                {
-                }
-                else if (btn[x + 1, y + 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-            }
-
-            if (movimiento == true)
-            {
-                Jugadas(x, y, ref turno);
-            }
+            
         }
 
         void PintarAdyacente(int x, int y, int turno)
@@ -488,7 +487,7 @@ namespace Juego_de_la_Plaga
             }
         }
 
-        void Jugadas(int x, int y, ref int ban)
+        void Jugadas(int x, int y, ref int turno)
         {
             if (turno == 0)
             {

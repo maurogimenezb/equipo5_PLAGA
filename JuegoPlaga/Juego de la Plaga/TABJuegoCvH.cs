@@ -5,13 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.Threading; // NUEVO
 
 namespace Juego_de_la_Plaga
 {
     public partial class TABJuegoCvH : Form
     {
-        bool turno = true; // PARA TRABAJAR CON LOS BOTONES CREADOS
+        Button[,] btn = new Button[50, 50];
+        int turno = 0;
 
         public TABJuegoCvH()
         {
@@ -34,11 +34,6 @@ namespace Juego_de_la_Plaga
             MenuPrincipal menu = new MenuPrincipal();
             menu.Show();
 
-            /*this.Close();
-            th = new Thread(atras);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();*/
-
         }
 
         private void btnAtras_Click(object sender, EventArgs e)
@@ -52,60 +47,6 @@ namespace Juego_de_la_Plaga
         private void btnReiniciar_Click_1(object sender, EventArgs e)
         {
             Application.Restart();
-        }
-
-        int cont = 1;
-        int x = 1;
-        int y = 1;
-
-        private void btnAgregar_Click(object sender, EventArgs e)
-        {
-            for (int i = 1; i <= x; i++)
-            {
-                Button b = new Button();
-                b.Text = "";
-                b.Name = cont.ToString();
-                b.Size = new Size(35, 35);
-                b.Location = new Point(40 * (i + 1), 40 * y);
-                Controls.Add(b);
-                b.Click += new EventHandler(this.button_Click);
-            }
-            if (x == int.Parse(txtX.Text))
-            {
-                x = 0;
-                y++;
-            }
-            if (cont == int.Parse(txtX.Text) * int.Parse(txtY.Text))
-            {
-                btnAgregar.Enabled = false;
-            }
-            cont++;
-            x++;
-        }
-
-        void button_Click(object sender, EventArgs e)
-        {
-            Button btn = sender as Button;
-
-            if (turno)
-            {
-                btn.BackColor = Color.Red;
-            }
-            else
-                btn.BackColor = Color.Blue;
-
-            turno = !turno;
-            btn.Enabled = false;
-
-            /*if (btn.BackColor == Color.Red)
-            {
-                MessageBox.Show("Elije una celda vacia");
-            }
-            else
-            {
-                btn.BackColor = Color.Red;
-            }*/
-
         }
 
         private void btnGO_Click(object sender, EventArgs e)
@@ -177,6 +118,387 @@ namespace Juego_de_la_Plaga
             lblIA.Text = txtIA.Text;
             groupBox1.Text = "Marcador";
             
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            int Xtxt = int.Parse(txtX.Text);
+            int Ytxt = int.Parse(txtY.Text);
+
+            for (int i = 1; i <= Xtxt; i++)
+            {
+                for (int j = 1; j <= Ytxt; j++)
+                {
+                    btn[i, j] = new Button()
+                    {
+                        Name = i + " " + j
+                    };
+                    btn[i, j].Size = new Size(35, 35);
+                    btn[i, j].BackColor = Color.DarkGray;
+                    btn[i, j].Location = new Point(35 * i, 35 * j);
+                    btn[i, j].Click += new EventHandler(button_Click);
+
+                    Controls.Add(btn[i, j]);
+                    //btn[x,y].Click += (sender1, ex) => this.button_Click(index + 1);
+                }
+            }
+            btnAgregar.Enabled = false;
+
+            // PINTO MIS BOTONES DE INICIALIZAR (ROJO Y AZUL)
+            btn[1, 1].BackColor = Color.Red;
+            btn[Xtxt, Ytxt].BackColor = Color.Blue;
+
+        }
+
+        void Valores(object sender, ref int x, ref int y) // Agarra los valores del click
+        {
+            Button b = sender as Button;
+
+            string[] split = b.Name.Split(new Char[] { ' ' });
+
+            x = Convert.ToInt32(split[0]);
+            y = Convert.ToInt32(split[1]);
+        }
+
+        void button_Click(object sender, EventArgs e)
+        {
+            int x = 0;
+            int y = 0;
+            bool movimiento = false;
+            Valores(sender, ref x, ref y);
+
+            //PINTAR ADYACENTE
+            if (turno == 0)
+            {
+                // JUGADOR 1
+
+                // BOTON DERECHO
+                if (btn[x + 1, y] == null)
+                {
+                }
+                else if (btn[x + 1, y].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON IZQUIERDO
+
+                if (btn[x - 1, y] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+
+
+                // BOTON ARRIBA
+                if (btn[x, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x, y - 1].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON ABAJO
+                if (btn[x, y + 1] == null)
+                {
+                }
+                else if (btn[x, y + 1].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON SUPERIOR IZQUIERDO
+                if (btn[x - 1, y - 1] == btn[0, 0])
+                {
+                }
+                else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+                // BOTON SUPERIOR DERECHO
+                if (btn[x + 1, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON INFERIOR IZQUIERDO
+                if (btn[x - 1, y + 1] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON INFERIOR DERECHO
+                if (btn[x + 1, y + 1] == null)
+                {
+                }
+                else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                {
+                    movimiento = true;
+                }
+            }
+            // JUGADOR 2
+            else
+            {
+                // BOTON DERECHO
+                if (btn[x + 1, y] == null)
+                {
+                }
+                else if (btn[x + 1, y].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+                // BOTON IZQUIERDO
+                if (btn[x - 1, y] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON ARRIBA
+                if (btn[x, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x, y - 1].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON ABAJO
+                if (btn[x, y + 1] == null)
+                {
+                }
+                else if (btn[x, y + 1].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON SUPERIOR IZQUIERDO
+                if (btn[x - 1, y - 1] == btn[0, 0])
+                {
+                }
+                else if (btn[x - 1, y - 1].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON SUPERIOR DERECHO
+                if (btn[x + 1, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x + 1, y - 1].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON INFERIOR IZQUIERDO
+                if (btn[x - 1, y + 1] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y + 1].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+
+                // BOTON INFERIOR DERECHO
+                if (btn[x + 1, y + 1] == null)
+                {
+                }
+                else if (btn[x + 1, y + 1].BackColor == Color.Blue)
+                {
+                    movimiento = true;
+                }
+            }
+
+            if (movimiento == true)
+            {
+                Jugadas(x, y, ref turno);
+            }
+
+        }
+
+        void PintarAdyacente(int x, int y, int turno)
+        {
+
+            if (turno == 0)
+            {
+                // JUGADOR 1
+
+                // PINTA BOTON DERECHO
+                if (btn[x + 1, y] == null)
+                {
+                }
+                else if (btn[x + 1, y].BackColor == Color.Blue)
+                {
+                    btn[x + 1, y].BackColor = Color.Red;
+                }
+
+                // PINTA BOTON IZQUIERDO
+
+                if (btn[x - 1, y] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y].BackColor == Color.Blue)
+                {
+                    btn[x - 1, y].BackColor = Color.Red;
+                }
+
+
+                // PINTA BOTON ARRIBA
+                if (btn[x, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x, y - 1].BackColor == Color.Blue)
+                {
+                    btn[x, y - 1].BackColor = Color.Red;
+                }
+
+                // PINTA BOTON ABAJO
+                if (btn[x, y + 1] == null)
+                {
+                }
+                else if (btn[x, y + 1].BackColor == Color.Blue)
+                {
+                    btn[x, y + 1].BackColor = Color.Red;
+                }
+
+                // PINTA BOTON SUPERIOR IZQUIERDO
+                if (btn[x - 1, y - 1] == btn[0, 0])
+                {
+                }
+                else if (btn[x - 1, y - 1].BackColor == Color.Blue)
+                {
+                    btn[x - 1, y - 1].BackColor = Color.Red;
+                }
+                // PINTA BOTON SUPERIOR DERECHO
+                if (btn[x + 1, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x + 1, y - 1].BackColor == Color.Blue)
+                {
+                    btn[x + 1, y - 1].BackColor = Color.Red;
+                }
+
+                // PINTA BOTON INFERIOR IZQUIERDO
+                if (btn[x - 1, y + 1] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y + 1].BackColor == Color.Blue)
+                {
+                    btn[x - 1, y + 1].BackColor = Color.Red;
+                }
+
+                // PINTA BOTON INFERIOR DERECHO
+                if (btn[x + 1, y + 1] == null)
+                {
+                }
+                else if (btn[x + 1, y + 1].BackColor == Color.Blue)
+                {
+                    btn[x + 1, y + 1].BackColor = Color.Red;
+                }
+            }
+
+            else
+            {
+                // JUGADOR 2
+
+                // PINTA BOTON DERECHO
+                if (btn[x + 1, y] == null)
+                {
+                }
+                else if (btn[x + 1, y].BackColor == Color.Red)
+                {
+                    btn[x + 1, y].BackColor = Color.Blue;
+                }
+                // PINTA BOTON IZQUIERDO
+                if (btn[x - 1, y] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y].BackColor == Color.Red)
+                {
+                    btn[x - 1, y].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON ARRIBA
+                if (btn[x, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x, y - 1].BackColor == Color.Red)
+                {
+                    btn[x, y - 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON ABAJO
+                if (btn[x, y + 1] == null)
+                {
+                }
+                else if (btn[x, y + 1].BackColor == Color.Red)
+                {
+                    btn[x, y + 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON SUPERIOR IZQUIERDO
+                if (btn[x - 1, y - 1] == btn[0, 0])
+                {
+                }
+                else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                {
+                    btn[x - 1, y - 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON SUPERIOR DERECHO
+                if (btn[x + 1, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                {
+                    btn[x + 1, y - 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON INFERIOR IZQUIERDO
+                if (btn[x - 1, y + 1] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                {
+                    btn[x - 1, y + 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON INFERIOR DERECHO
+                if (btn[x + 1, y + 1] == null)
+                {
+                }
+                else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                {
+                    btn[x + 1, y + 1].BackColor = Color.Blue;
+                }
+            }
+        }
+
+        void Jugadas(int x, int y, ref int turno)
+        {
+            if (turno == 0)
+            {
+                btn[x, y].BackColor = Color.Red;
+                PintarAdyacente(x, y, turno);
+                turno = 1;
+            }
+            else
+            {
+                btn[x, y].BackColor = Color.Blue;
+                PintarAdyacente(x, y, turno);
+                turno = 0;
+            }
         }
 
     }
