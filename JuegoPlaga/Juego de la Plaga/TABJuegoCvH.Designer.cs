@@ -371,6 +371,7 @@ namespace Juego_de_la_Plaga
             this.gboxFichas.Size = new System.Drawing.Size(85, 159);
             this.gboxFichas.TabIndex = 33;
             this.gboxFichas.TabStop = false;
+            this.gboxFichas.Visible = false;
             // 
             // lblCantAzules
             // 
