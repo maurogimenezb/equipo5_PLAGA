@@ -162,7 +162,7 @@ namespace Juego_de_la_Plaga
                 }
                 if (rbtnIA1R.Checked == false && rbtnIA1A.Checked == false || rbtnIA2R.Checked == false && rbtnIA2A.Checked == false)
                 {
-                    MessageBox.Show("Cada jugador puede escoger solamente una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 }
             }
