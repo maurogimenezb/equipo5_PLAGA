@@ -56,6 +56,12 @@ namespace Juego_de_la_Plaga
             this.btnGO = new System.Windows.Forms.PictureBox();
             this.txtX = new System.Windows.Forms.TextBox();
             this.btnReiniciar = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblRojo = new System.Windows.Forms.Label();
+            this.lblAzul = new System.Windows.Forms.Label();
+            this.lblCantRojas = new System.Windows.Forms.Label();
+            this.lblCantAzules = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,12 +70,14 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(812, 65);
+            this.btnAgregar.Location = new System.Drawing.Point(206, 35);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(86, 31);
@@ -81,7 +89,7 @@ namespace Juego_de_la_Plaga
             // btnMP
             // 
             this.btnMP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMP.Location = new System.Drawing.Point(227, 522);
+            this.btnMP.Location = new System.Drawing.Point(185, 525);
             this.btnMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(148, 32);
@@ -122,35 +130,36 @@ namespace Juego_de_la_Plaga
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(615, 93);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(49, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 21);
+            this.label1.Size = new System.Drawing.Size(79, 17);
             this.label1.TabIndex = 14;
             this.label1.Text = "Cant. Filas:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(566, 45);
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(9, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 21);
+            this.label2.Size = new System.Drawing.Size(119, 17);
             this.label2.TabIndex = 15;
             this.label2.Text = "Cant. Columnas:";
             // 
             // txtY
             // 
-            this.txtY.Location = new System.Drawing.Point(722, 87);
+            this.txtY.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtY.Location = new System.Drawing.Point(129, 60);
             this.txtY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtY.Name = "txtY";
-            this.txtY.Size = new System.Drawing.Size(71, 27);
+            this.txtY.Size = new System.Drawing.Size(71, 25);
             this.txtY.TabIndex = 16;
             // 
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAtras.Location = new System.Drawing.Point(60, 522);
+            this.btnAtras.Location = new System.Drawing.Point(18, 525);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 32);
@@ -172,9 +181,9 @@ namespace Juego_de_la_Plaga
             this.groupBox1.Controls.Add(this.lblJ1);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(566, 135);
+            this.groupBox1.Location = new System.Drawing.Point(572, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 453);
+            this.groupBox1.Size = new System.Drawing.Size(330, 447);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  Introduzca los nombres de los jugadores:";
@@ -309,7 +318,7 @@ namespace Juego_de_la_Plaga
             // btnGO
             // 
             this.btnGO.Image = ((System.Drawing.Image)(resources.GetObject("btnGO.Image")));
-            this.btnGO.Location = new System.Drawing.Point(460, 507);
+            this.btnGO.Location = new System.Drawing.Point(466, 504);
             this.btnGO.Name = "btnGO";
             this.btnGO.Size = new System.Drawing.Size(100, 93);
             this.btnGO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -319,16 +328,17 @@ namespace Juego_de_la_Plaga
             // 
             // txtX
             // 
-            this.txtX.Location = new System.Drawing.Point(722, 39);
+            this.txtX.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtX.Location = new System.Drawing.Point(129, 27);
             this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(71, 27);
+            this.txtX.Size = new System.Drawing.Size(71, 25);
             this.txtX.TabIndex = 29;
             // 
             // btnReiniciar
             // 
             this.btnReiniciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReiniciar.Location = new System.Drawing.Point(148, 562);
+            this.btnReiniciar.Location = new System.Drawing.Point(106, 565);
             this.btnReiniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(148, 32);
@@ -337,24 +347,83 @@ namespace Juego_de_la_Plaga
             this.btnReiniciar.UseVisualStyleBackColor = true;
             this.btnReiniciar.Click += new System.EventHandler(this.btnReiniciar_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtX);
+            this.groupBox4.Controls.Add(this.btnAgregar);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.txtY);
+            this.groupBox4.Location = new System.Drawing.Point(533, 17);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(301, 100);
+            this.groupBox4.TabIndex = 31;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Ingrese las dimesiones de su tablero";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.lblCantAzules);
+            this.groupBox5.Controls.Add(this.lblCantRojas);
+            this.groupBox5.Controls.Add(this.lblAzul);
+            this.groupBox5.Controls.Add(this.lblRojo);
+            this.groupBox5.Location = new System.Drawing.Point(481, 342);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(85, 159);
+            this.groupBox5.TabIndex = 32;
+            this.groupBox5.TabStop = false;
+            // 
+            // lblRojo
+            // 
+            this.lblRojo.AutoSize = true;
+            this.lblRojo.ForeColor = System.Drawing.Color.Red;
+            this.lblRojo.Location = new System.Drawing.Point(18, 23);
+            this.lblRojo.Name = "lblRojo";
+            this.lblRojo.Size = new System.Drawing.Size(45, 20);
+            this.lblRojo.TabIndex = 30;
+            this.lblRojo.Text = "Rojas";
+            // 
+            // lblAzul
+            // 
+            this.lblAzul.AutoSize = true;
+            this.lblAzul.ForeColor = System.Drawing.Color.Blue;
+            this.lblAzul.Location = new System.Drawing.Point(18, 90);
+            this.lblAzul.Name = "lblAzul";
+            this.lblAzul.Size = new System.Drawing.Size(52, 20);
+            this.lblAzul.TabIndex = 31;
+            this.lblAzul.Text = "Azules";
+            // 
+            // lblCantRojas
+            // 
+            this.lblCantRojas.AutoSize = true;
+            this.lblCantRojas.Location = new System.Drawing.Point(18, 56);
+            this.lblCantRojas.Name = "lblCantRojas";
+            this.lblCantRojas.Size = new System.Drawing.Size(0, 20);
+            this.lblCantRojas.TabIndex = 32;
+            // 
+            // lblCantAzules
+            // 
+            this.lblCantAzules.AutoSize = true;
+            this.lblCantAzules.Location = new System.Drawing.Point(20, 122);
+            this.lblCantAzules.Name = "lblCantAzules";
+            this.lblCantAzules.Size = new System.Drawing.Size(0, 20);
+            this.lblCantAzules.TabIndex = 33;
+            // 
             // TABJuegoHvH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnReiniciar);
-            this.Controls.Add(this.txtX);
             this.Controls.Add(this.btnGO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAtras);
-            this.Controls.Add(this.txtY);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnMP);
-            this.Controls.Add(this.btnAgregar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -372,8 +441,11 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -405,5 +477,11 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton rbtnJ1A;
         private System.Windows.Forms.RadioButton rbtnJ1R;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label lblCantAzules;
+        private System.Windows.Forms.Label lblCantRojas;
+        private System.Windows.Forms.Label lblAzul;
+        private System.Windows.Forms.Label lblRojo;
     }
 }

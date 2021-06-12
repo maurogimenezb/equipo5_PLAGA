@@ -112,7 +112,7 @@ namespace Juego_de_la_Plaga
             groupBox1.Text = "Marcador";
         }
 
-        // int cont = 1;
+        //int cont = 1;
         //int x = 1;
         //int y = 1;
 
@@ -169,10 +169,9 @@ namespace Juego_de_la_Plaga
             //PINTAR ADYACENTE
             if (btn[x, y].BackColor == Color.DarkGray)
             {
+                // JUGADOR 1
                 if (turno == 0)
                 {
-                    // JUGADOR 1
-
                     // BOTON DERECHO
                     if (btn[x + 1, y] == null)
                     {
@@ -183,7 +182,6 @@ namespace Juego_de_la_Plaga
                     }
 
                     // BOTON IZQUIERDO
-
                     if (btn[x - 1, y] == btn[0, y])
                     {
                     }
@@ -191,7 +189,6 @@ namespace Juego_de_la_Plaga
                     {
                         movimiento = true;
                     }
-
 
                     // BOTON ARRIBA
                     if (btn[x, y - 1] == btn[x, 0])
@@ -219,6 +216,7 @@ namespace Juego_de_la_Plaga
                     {
                         movimiento = true;
                     }
+
                     // BOTON SUPERIOR DERECHO
                     if (btn[x + 1, y - 1] == btn[x, 0])
                     {
@@ -257,6 +255,7 @@ namespace Juego_de_la_Plaga
                     {
                         movimiento = true;
                     }
+
                     // BOTON IZQUIERDO
                     if (btn[x - 1, y] == btn[0, y])
                     {
@@ -331,10 +330,9 @@ namespace Juego_de_la_Plaga
 
         void PintarAdyacente(int x, int y, int turno)
         {
-
+            // JUGADOR 1
             if (turno == 0)
             {
-                // JUGADOR 1
 
                 // PINTA BOTON DERECHO
                 if (btn[x + 1, y] == null)
@@ -346,7 +344,6 @@ namespace Juego_de_la_Plaga
                 }
 
                 // PINTA BOTON IZQUIERDO
-
                 if (btn[x - 1, y] == btn[0, y])
                 {
                 }
@@ -354,7 +351,6 @@ namespace Juego_de_la_Plaga
                 {
                     btn[x - 1, y].BackColor = Color.Red;
                 }
-
 
                 // PINTA BOTON ARRIBA
                 if (btn[x, y - 1] == btn[x, 0])
@@ -382,6 +378,7 @@ namespace Juego_de_la_Plaga
                 {
                     btn[x - 1, y - 1].BackColor = Color.Red;
                 }
+
                 // PINTA BOTON SUPERIOR DERECHO
                 if (btn[x + 1, y - 1] == btn[x, 0])
                 {
@@ -409,10 +406,9 @@ namespace Juego_de_la_Plaga
                     btn[x + 1, y + 1].BackColor = Color.Red;
                 }
             }
-
+            // JUGADOR 2
             else
             {
-                // JUGADOR 2
 
                 // PINTA BOTON DERECHO
                 if (btn[x + 1, y] == null)
@@ -422,6 +418,7 @@ namespace Juego_de_la_Plaga
                 {
                     btn[x + 1, y].BackColor = Color.Blue;
                 }
+
                 // PINTA BOTON IZQUIERDO
                 if (btn[x - 1, y] == btn[0, y])
                 {
@@ -519,6 +516,7 @@ namespace Juego_de_la_Plaga
 
             btn[1, 1].BackColor = Color.Red;
             btn[Xtxt, Ytxt].BackColor = Color.Blue;
+
         }
 
     }

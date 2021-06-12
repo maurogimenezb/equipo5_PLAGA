@@ -32,11 +32,6 @@ namespace Juego_de_la_Plaga
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TABJuegoCvC));
             this.btnMinimizar = new System.Windows.Forms.PictureBox();
             this.btnSalir = new System.Windows.Forms.PictureBox();
-            this.txtY = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtX = new System.Windows.Forms.TextBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -56,6 +51,17 @@ namespace Juego_de_la_Plaga
             this.btnReiniciar = new System.Windows.Forms.Button();
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnMP = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.txtX = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtY = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblCantAzules = new System.Windows.Forms.Label();
+            this.lblCantRojas = new System.Windows.Forms.Label();
+            this.lblAzul = new System.Windows.Forms.Label();
+            this.lblRojo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -64,6 +70,8 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnMinimizar
@@ -85,54 +93,6 @@ namespace Juego_de_la_Plaga
             this.btnSalir.TabIndex = 12;
             this.btnSalir.TabStop = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // txtY
-            // 
-            this.txtY.Location = new System.Drawing.Point(715, 89);
-            this.txtY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtY.Name = "txtY";
-            this.txtY.Size = new System.Drawing.Size(71, 27);
-            this.txtY.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(559, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(150, 21);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Cant. Columnas:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(608, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 21);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "Cant. Filas:";
-            // 
-            // txtX
-            // 
-            this.txtX.Location = new System.Drawing.Point(715, 45);
-            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtX.Name = "txtX";
-            this.txtX.Size = new System.Drawing.Size(71, 27);
-            this.txtX.TabIndex = 23;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAgregar.Location = new System.Drawing.Point(805, 67);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(86, 31);
-            this.btnAgregar.TabIndex = 22;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // panel1
             // 
@@ -156,9 +116,9 @@ namespace Juego_de_la_Plaga
             this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.lblIA1);
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(572, 135);
+            this.groupBox1.Location = new System.Drawing.Point(572, 141);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(330, 453);
+            this.groupBox1.Size = new System.Drawing.Size(330, 447);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "  Introduzca los nombres de los jugadores:";
@@ -304,7 +264,7 @@ namespace Juego_de_la_Plaga
             // btnReiniciar
             // 
             this.btnReiniciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReiniciar.Location = new System.Drawing.Point(161, 565);
+            this.btnReiniciar.Location = new System.Drawing.Point(102, 565);
             this.btnReiniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(148, 32);
@@ -316,7 +276,7 @@ namespace Juego_de_la_Plaga
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAtras.Location = new System.Drawing.Point(73, 525);
+            this.btnAtras.Location = new System.Drawing.Point(14, 525);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 32);
@@ -328,7 +288,7 @@ namespace Juego_de_la_Plaga
             // btnMP
             // 
             this.btnMP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMP.Location = new System.Drawing.Point(240, 525);
+            this.btnMP.Location = new System.Drawing.Point(181, 525);
             this.btnMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(148, 32);
@@ -337,22 +297,130 @@ namespace Juego_de_la_Plaga
             this.btnMP.UseVisualStyleBackColor = true;
             this.btnMP.Click += new System.EventHandler(this.btnMP_Click);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtX);
+            this.groupBox4.Controls.Add(this.btnAgregar);
+            this.groupBox4.Controls.Add(this.label1);
+            this.groupBox4.Controls.Add(this.label2);
+            this.groupBox4.Controls.Add(this.txtY);
+            this.groupBox4.Location = new System.Drawing.Point(533, 17);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(301, 100);
+            this.groupBox4.TabIndex = 34;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Ingrese las dimesiones de su tablero";
+            // 
+            // txtX
+            // 
+            this.txtX.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtX.Location = new System.Drawing.Point(129, 27);
+            this.txtX.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtX.Name = "txtX";
+            this.txtX.Size = new System.Drawing.Size(71, 25);
+            this.txtX.TabIndex = 29;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAgregar.Location = new System.Drawing.Point(206, 35);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(86, 31);
+            this.btnAgregar.TabIndex = 0;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(49, 68);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 17);
+            this.label1.TabIndex = 14;
+            this.label1.Text = "Cant. Filas:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(9, 35);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 17);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Cant. Columnas:";
+            // 
+            // txtY
+            // 
+            this.txtY.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtY.Location = new System.Drawing.Point(129, 60);
+            this.txtY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtY.Name = "txtY";
+            this.txtY.Size = new System.Drawing.Size(71, 25);
+            this.txtY.TabIndex = 16;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.lblCantAzules);
+            this.groupBox5.Controls.Add(this.lblCantRojas);
+            this.groupBox5.Controls.Add(this.lblAzul);
+            this.groupBox5.Controls.Add(this.lblRojo);
+            this.groupBox5.Location = new System.Drawing.Point(481, 342);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(85, 159);
+            this.groupBox5.TabIndex = 35;
+            this.groupBox5.TabStop = false;
+            // 
+            // lblCantAzules
+            // 
+            this.lblCantAzules.AutoSize = true;
+            this.lblCantAzules.Location = new System.Drawing.Point(20, 122);
+            this.lblCantAzules.Name = "lblCantAzules";
+            this.lblCantAzules.Size = new System.Drawing.Size(0, 20);
+            this.lblCantAzules.TabIndex = 33;
+            // 
+            // lblCantRojas
+            // 
+            this.lblCantRojas.AutoSize = true;
+            this.lblCantRojas.Location = new System.Drawing.Point(18, 56);
+            this.lblCantRojas.Name = "lblCantRojas";
+            this.lblCantRojas.Size = new System.Drawing.Size(0, 20);
+            this.lblCantRojas.TabIndex = 32;
+            // 
+            // lblAzul
+            // 
+            this.lblAzul.AutoSize = true;
+            this.lblAzul.ForeColor = System.Drawing.Color.Blue;
+            this.lblAzul.Location = new System.Drawing.Point(18, 90);
+            this.lblAzul.Name = "lblAzul";
+            this.lblAzul.Size = new System.Drawing.Size(52, 20);
+            this.lblAzul.TabIndex = 31;
+            this.lblAzul.Text = "Azules";
+            // 
+            // lblRojo
+            // 
+            this.lblRojo.AutoSize = true;
+            this.lblRojo.ForeColor = System.Drawing.Color.Red;
+            this.lblRojo.Location = new System.Drawing.Point(18, 23);
+            this.lblRojo.Name = "lblRojo";
+            this.lblRojo.Size = new System.Drawing.Size(45, 20);
+            this.lblRojo.TabIndex = 30;
+            this.lblRojo.Text = "Rojas";
+            // 
             // TABJuegoCvC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btnReiniciar);
             this.Controls.Add(this.btnAtras);
             this.Controls.Add(this.btnMP);
             this.Controls.Add(this.btnGO);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtY);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtX);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnMinimizar);
             this.Controls.Add(this.btnSalir);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -372,19 +440,17 @@ namespace Juego_de_la_Plaga
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.PictureBox btnMinimizar;
         private System.Windows.Forms.PictureBox btnSalir;
-        private System.Windows.Forms.TextBox txtY;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtX;
-        private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnAtras;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -404,5 +470,16 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.RadioButton rbtnIA2R;
         private System.Windows.Forms.Button btnReiniciar;
         private System.Windows.Forms.Button btnMP;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox txtX;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtY;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label lblCantAzules;
+        private System.Windows.Forms.Label lblCantRojas;
+        private System.Windows.Forms.Label lblAzul;
+        private System.Windows.Forms.Label lblRojo;
     }
 }
