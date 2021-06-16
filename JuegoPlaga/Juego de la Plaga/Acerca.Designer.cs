@@ -35,8 +35,10 @@ namespace Juego_de_la_Plaga
             this.salirAA = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnATR = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarAA)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salirAA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +86,7 @@ namespace Juego_de_la_Plaga
             this.btnATR.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnATR.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnATR.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnATR.Location = new System.Drawing.Point(733, 521);
+            this.btnATR.Location = new System.Drawing.Point(762, 557);
             this.btnATR.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnATR.Name = "btnATR";
             this.btnATR.Size = new System.Drawing.Size(106, 30);
@@ -93,11 +95,22 @@ namespace Juego_de_la_Plaga
             this.btnATR.UseVisualStyleBackColor = true;
             this.btnATR.Click += new System.EventHandler(this.btnATR_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(371, 117);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(456, 402);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 15;
+            this.pictureBox1.TabStop = false;
+            // 
             // Acerca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnATR);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.minimizarAA);
@@ -111,6 +124,7 @@ namespace Juego_de_la_Plaga
             this.Load += new System.EventHandler(this.Acerca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.minimizarAA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salirAA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +137,6 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.PictureBox salirAA;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnATR;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

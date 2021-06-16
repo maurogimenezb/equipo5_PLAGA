@@ -62,6 +62,7 @@ namespace Juego_de_la_Plaga
             this.lblCantRojas = new System.Windows.Forms.Label();
             this.lblAzul = new System.Windows.Forms.Label();
             this.lblRojo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.gboxMarcador.SuspendLayout();
@@ -297,14 +298,15 @@ namespace Juego_de_la_Plaga
             // 
             // gboxDimensiones
             // 
+            this.gboxDimensiones.Controls.Add(this.label3);
             this.gboxDimensiones.Controls.Add(this.txtX);
             this.gboxDimensiones.Controls.Add(this.btnAgregar);
             this.gboxDimensiones.Controls.Add(this.label1);
             this.gboxDimensiones.Controls.Add(this.label2);
             this.gboxDimensiones.Controls.Add(this.txtY);
-            this.gboxDimensiones.Location = new System.Drawing.Point(533, 17);
+            this.gboxDimensiones.Location = new System.Drawing.Point(533, 0);
             this.gboxDimensiones.Name = "gboxDimensiones";
-            this.gboxDimensiones.Size = new System.Drawing.Size(301, 100);
+            this.gboxDimensiones.Size = new System.Drawing.Size(301, 135);
             this.gboxDimensiones.TabIndex = 34;
             this.gboxDimensiones.TabStop = false;
             this.gboxDimensiones.Text = "Ingrese las dimesiones de su tablero";
@@ -408,6 +410,17 @@ namespace Juego_de_la_Plaga
             this.lblRojo.TabIndex = 30;
             this.lblRojo.Text = "Rojas";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(25, 89);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(254, 34);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Los tamaños aceptables son entre 3 y 10, \r\ntanto para filas como columnas";
+            // 
             // TABJuegoCvC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -481,5 +494,6 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Label lblCantRojas;
         private System.Windows.Forms.Label lblAzul;
         private System.Windows.Forms.Label lblRojo;
+        private System.Windows.Forms.Label label3;
     }
 }

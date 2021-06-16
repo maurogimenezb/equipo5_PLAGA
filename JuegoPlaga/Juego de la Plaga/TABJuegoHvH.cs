@@ -15,20 +15,28 @@ namespace Juego_de_la_Plaga
         Button[,] btn = new Button[50, 50];
         int turno = 0; // PARA TRABAJAR CON LOS BOTONES CREADOS
 
+        //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
+        //int piezasRojas = 0;
+        //int piezasAzules = 0;
+
+
         public TABJuegoHvH()
         {
             InitializeComponent();
         }
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
 
         private void btnMP_Click_1(object sender, EventArgs e)
         {
@@ -38,6 +46,7 @@ namespace Juego_de_la_Plaga
 
         }
 
+
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -45,6 +54,7 @@ namespace Juego_de_la_Plaga
             nivel.Show();
 
         }
+
 
         private void btnGO_Click(object sender, EventArgs e)
         {
@@ -54,6 +64,7 @@ namespace Juego_de_la_Plaga
         string jugador1 = " ";
         string jugador2 = " ";
 
+        //Metodo que valida los txt de cada jugador y los radiobuttons de seleccion de color 
         private void Iniciar()
         {
             if (txtJ1.Text == "" && txtJ2.Text == "")
@@ -105,6 +116,7 @@ namespace Juego_de_la_Plaga
             }
         }
 
+        //Metodo que hace visible el nombre de los jugadores, el marcador, el gboxDimensiones y el gboxFichas 
         private void PlayGame()
         {
             lblJ1.Text = txtJ1.Text;
@@ -117,45 +129,54 @@ namespace Juego_de_la_Plaga
             
         }
 
-        //int cont = 1;
-        //int x = 1;
-        //int y = 1;
-
+        //Metodo que agrega botones en forma de un arreglo bidimensional
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
             int Xtxt = int.Parse(txtX.Text);
             int Ytxt = int.Parse(txtY.Text);
 
-            for (int i = 1; i <= Xtxt; i++)
+            //Se valida que las dimensiones del tablero introducidas por el jugador sean las adecuadas 
+            if ((Xtxt >= 3 && Xtxt <= 10) && (Ytxt >= 3 && Ytxt <= 10))
             {
-                for (int j = 1; j <= Ytxt; j++)
+                for (int i = 1; i <= Xtxt; i++)
                 {
-                    btn[i, j] = new Button()
+                    for (int j = 1; j <= Ytxt; j++)
                     {
-                        Name = i + " " + j
-                    };
-                    btn[i, j].Size = new Size(35, 35);
-                    btn[i, j].BackColor = Color.DarkGray;
-                    btn[i, j].Location = new Point(35 * i, 35 * j);
-                    btn[i, j].Click += new EventHandler(button_Click);
+                        btn[i, j] = new Button()
+                        {
+                            Name = i + " " + j
+                        };
+                        btn[i, j].Size = new Size(35, 35);
+                        btn[i, j].BackColor = Color.DarkGray;
+                        btn[i, j].Location = new Point(35 * i, 35 * j);
+                        btn[i, j].Click += new EventHandler(button_Click);
 
-                    Controls.Add(btn[i, j]);
-                    //btn[x,y].Click += (sender1, ex) => this.button_Click(index + 1);
+                        Controls.Add(btn[i, j]);
+                        //btn[x,y].Click += (sender1, ex) => this.button_Click(index + 1);
+                    }
                 }
-            }
-            btnAgregar.Enabled = false;
 
-            // PINTO MIS BOTONES DE INICIALIZAR (ROJO Y AZUL)
-            btn[1, 1].BackColor = Color.Red;
-            btn[Xtxt, Ytxt].BackColor = Color.Blue;
+                btnAgregar.Enabled = false;
+
+                // PINTO MIS BOTONES DE INICIALIZAR (ROJO Y AZUL)
+                btn[1, 1].BackColor = Color.Red;
+                btn[Xtxt, Ytxt].BackColor = Color.Blue;
+            }
+            else
+            {
+                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\n Vuelva a introducir de vuelta","Atención!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            //Se hace visible el turno del jugador
+            turnoJug();
 
         }
 
         // PARA TRABAJAR CON LOS BOTONES CREADOS
-        // int a = 0;
         void Valores(object sender, ref int x, ref int y) // Agarra los valores del click
         {
+            //Obtenemos la posicion del boton en el cual se ha echo click, para posteriormente poder trabajar con esas posiciones
             Button b = sender as Button;
 
             string[] split = b.Name.Split(new Char[] { ' ' });
@@ -164,12 +185,17 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
+
         void button_Click(object sender, EventArgs e)
         {
             int x = 0;
             int y = 0;
             bool movimiento = false;
            Valores(sender, ref x, ref y);
+
+            //Columna ->    X , Fila ->    Y
+
+            //while ()
 
             //PINTAR ADYACENTE
             if (btn[x, y].BackColor == Color.DarkGray)
@@ -333,6 +359,7 @@ namespace Juego_de_la_Plaga
             
         }
 
+        //Metodo que come fichas del contrario si estan a su alcance
         void PintarAdyacente(int x, int y, int turno)
         {
             // JUGADOR 1
@@ -489,23 +516,26 @@ namespace Juego_de_la_Plaga
             }
         }
 
+
         void Jugadas(int x, int y, ref int turno)
         {
             if (turno == 0)
             {
+                //Jugador Rojo
                 btn[x, y].BackColor = Color.Red;
                 PintarAdyacente(x, y, turno);
                 turno = 1;
             }
             else
             {
+                //Jugador Azul
                 btn[x, y].BackColor = Color.Blue;
                 PintarAdyacente(x, y, turno);
                 turno = 0;
             }
         }
 
-
+        //Reinicia el tablero 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
             int Xtxt = int.Parse(txtX.Text);
@@ -524,5 +554,29 @@ namespace Juego_de_la_Plaga
 
         }
 
+
+        private void quienGana() 
+        {
+            //if( )
+
+        }
+
+        private void turnoJug()
+        {
+            if (rbtnJ1R.Checked && rbtnJ2A.Checked)
+            {
+                lblTurno1.Text = txtJ1.Text;
+                lblTurno2.Text = txtJ2.Text;
+            }
+            else
+            {
+                if (rbtnJ2R.Checked && rbtnJ1A.Checked)
+                {
+                    lblTurno1.Text = txtJ2.Text;
+                    lblTurno2.Text = txtJ1.Text;
+                }
+            }
+
+        }
     }
 }
