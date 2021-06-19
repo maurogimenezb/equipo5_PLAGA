@@ -54,6 +54,7 @@ namespace Juego_de_la_Plaga
         //Reinicia el Tablero 
         private void btnReiniciar_Click_1(object sender, EventArgs e)
         {
+            this.Close();
             TABJuegoCvC tablero = new TABJuegoCvC();
             tablero.Show();
         }

@@ -3,3 +3,8 @@ Nombre Jugador 2: B
 Turno 1: Rojo
 Turno 2: Azul
 
+Nombre Jugador 1: a
+Nombre Jugador 2: ia
+Turno 1: Rojo
+Turno 2: Azul
+

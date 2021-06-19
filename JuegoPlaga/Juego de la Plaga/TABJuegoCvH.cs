@@ -60,6 +60,7 @@ namespace Juego_de_la_Plaga
         //Reinicia el tablero 
         private void btnReiniciar_Click(object sender, EventArgs e)
         {
+            this.Close();
             TABJuegoCvH tablero = new TABJuegoCvH();
             tablero.Show();
         }
