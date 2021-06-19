@@ -15,11 +15,6 @@ namespace Juego_de_la_Plaga
             InitializeComponent();
         }
 
-        private void Acerca_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void salirAA_Click(object sender, EventArgs e)
         {
             Application.Exit();

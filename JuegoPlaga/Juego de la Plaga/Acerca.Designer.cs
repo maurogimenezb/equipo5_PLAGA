@@ -98,9 +98,9 @@ namespace Juego_de_la_Plaga
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(371, 117);
+            this.pictureBox1.Location = new System.Drawing.Point(390, 162);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(456, 402);
+            this.pictureBox1.Size = new System.Drawing.Size(415, 321);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
@@ -121,7 +121,6 @@ namespace Juego_de_la_Plaga
             this.Name = "Acerca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AcercaAutores";
-            this.Load += new System.EventHandler(this.Acerca_Load);
             ((System.ComponentModel.ISupportInitialize)(this.minimizarAA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salirAA)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

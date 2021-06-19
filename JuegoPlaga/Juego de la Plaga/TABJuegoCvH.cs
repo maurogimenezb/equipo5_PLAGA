@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Juego_de_la_Plaga
 {
@@ -13,9 +14,14 @@ namespace Juego_de_la_Plaga
         Button[,] btn = new Button[50, 50];
         int turno = 0;
 
-        //char player, computer;
+        string jugador1 = " ";
+        string jugador2 = " ";
+
         //Boolean playerF;
 
+        //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
+        int piezasRojas = 0;
+        int piezasAzules = 0;
 
         public TABJuegoCvH()
         {
@@ -23,19 +29,19 @@ namespace Juego_de_la_Plaga
         }
 
 
-        private void btnSalir_Click_1(object sender, EventArgs e)
+        public void btnSalir_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
+        public void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
 
-        private void btnMP_Click(object sender, EventArgs e)
+        public void btnMP_Click(object sender, EventArgs e)
         {
             this.Hide();
             MenuPrincipal menu = new MenuPrincipal();
@@ -44,31 +50,30 @@ namespace Juego_de_la_Plaga
         }
 
 
-        private void btnAtras_Click(object sender, EventArgs e)
+        public void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Nivel1 nivel = new Nivel1();
-            nivel.Show();
-
+            Modos modo = new Modos();
+            modo.Show();
         }
 
-
-        private void btnReiniciar_Click_1(object sender, EventArgs e)
+        //Reinicia el tablero 
+        private void btnReiniciar_Click(object sender, EventArgs e)
         {
-            Application.Restart();
+            TABJuegoCvH tablero = new TABJuegoCvH();
+            tablero.Show();
         }
 
-
-        private void btnGO_Click(object sender, EventArgs e)
+        //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
+        public void btnGO_Click(object sender, EventArgs e)
         {
+            
             Iniciar();
 
         }
 
-        string jugador1 = " ";
-        string jugador2 = " ";
-
-        private void Iniciar()
+        //Hace las validaciones correspondiente, sobre los textboxs y radiobuttons de cada jugador
+        public void Iniciar()
         {
             if (txtJug.Text == "" && txtIA.Text == "")
             {
@@ -123,8 +128,8 @@ namespace Juego_de_la_Plaga
             }
         }
 
-
-        private void PlayGame()
+        //Inicializa el juego despues de haber ingresado ambos jugadores sus respectivos nombres y fichas 
+        public void PlayGame()
         {
             lblJug.Text = txtJug.Text;
             lblIA.Text = txtIA.Text;
@@ -136,8 +141,9 @@ namespace Juego_de_la_Plaga
 
         }
 
-
-        private void btnAgregar_Click_1(object sender, EventArgs e)
+        //Metodo que agrega los botones en forma de un arreglo bidimensional, segun la cantidad de filas y columnas
+        //que el jugador ingresa por teclado 
+        public void btnAgregar_Click_1(object sender, EventArgs e)
         {
 
             int Xtxt = int.Parse(txtX.Text);
@@ -157,10 +163,11 @@ namespace Juego_de_la_Plaga
                         btn[i, j].Size = new Size(35, 35);
                         btn[i, j].BackColor = Color.DarkGray;
                         btn[i, j].Location = new Point(35 * i, 35 * j);
-                        btn[i, j].Click += new EventHandler(button_Click);
+                        btn[i, j].Click += new EventHandler(playerInput_Click);
 
                         Controls.Add(btn[i, j]);
                         //btn[x,y].Click += (sender1, ex) => this.button_Click(index + 1);
+
                     }
                 }
 
@@ -173,6 +180,8 @@ namespace Juego_de_la_Plaga
             else
             {
                 MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\n Vuelva a introducir de vuelta", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtX.Text = "";
+                txtY.Text = "";
             }
 
             //Se hace visible el turno del jugador
@@ -180,8 +189,8 @@ namespace Juego_de_la_Plaga
 
         }
 
-
-        void Valores(object sender, ref int x, ref int y) // Agarra los valores del click
+        //Metodo que va obteniendo la direccion en i y j de la ficha que fue seleccionada por el jugador 
+        public void Valores(object sender, ref int x, ref int y) // Agarra los valores del click
         {
             Button b = sender as Button;
 
@@ -191,8 +200,8 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
-
-        void button_Click(object sender, EventArgs e)
+        //Metodo que controla los movimientos del jugador -> Humano
+        public void playerInput_Click(object sender, EventArgs e)
         {
             int x = 0;
             int y = 0;
@@ -202,7 +211,7 @@ namespace Juego_de_la_Plaga
             //PINTAR ADYACENTE
             if (turno == 0)
             {
-                // JUGADOR 1
+                // JUGADOR 1    -> Humano
 
                 // BOTON DERECHO
                 if (btn[x + 1, y] == null)
@@ -277,81 +286,13 @@ namespace Juego_de_la_Plaga
                     movimiento = true;
                 }
             }
-            // JUGADOR 2
+            // JUGADOR 2    -> Computadora IA
             else
             {
-                // BOTON DERECHO
-                if (btn[x + 1, y] == null)
-                {
-                }
-                else if (btn[x + 1, y].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-                // BOTON IZQUIERDO
-                if (btn[x - 1, y] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON ARRIBA
-                if (btn[x, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x, y - 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON ABAJO
-                if (btn[x, y + 1] == null)
-                {
-                }
-                else if (btn[x, y + 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON SUPERIOR IZQUIERDO
-                if (btn[x - 1, y - 1] == btn[0, 0])
-                {
-                }
-                else if (btn[x - 1, y - 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON SUPERIOR DERECHO
-                if (btn[x + 1, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x + 1, y - 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON INFERIOR IZQUIERDO
-                if (btn[x - 1, y + 1] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y + 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
-
-                // BOTON INFERIOR DERECHO
-                if (btn[x + 1, y + 1] == null)
-                {
-                }
-                else if (btn[x + 1, y + 1].BackColor == Color.Blue)
-                {
-                    movimiento = true;
-                }
+                
             }
 
+            //
             if (movimiento == true)
             {
                 Jugadas(x, y, ref turno);
@@ -359,13 +300,15 @@ namespace Juego_de_la_Plaga
 
         }
 
-
-        void PintarAdyacente(int x, int y, int turno)
+        //Metodo que pinta las casillas que se encuentran alrededor de la ficha anteriormente escogida siguiendo las reglas 
+        public void PintarAdyacente(int x, int y, int turno)
         {
+            piezasRojas = 0;
+            piezasAzules = 0;
 
             if (turno == 0)
             {
-                // JUGADOR 1
+                // JUGADOR 1    -> Humano
 
                 // PINTA BOTON DERECHO
                 if (btn[x + 1, y] == null)
@@ -374,6 +317,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x + 1, y].BackColor == Color.Blue)
                 {
                     btn[x + 1, y].BackColor = Color.Red;
+                    piezasRojas++;
                 }
 
                 // PINTA BOTON IZQUIERDO
@@ -384,6 +328,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x - 1, y].BackColor == Color.Blue)
                 {
                     btn[x - 1, y].BackColor = Color.Red;
+                    piezasRojas++;
                 }
 
 
@@ -394,6 +339,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x, y - 1].BackColor == Color.Blue)
                 {
                     btn[x, y - 1].BackColor = Color.Red;
+                    piezasRojas++;
                 }
 
                 // PINTA BOTON ABAJO
@@ -403,6 +349,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x, y + 1].BackColor == Color.Blue)
                 {
                     btn[x, y + 1].BackColor = Color.Red;
+                    piezasRojas++;
                 }
 
                 // PINTA BOTON SUPERIOR IZQUIERDO
@@ -412,6 +359,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x - 1, y - 1].BackColor == Color.Blue)
                 {
                     btn[x - 1, y - 1].BackColor = Color.Red;
+                    piezasRojas++;
                 }
                 // PINTA BOTON SUPERIOR DERECHO
                 if (btn[x + 1, y - 1] == btn[x, 0])
@@ -420,6 +368,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x + 1, y - 1].BackColor == Color.Blue)
                 {
                     btn[x + 1, y - 1].BackColor = Color.Red;
+                    piezasRojas++;
                 }
 
                 // PINTA BOTON INFERIOR IZQUIERDO
@@ -429,6 +378,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x - 1, y + 1].BackColor == Color.Blue)
                 {
                     btn[x - 1, y + 1].BackColor = Color.Red;
+                    piezasRojas++;
                 }
 
                 // PINTA BOTON INFERIOR DERECHO
@@ -438,88 +388,21 @@ namespace Juego_de_la_Plaga
                 else if (btn[x + 1, y + 1].BackColor == Color.Blue)
                 {
                     btn[x + 1, y + 1].BackColor = Color.Red;
+                    piezasRojas++;
                 }
             }
 
             else
             {
-                // JUGADOR 2
+                // JUGADOR 2    -> Computadora IA
 
-                // PINTA BOTON DERECHO
-                if (btn[x + 1, y] == null)
-                {
-                }
-                else if (btn[x + 1, y].BackColor == Color.Red)
-                {
-                    btn[x + 1, y].BackColor = Color.Blue;
-                }
-                // PINTA BOTON IZQUIERDO
-                if (btn[x - 1, y] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y].BackColor == Color.Red)
-                {
-                    btn[x - 1, y].BackColor = Color.Blue;
-                }
+                
 
-                // PINTA BOTON ARRIBA
-                if (btn[x, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x, y - 1].BackColor == Color.Red)
-                {
-                    btn[x, y - 1].BackColor = Color.Blue;
-                }
-
-                // PINTA BOTON ABAJO
-                if (btn[x, y + 1] == null)
-                {
-                }
-                else if (btn[x, y + 1].BackColor == Color.Red)
-                {
-                    btn[x, y + 1].BackColor = Color.Blue;
-                }
-
-                // PINTA BOTON SUPERIOR IZQUIERDO
-                if (btn[x - 1, y - 1] == btn[0, 0])
-                {
-                }
-                else if (btn[x - 1, y - 1].BackColor == Color.Red)
-                {
-                    btn[x - 1, y - 1].BackColor = Color.Blue;
-                }
-
-                // PINTA BOTON SUPERIOR DERECHO
-                if (btn[x + 1, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x + 1, y - 1].BackColor == Color.Red)
-                {
-                    btn[x + 1, y - 1].BackColor = Color.Blue;
-                }
-
-                // PINTA BOTON INFERIOR IZQUIERDO
-                if (btn[x - 1, y + 1] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y + 1].BackColor == Color.Red)
-                {
-                    btn[x - 1, y + 1].BackColor = Color.Blue;
-                }
-
-                // PINTA BOTON INFERIOR DERECHO
-                if (btn[x + 1, y + 1] == null)
-                {
-                }
-                else if (btn[x + 1, y + 1].BackColor == Color.Red)
-                {
-                    btn[x + 1, y + 1].BackColor = Color.Blue;
-                }
             }
         }
 
-
-        void Jugadas(int x, int y, ref int turno)
+        //
+        public void Jugadas(int x, int y, ref int turno)
         {
             if (turno == 0)
             {
@@ -535,7 +418,8 @@ namespace Juego_de_la_Plaga
             }
         }
 
-        private void turnoJug()
+        //Hace visible en el tablero cual es el turno de cada jugador 
+        public void turnoJug()
         {
             if (rbtnJR.Checked && rbtnIAA.Checked)
             {
@@ -553,5 +437,89 @@ namespace Juego_de_la_Plaga
 
         }
 
+        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
+        private void txtJug_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
+        private void txtIA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Detecta cual de los dos jugadores es el ganador 
+        public void detectWin()
+        {
+            //Hacemos las validaciones si ambos tienen la misma cantidad de piezas, seria un empate 
+            //Si hay mas  fichas del jugador que escogio el color rojo como ficha, entonces gana ese jugador 
+            //Si hay mas fichas del jugador que escogio el color azul como ficha, entonces gana ese jugador
+
+        }
+
+        //Se guardan los datos del jugador y su partida
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+            StreamWriter escribir = new StreamWriter(@"C:\Users\User\source\repos\equipo5_PLAGA\jugadasHvC.txt", true);
+
+            try
+            {
+                //Nombre de ambos jugadores 
+                escribir.WriteLine("Nombre Jugador 1: " + txtJug.Text);
+                escribir.WriteLine("Nombre Jugador 2: " + txtIA.Text);
+
+                //Turno de cada jugador 
+                if (rbtnJR.Checked && rbtnIAA.Checked)
+                {
+                    escribir.WriteLine("Turno 1: " + rbtnJR.Text);
+                    escribir.WriteLine("Turno 2: " + rbtnIAA.Text);
+                }
+                else
+                {
+                    if (rbtnIAR.Checked && rbtnJA.Checked)
+                    {
+                        escribir.WriteLine("Turno 1: " + rbtnIAR.Text);
+                        escribir.WriteLine("Turno 2: " + rbtnJA.Text);
+                    }
+                }
+
+                //Cantidad de fichas Rojas
+
+                //Cantidad de fichas Azules 
+
+
+                escribir.WriteLine();
+
+                MessageBox.Show("Partida Guardada!");
+
+            }
+            catch
+            {
+                MessageBox.Show("Error!");
+            }
+            finally
+            {
+                escribir.Close();
+            }
+        }
+
+        //
+        void playerInput()
+        {
+            
+        }
+
+        
     }
 }

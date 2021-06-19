@@ -1,0 +1,123 @@
+Nombre Jugador 1: d
+Nombre Jugador 2: f
+Turno 1: Rojo
+Turno 2: Azul
+
+Nombre Jugador 1: a
+Nombre Jugador 2: b
+Turno 1: Rojo
+Turno 2: Azul
+
+Nombre Jugador 1: A
+Nombre Jugador 2: B
+Turno 1: Rojo
+Turno 2: Azul
+
+Nombre Jugador 1: a
+Nombre Jugador 2: b
+Turno 1: Rojo
+Turno 2: Azul
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Nombre Jugador 1: a
+Nombre Jugador 2: b
+Turno 1: Rojo
+Turno 2: Azul
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 
+Tablero: 

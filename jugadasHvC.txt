@@ -1,0 +1,5 @@
+Nombre Jugador 1: A
+Nombre Jugador 2: B
+Turno 1: Rojo
+Turno 2: Azul
+

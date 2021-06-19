@@ -21,15 +21,9 @@ namespace Juego_de_la_Plaga
         private void btnCvH_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Nivel1 jugador = new Nivel1();
-            jugador.Show();
-
+            TABJuegoCvH tablero = new TABJuegoCvH();
+            tablero.Show();
         }
-
-        /*private void abrirniveles(object obj)
-        {
-            Application.Run(new Nivel1());
-        }*/
 
         private void btnatras_Click(object sender, EventArgs e)
         {
@@ -43,13 +37,12 @@ namespace Juego_de_la_Plaga
         {
             Application.Run(new MenuPrincipal());
         }
-        // ABRIR EL JUEGO HUMANO V HUMANO
+
         private void btnHvH_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Nivel2 nivel = new Nivel2();
-            nivel.Show();
-
+            TABJuegoHvH tablero = new TABJuegoHvH();
+            tablero.Show();
         }
 
         private void abrirjuegoHvH(object obj)
@@ -57,14 +50,11 @@ namespace Juego_de_la_Plaga
             Application.Run(new TABJuegoHvH());
         }
 
-        // ABRIR EL JUEGO COMPUTADORA V COMPUTADORA
-
-
         private void btnCvC_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Nivel3 nivel = new Nivel3();
-            nivel.Show();
+            TABJuegoCvC tablero = new TABJuegoCvC();
+            tablero.Show();
         }
         private void abrirjuegoCvC(object obj)
         {

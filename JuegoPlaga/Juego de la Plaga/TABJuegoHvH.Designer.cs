@@ -67,6 +67,7 @@ namespace Juego_de_la_Plaga
             this.label7 = new System.Windows.Forms.Label();
             this.lblTurno1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnGuardarP = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSalir)).BeginInit();
             this.gboxMarcador.SuspendLayout();
@@ -272,6 +273,7 @@ namespace Juego_de_la_Plaga
             this.txtJ2.Name = "txtJ2";
             this.txtJ2.Size = new System.Drawing.Size(125, 27);
             this.txtJ2.TabIndex = 36;
+            this.txtJ2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJ2_KeyPress);
             // 
             // lblJ2
             // 
@@ -299,6 +301,7 @@ namespace Juego_de_la_Plaga
             this.txtJ1.Name = "txtJ1";
             this.txtJ1.Size = new System.Drawing.Size(125, 27);
             this.txtJ1.TabIndex = 32;
+            this.txtJ1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJ1_KeyPress);
             // 
             // lblJ1
             // 
@@ -343,7 +346,7 @@ namespace Juego_de_la_Plaga
             // btnReiniciar
             // 
             this.btnReiniciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReiniciar.Location = new System.Drawing.Point(106, 565);
+            this.btnReiniciar.Location = new System.Drawing.Point(18, 565);
             this.btnReiniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(148, 32);
@@ -464,11 +467,24 @@ namespace Juego_de_la_Plaga
             this.label6.TabIndex = 38;
             this.label6.Text = "TURNO 1: ";
             // 
+            // btnGuardarP
+            // 
+            this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnGuardarP.Location = new System.Drawing.Point(185, 565);
+            this.btnGuardarP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardarP.Name = "btnGuardarP";
+            this.btnGuardarP.Size = new System.Drawing.Size(148, 32);
+            this.btnGuardarP.TabIndex = 43;
+            this.btnGuardarP.Text = "Guardar Partida";
+            this.btnGuardarP.UseVisualStyleBackColor = true;
+            this.btnGuardarP.Click += new System.EventHandler(this.btnGuardarP_Click);
+            // 
             // TABJuegoHvH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.btnGuardarP);
             this.Controls.Add(this.lblTurno2);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.lblTurno1);
@@ -548,5 +564,6 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lblTurno1;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnGuardarP;
     }
 }

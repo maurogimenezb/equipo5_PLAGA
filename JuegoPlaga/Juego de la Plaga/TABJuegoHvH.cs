@@ -6,14 +6,21 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading; // NUEVO
+using System.IO;
 
 namespace Juego_de_la_Plaga
 {
     public partial class TABJuegoHvH : Form
     {
-
+        //Crea el arreglo Bidimensional de botones 
         Button[,] btn = new Button[50, 50];
-        int turno = 0; // PARA TRABAJAR CON LOS BOTONES CREADOS
+
+        // PARA TRABAJAR CON LOS BOTONES CREADOS
+        //Designa un turno a cada jugador
+        int turno = 0; 
+
+        string jugador1 = " ";
+        string jugador2 = " ";
 
         //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
         //int piezasRojas = 0;
@@ -43,26 +50,89 @@ namespace Juego_de_la_Plaga
             this.Hide();
             MenuPrincipal menu = new MenuPrincipal();
             menu.Show();
-
         }
 
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Nivel2 nivel = new Nivel2();
-            nivel.Show();
+            Modos modo = new Modos();
+            modo.Show();
+        }
+
+        //Reinicia el tablero 
+        private void btnReiniciar_Click(object sender, EventArgs e)
+        {
+            TABJuegoHvH tablero = new TABJuegoHvH();
+            tablero.Show();
+        }
+
+        //Guarda la partida que el jugador estuvo jugando
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+            StreamWriter escribir = new StreamWriter(@"C:\Users\User\source\repos\equipo5_PLAGA\jugadasHvH.txt", true);
+
+            try
+            {
+                //Nombre de ambos jugadores 
+                escribir.WriteLine("Nombre Jugador 1: " + txtJ1.Text);
+                escribir.WriteLine("Nombre Jugador 2: " + txtJ2.Text);
+
+                //Turno de cada jugador 
+                if (rbtnJ1R.Checked && rbtnJ2A.Checked)
+                {
+                    escribir.WriteLine("Turno 1: " + rbtnJ1R.Text);
+                    escribir.WriteLine("Turno 2: " + rbtnJ2A.Text);
+                }
+                else
+                {
+                    if (rbtnJ2R.Checked && rbtnJ1A.Checked)
+                    {
+                        escribir.WriteLine("Turno 1: " + rbtnJ2R.Text);
+                        escribir.WriteLine("Turno 2: " + rbtnJ1A.Text);
+                    }
+                }
+
+                //Tablero
+
+                /*int Xtxt = int.Parse(txtX.Text);
+                int Ytxt = int.Parse(txtY.Text);
+
+                for (int i =0; i<= Xtxt; i++)
+                {
+                    for(int j=0; i<= Ytxt; j++)
+                    {
+                        escribir.WriteLine("Tablero: " + btn[i, j]);
+                    }
+                }*/
+
+
+                //Cantidad de fichas Rojas
+
+                //Cantidad de fichas Azules 
+
+
+                escribir.WriteLine();
+
+                MessageBox.Show("Partida Guardada!");
+
+            }
+            catch
+            {
+                MessageBox.Show("Error!");
+            }
+            finally
+            {
+                escribir.Close();
+            }
 
         }
 
-
+        //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         private void btnGO_Click(object sender, EventArgs e)
         {
             Iniciar();
         }
-
-        string jugador1 = " ";
-        string jugador2 = " ";
 
         //Metodo que valida los txt de cada jugador y los radiobuttons de seleccion de color 
         private void Iniciar()
@@ -185,12 +255,13 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
-
+        //
         void button_Click(object sender, EventArgs e)
         {
             int x = 0;
             int y = 0;
             bool movimiento = false;
+
            Valores(sender, ref x, ref y);
 
             //Columna ->    X , Fila ->    Y
@@ -352,6 +423,7 @@ namespace Juego_de_la_Plaga
                 }
             }
 
+                //Si movimiento es igual a "true" entonces llamamos al metodo "Jugadas"
                 if (movimiento == true)
                 {
                     Jugadas(x, y, ref turno);
@@ -516,51 +588,26 @@ namespace Juego_de_la_Plaga
             }
         }
 
-
+        //
         void Jugadas(int x, int y, ref int turno)
         {
             if (turno == 0)
             {
-                //Jugador Rojo
+                //Jugador fichas Rojas
                 btn[x, y].BackColor = Color.Red;
                 PintarAdyacente(x, y, turno);
                 turno = 1;
             }
             else
             {
-                //Jugador Azul
+                //Jugador fichas Azul
                 btn[x, y].BackColor = Color.Blue;
                 PintarAdyacente(x, y, turno);
                 turno = 0;
             }
         }
 
-        //Reinicia el tablero 
-        private void btnReiniciar_Click(object sender, EventArgs e)
-        {
-            int Xtxt = int.Parse(txtX.Text);
-            int Ytxt = int.Parse(txtY.Text);
-
-            for (int i = 1; i <= Xtxt; i++)
-            {
-                for (int j = 1; j <= Ytxt; j++)
-                {
-                    btn[i, j].BackColor = Color.DarkGray;
-                }
-            }
-
-            btn[1, 1].BackColor = Color.Red;
-            btn[Xtxt, Ytxt].BackColor = Color.Blue;
-
-        }
-
-
-        private void quienGana() 
-        {
-            //if( )
-
-        }
-
+        //A traves de este metodo se hace visible el turno respectivo de cada jugador 
         private void turnoJug()
         {
             if (rbtnJ1R.Checked && rbtnJ2A.Checked)
@@ -577,6 +624,46 @@ namespace Juego_de_la_Plaga
                 }
             }
 
+        }
+
+        //Metodo que detecta cual de los dos jugadores es el ganador
+        public void detectWin()
+        {
+            //Hacemos las validaciones si ambos tienen la misma cantidad de piezas, seria un empate 
+            //Si hay mas fichas del jugador que escogio el color rojo como ficha, entonces gana ese jugador 
+            //Si hay mas fichas del jugador que escogio el color azul como ficha, entonces gana ese jugador
+
+
+
+            
+        }
+
+        // Inicializa el juego
+        public void startGame()
+        {
+            
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
+        private void txtJ1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
+        private void txtJ2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
         }
     }
 }
