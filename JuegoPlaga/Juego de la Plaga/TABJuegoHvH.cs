@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading; // NUEVO
 using System.IO;
+using System.Media;
 
 namespace Juego_de_la_Plaga
 {
@@ -26,6 +27,7 @@ namespace Juego_de_la_Plaga
         //int piezasRojas = 0;
         //int piezasAzules = 0;
 
+        //SoundPlayer sonido;
 
         public TABJuegoHvH()
         {
@@ -55,6 +57,7 @@ namespace Juego_de_la_Plaga
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             Modos modo = new Modos();
             modo.Show();
@@ -267,162 +270,191 @@ namespace Juego_de_la_Plaga
 
             //Columna ->    X , Fila ->    Y
 
-            //while ()
+            //while () contorlar con un ciclo while. mientras las casillas no sean rojas o azules hacer o un uf silas casillas no estan pintadas e  roojo o azuln
 
             //PINTAR ADYACENTE
-            if (btn[x, y].BackColor == Color.DarkGray)
+            
+            
+            // JUGADOR 1
+            if (turno == 0)
             {
-                // JUGADOR 1
-                if (turno == 0)
+                if (btn[x, y].BackColor == Color.DarkGray)
                 {
-                    // BOTON DERECHO
-                    if (btn[x + 1, y] == null)
-                    {
-                    }
-                    else if (btn[x + 1, y].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
 
-                    // BOTON IZQUIERDO
-                    if (btn[x - 1, y] == btn[0, y])
-                    {
-                    }
-                    else if (btn[x - 1, y].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON DERECHO
+                   if (btn[x + 1, y] == null)
+                   {
+                   }
+                   else if (btn[x + 1, y].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
 
-                    // BOTON ARRIBA
-                    if (btn[x, y - 1] == btn[x, 0])
-                    {
-                    }
-                    else if (btn[x, y - 1].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON IZQUIERDO
+                   if (btn[x - 1, y] == btn[0, y])
+                   {
+                   }
+                   else if (btn[x - 1, y].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
 
-                    // BOTON ABAJO
-                    if (btn[x, y + 1] == null)
-                    {
-                    }
-                    else if (btn[x, y + 1].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON ARRIBA
+                   if (btn[x, y - 1] == btn[x, 0])
+                   {
+                   }
+                   else if (btn[x, y - 1].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
 
-                    // BOTON SUPERIOR IZQUIERDO
-                    if (btn[x - 1, y - 1] == btn[0, 0])
-                    {
-                    }
-                    else if (btn[x - 1, y - 1].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON ABAJO
+                   if (btn[x, y + 1] == null)
+                   {
+                   }
+                   else if (btn[x, y + 1].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
 
-                    // BOTON SUPERIOR DERECHO
-                    if (btn[x + 1, y - 1] == btn[x, 0])
-                    {
-                    }
-                    else if (btn[x + 1, y - 1].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON SUPERIOR IZQUIERDO
+                   if (btn[x - 1, y - 1] == btn[0, 0])
+                   {
+                   }
+                   else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
 
-                    // BOTON INFERIOR IZQUIERDO
-                    if (btn[x - 1, y + 1] == btn[0, y])
-                    {
-                    }
-                    else if (btn[x - 1, y + 1].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON SUPERIOR DERECHO
+                   if (btn[x + 1, y - 1] == btn[x, 0])
+                   {
+                   }
+                   else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
 
-                    // BOTON INFERIOR DERECHO
-                    if (btn[x + 1, y + 1] == null)
-                    {
-                    }
-                    else if (btn[x + 1, y + 1].BackColor == Color.Red)
-                    {
-                        movimiento = true;
-                    }
+                   // BOTON INFERIOR IZQUIERDO
+                   if (btn[x - 1, y + 1] == btn[0, y])
+                   {
+                   }
+                   else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
+
+                   // BOTON INFERIOR DERECHO
+                   if (btn[x + 1, y + 1] == null)
+                   {
+                   }
+                   else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                   {
+                     movimiento = true;
+                   }
                 }
-                // JUGADOR 2
                 else
                 {
-                    // BOTON DERECHO
-                    if (btn[x + 1, y] == null)
-                    {
-                    }
-                    else if (btn[x + 1, y].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
+                   if (btn[x, y].BackColor == Color.Red || btn[x, y].BackColor == Color.Blue)
+                   {
+                        SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
+                        sonido.Play();
 
-                    // BOTON IZQUIERDO
-                    if (btn[x - 1, y] == btn[0, y])
-                    {
-                    }
-                    else if (btn[x - 1, y].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
-
-                    // BOTON ARRIBA
-                    if (btn[x, y - 1] == btn[x, 0])
-                    {
-                    }
-                    else if (btn[x, y - 1].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
-
-                    // BOTON ABAJO
-                    if (btn[x, y + 1] == null)
-                    {
-                    }
-                    else if (btn[x, y + 1].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
-
-                    // BOTON SUPERIOR IZQUIERDO
-                    if (btn[x - 1, y - 1] == btn[0, 0])
-                    {
-                    }
-                    else if (btn[x - 1, y - 1].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
-
-                    // BOTON SUPERIOR DERECHO
-                    if (btn[x + 1, y - 1] == btn[x, 0])
-                    {
-                    }
-                    else if (btn[x + 1, y - 1].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
-
-                    // BOTON INFERIOR IZQUIERDO
-                    if (btn[x - 1, y + 1] == btn[0, y])
-                    {
-                    }
-                    else if (btn[x - 1, y + 1].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
-
-                    // BOTON INFERIOR DERECHO
-                    if (btn[x + 1, y + 1] == null)
-                    {
-                    }
-                    else if (btn[x + 1, y + 1].BackColor == Color.Blue)
-                    {
-                        movimiento = true;
-                    }
+                        //SystemSounds.Exclamation.Play();
+                        MessageBox.Show("La celda seleccionada ya está ocupada!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   }
                 }
             }
+            // JUGADOR 2
+            else
+            {
+               if (btn[x, y].BackColor == Color.DarkGray)
+               {
+                  // BOTON DERECHO
+                  if (btn[x + 1, y] == null)
+                  {
+                  }
+                  else if (btn[x + 1, y].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+
+                  // BOTON IZQUIERDO
+                  if (btn[x - 1, y] == btn[0, y])
+                  {
+                  }
+                  else if (btn[x - 1, y].BackColor == Color.Blue)
+                  {
+                     movimiento = true;
+                  }
+
+                  // BOTON ARRIBA
+                  if (btn[x, y - 1] == btn[x, 0])
+                  {
+                  }
+                  else if (btn[x, y - 1].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+
+                  // BOTON ABAJO
+                  if (btn[x, y + 1] == null)
+                  {
+                  }
+                  else if (btn[x, y + 1].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+
+                  // BOTON SUPERIOR IZQUIERDO
+                  if (btn[x - 1, y - 1] == btn[0, 0])
+                  {
+                  }
+                  else if (btn[x - 1, y - 1].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+
+                  // BOTON SUPERIOR DERECHO
+                  if (btn[x + 1, y - 1] == btn[x, 0])
+                  {
+                  }
+                  else if (btn[x + 1, y - 1].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+
+                  // BOTON INFERIOR IZQUIERDO
+                  if (btn[x - 1, y + 1] == btn[0, y])
+                  {
+                  }
+                  else if (btn[x - 1, y + 1].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+
+                  // BOTON INFERIOR DERECHO
+                  if (btn[x + 1, y + 1] == null)
+                  {
+                  }
+                  else if (btn[x + 1, y + 1].BackColor == Color.Blue)
+                  {
+                    movimiento = true;
+                  }
+               }
+               else
+               {
+                   if(btn[x , y].BackColor == Color.Red || btn[x , y].BackColor == Color.Blue)
+                   {
+                      SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
+                      sonido.Play();
+
+                      //SystemSounds.Exclamation.Play();
+                      MessageBox.Show("La celda seleccionada ya está ocupada!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                   }
+               }
+            }
+            
 
                 //Si movimiento es igual a "true" entonces llamamos al metodo "Jugadas"
                 if (movimiento == true)
@@ -445,6 +477,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x + 1, y].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x + 1, y].BackColor = Color.Red;
                 }
 
@@ -454,6 +489,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x - 1, y].BackColor = Color.Red;
                 }
 
@@ -463,6 +501,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x, y - 1].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x, y - 1].BackColor = Color.Red;
                 }
 
@@ -472,6 +513,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x, y + 1].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x, y + 1].BackColor = Color.Red;
                 }
 
@@ -481,6 +525,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y - 1].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x - 1, y - 1].BackColor = Color.Red;
                 }
 
@@ -490,6 +537,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x + 1, y - 1].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x + 1, y - 1].BackColor = Color.Red;
                 }
 
@@ -499,6 +549,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y + 1].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x - 1, y + 1].BackColor = Color.Red;
                 }
 
@@ -508,6 +561,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x + 1, y + 1].BackColor == Color.Blue)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x + 1, y + 1].BackColor = Color.Red;
                 }
             }
@@ -521,6 +577,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x + 1, y].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x + 1, y].BackColor = Color.Blue;
                 }
 
@@ -530,6 +589,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x - 1, y].BackColor = Color.Blue;
                 }
 
@@ -539,6 +601,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x, y - 1].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x, y - 1].BackColor = Color.Blue;
                 }
 
@@ -548,6 +613,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x, y + 1].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x, y + 1].BackColor = Color.Blue;
                 }
 
@@ -557,6 +625,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y - 1].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x - 1, y - 1].BackColor = Color.Blue;
                 }
 
@@ -566,6 +637,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x + 1, y - 1].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x + 1, y - 1].BackColor = Color.Blue;
                 }
 
@@ -575,6 +649,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y + 1].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x - 1, y + 1].BackColor = Color.Blue;
                 }
 
@@ -584,6 +661,9 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x + 1, y + 1].BackColor == Color.Red)
                 {
+                    SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                    sonido.Play();
+
                     btn[x + 1, y + 1].BackColor = Color.Blue;
                 }
             }

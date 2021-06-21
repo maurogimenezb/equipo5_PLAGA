@@ -20,8 +20,8 @@ namespace Juego_de_la_Plaga
         //Boolean playerF;
 
         //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
-        int piezasRojas = 0;
-        int piezasAzules = 0;
+        //int piezasRojas = 0;
+        //int piezasAzules = 0;
 
         public TABJuegoCvH()
         {
@@ -214,77 +214,80 @@ namespace Juego_de_la_Plaga
             {
                 // JUGADOR 1    -> Humano
 
-                // BOTON DERECHO
-                if (btn[x + 1, y] == null)
+                if (btn[x, y].BackColor == Color.DarkGray)
                 {
-                }
-                else if (btn[x + 1, y].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON DERECHO
+                    if (btn[x + 1, y] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON IZQUIERDO
+                    // BOTON IZQUIERDO
 
-                if (btn[x - 1, y] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    if (btn[x - 1, y] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
 
-                // BOTON ARRIBA
-                if (btn[x, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x, y - 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON ARRIBA
+                    if (btn[x, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON ABAJO
-                if (btn[x, y + 1] == null)
-                {
-                }
-                else if (btn[x, y + 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON ABAJO
+                    if (btn[x, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON SUPERIOR IZQUIERDO
-                if (btn[x - 1, y - 1] == btn[0, 0])
-                {
-                }
-                else if (btn[x - 1, y - 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
-                // BOTON SUPERIOR DERECHO
-                if (btn[x + 1, y - 1] == btn[x, 0])
-                {
-                }
-                else if (btn[x + 1, y - 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON SUPERIOR IZQUIERDO
+                    if (btn[x - 1, y - 1] == btn[0, 0])
+                    {
+                    }
+                    else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
+                    // BOTON SUPERIOR DERECHO
+                    if (btn[x + 1, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON INFERIOR IZQUIERDO
-                if (btn[x - 1, y + 1] == btn[0, y])
-                {
-                }
-                else if (btn[x - 1, y + 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
-                }
+                    // BOTON INFERIOR IZQUIERDO
+                    if (btn[x - 1, y + 1] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                // BOTON INFERIOR DERECHO
-                if (btn[x + 1, y + 1] == null)
-                {
-                }
-                else if (btn[x + 1, y + 1].BackColor == Color.Red)
-                {
-                    movimiento = true;
+                    // BOTON INFERIOR DERECHO
+                    if (btn[x + 1, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
                 }
             }
             // JUGADOR 2    -> Computadora IA
@@ -304,8 +307,8 @@ namespace Juego_de_la_Plaga
         //Metodo que pinta las casillas que se encuentran alrededor de la ficha anteriormente escogida siguiendo las reglas 
         public void PintarAdyacente(int x, int y, int turno)
         {
-            piezasRojas = 0;
-            piezasAzules = 0;
+            //piezasRojas = 0;
+            //piezasAzules = 0;
 
             if (turno == 0)
             {
@@ -318,7 +321,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x + 1, y].BackColor == Color.Blue)
                 {
                     btn[x + 1, y].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
 
                 // PINTA BOTON IZQUIERDO
@@ -329,7 +332,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x - 1, y].BackColor == Color.Blue)
                 {
                     btn[x - 1, y].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
 
 
@@ -340,7 +343,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x, y - 1].BackColor == Color.Blue)
                 {
                     btn[x, y - 1].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
 
                 // PINTA BOTON ABAJO
@@ -350,7 +353,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x, y + 1].BackColor == Color.Blue)
                 {
                     btn[x, y + 1].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
 
                 // PINTA BOTON SUPERIOR IZQUIERDO
@@ -360,7 +363,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x - 1, y - 1].BackColor == Color.Blue)
                 {
                     btn[x - 1, y - 1].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
                 // PINTA BOTON SUPERIOR DERECHO
                 if (btn[x + 1, y - 1] == btn[x, 0])
@@ -369,7 +372,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x + 1, y - 1].BackColor == Color.Blue)
                 {
                     btn[x + 1, y - 1].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
 
                 // PINTA BOTON INFERIOR IZQUIERDO
@@ -378,8 +381,7 @@ namespace Juego_de_la_Plaga
                 }
                 else if (btn[x - 1, y + 1].BackColor == Color.Blue)
                 {
-                    btn[x - 1, y + 1].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
 
                 // PINTA BOTON INFERIOR DERECHO
@@ -389,7 +391,7 @@ namespace Juego_de_la_Plaga
                 else if (btn[x + 1, y + 1].BackColor == Color.Blue)
                 {
                     btn[x + 1, y + 1].BackColor = Color.Red;
-                    piezasRojas++;
+                    
                 }
             }
 
