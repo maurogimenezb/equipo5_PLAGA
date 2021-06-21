@@ -121,3 +121,8 @@ Tablero:
 Tablero: 
 Tablero: 
 Tablero: 
+Nombre Jugador 1: Melissa
+Nombre Jugador 2: Mauro
+Turno 1: Rojo
+Turno 2: Azul
+

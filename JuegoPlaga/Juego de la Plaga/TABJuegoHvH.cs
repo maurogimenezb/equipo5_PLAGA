@@ -27,13 +27,13 @@ namespace Juego_de_la_Plaga
         //int piezasRojas = 0;
         //int piezasAzules = 0;
 
-        //SoundPlayer sonido;
-
         public TABJuegoHvH()
-        {
-            InitializeComponent();
-        }
+        { 
 
+            InitializeComponent();
+           
+        }
+   
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -135,7 +135,11 @@ namespace Juego_de_la_Plaga
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         private void btnGO_Click(object sender, EventArgs e)
         {
+            //Se desactiva el mensaje inicial 
+            pnlMsjInicial.Visible = false;
+
             Iniciar();
+
         }
 
         //Metodo que valida los txt de cada jugador y los radiobuttons de seleccion de color 
@@ -245,6 +249,9 @@ namespace Juego_de_la_Plaga
             //Se hace visible el turno del jugador
             turnoJug();
 
+            //Hacemos visible el turno del jugador 1
+            lblJuega.Text = txtJ1.Text;
+
         }
 
         // PARA TRABAJAR CON LOS BOTONES CREADOS
@@ -259,7 +266,8 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
-        //
+        //Metodo que hace las verificaciones correspondientes acerca de las posiciones en donde el jugador puede pintar su celda,
+        //Arriba,Abajo,Derecha,Izquierda,Btn Superior Derecho,Btn Superior Izquierdo,Btn Inferior Derecho,Btn Inferior Izquierdo
         void button_Click(object sender, EventArgs e)
         {
             int x = 0;
@@ -273,11 +281,11 @@ namespace Juego_de_la_Plaga
             //while () contorlar con un ciclo while. mientras las casillas no sean rojas o azules hacer o un uf silas casillas no estan pintadas e  roojo o azuln
 
             //PINTAR ADYACENTE
-            
-            
+
             // JUGADOR 1
             if (turno == 0)
             {
+
                 if (btn[x, y].BackColor == Color.DarkGray)
                 {
 
@@ -352,9 +360,13 @@ namespace Juego_de_la_Plaga
                    {
                      movimiento = true;
                    }
+
+                    //Hacemos visible el turno del jugador 2
+                    lblJuega.Text = txtJ2.Text;
                 }
                 else
                 {
+                    
                    if (btn[x, y].BackColor == Color.Red || btn[x, y].BackColor == Color.Blue)
                    {
                         SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
@@ -364,10 +376,12 @@ namespace Juego_de_la_Plaga
                         MessageBox.Show("La celda seleccionada ya está ocupada!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                    }
                 }
+
             }
             // JUGADOR 2
             else
             {
+
                if (btn[x, y].BackColor == Color.DarkGray)
                {
                   // BOTON DERECHO
@@ -441,7 +455,10 @@ namespace Juego_de_la_Plaga
                   {
                     movimiento = true;
                   }
-               }
+
+                    //Hacemos visible el turno del jugador 1
+                    lblJuega.Text = txtJ1.Text;
+                }
                else
                {
                    if(btn[x , y].BackColor == Color.Red || btn[x , y].BackColor == Color.Blue)
@@ -454,8 +471,7 @@ namespace Juego_de_la_Plaga
                    }
                }
             }
-            
-
+           
                 //Si movimiento es igual a "true" entonces llamamos al metodo "Jugadas"
                 if (movimiento == true)
                 {
@@ -688,6 +704,27 @@ namespace Juego_de_la_Plaga
             }
         }
 
+        //Metodo que hace visible el nombre del jugador que juega en el tablero 
+        void quienJuega()
+        {
+            //Hacemos visible el turno del jugador 1
+            lblJuega.Text = txtJ2.Text;
+
+            if (turno == 0)
+            {
+                //Hacemos visible el turno del jugador 1
+                lblJuega.Text = txtJ1.Text;
+                turno = 1;
+            }
+            else
+            {
+                //Hacemos visible el turno del jugador 1
+                lblJuega.Text = txtJ2.Text;
+                turno = 0;
+            }
+
+        }
+
         //A traves de este metodo se hace visible el turno respectivo de cada jugador 
         private void turnoJug()
         {
@@ -746,5 +783,6 @@ namespace Juego_de_la_Plaga
                 return;
             }
         }
+
     }
 }
