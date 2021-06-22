@@ -29,9 +29,7 @@ namespace Juego_de_la_Plaga
 
         public TABJuegoHvH()
         { 
-
-            InitializeComponent();
-           
+            InitializeComponent(); 
         }
    
 
@@ -131,12 +129,12 @@ namespace Juego_de_la_Plaga
             }
 
         }
-
+        
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         private void btnGO_Click(object sender, EventArgs e)
         {
             //Se desactiva el mensaje inicial 
-            pnlMsjInicial.Visible = false;
+            //gboxMsjInicial.Visible = false;
 
             Iniciar();
 

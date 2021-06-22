@@ -44,8 +44,12 @@ namespace Juego_de_la_Plaga
         {
             
             this.Hide();
-           // SystemSounds.Question.Play();
-            // Console.Beep();
+            //SystemSounds.Question.Play();
+            //Console.Beep();
+
+            SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/windows-exclamacion.wav");
+            sonido.Play();
+
             MsjSalir salir = new MsjSalir();
             salir.Show();
         }

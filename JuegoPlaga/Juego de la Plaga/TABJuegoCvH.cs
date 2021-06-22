@@ -68,7 +68,7 @@ namespace Juego_de_la_Plaga
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         public void btnGO_Click(object sender, EventArgs e)
         {
-            
+            //Se desactiva el mensaje inicial 
             Iniciar();
 
         }
@@ -188,6 +188,9 @@ namespace Juego_de_la_Plaga
             //Se hace visible el turno del jugador
             turnoJug();
 
+            //Hacemos visible el turno del jugador 1
+            lblJuega.Text = txtJug.Text;
+
         }
 
         //Metodo que va obteniendo la direccion en i y j de la ficha que fue seleccionada por el jugador 
@@ -289,6 +292,9 @@ namespace Juego_de_la_Plaga
                         movimiento = true;
                     }
                 }
+
+                //Hacemos visible el turno del jugador 2
+                lblJuega.Text = txtIA.Text;
             }
             // JUGADOR 2    -> Computadora IA
             else

@@ -58,7 +58,6 @@ namespace Juego_de_la_Plaga
             this.btnReiniciar = new System.Windows.Forms.Button();
             this.gboxDimensiones = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnlMsjInicial = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.gboxFichas = new System.Windows.Forms.GroupBox();
             this.lblCantAzules = new System.Windows.Forms.Label();
@@ -81,7 +80,6 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).BeginInit();
             this.gboxDimensiones.SuspendLayout();
-            this.pnlMsjInicial.SuspendLayout();
             this.gboxFichas.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -387,24 +385,16 @@ namespace Juego_de_la_Plaga
             this.label3.TabIndex = 33;
             this.label3.Text = "Los tamaños aceptables son entre 3 y 10, \r\ntanto para filas como columnas";
             // 
-            // pnlMsjInicial
-            // 
-            this.pnlMsjInicial.Controls.Add(this.label4);
-            this.pnlMsjInicial.Location = new System.Drawing.Point(533, 0);
-            this.pnlMsjInicial.Name = "pnlMsjInicial";
-            this.pnlMsjInicial.Size = new System.Drawing.Size(301, 135);
-            this.pnlMsjInicial.TabIndex = 46;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(49, 37);
+            this.label4.Location = new System.Drawing.Point(32, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(208, 69);
+            this.label4.Size = new System.Drawing.Size(495, 20);
             this.label4.TabIndex = 34;
-            this.label4.Text = "  Para empezar a jugar, \r\n ingrese el nombre de los \r\njugadores y presione GO!!";
+            this.label4.Text = "Para empezar a jugar, ingrese el nombre de los jugadores y presione GO!!";
             // 
             // gboxFichas
             // 
@@ -412,17 +402,18 @@ namespace Juego_de_la_Plaga
             this.gboxFichas.Controls.Add(this.lblCantRojas);
             this.gboxFichas.Controls.Add(this.lblAzul);
             this.gboxFichas.Controls.Add(this.lblRojo);
-            this.gboxFichas.Location = new System.Drawing.Point(481, 342);
+            this.gboxFichas.Location = new System.Drawing.Point(481, 344);
             this.gboxFichas.Name = "gboxFichas";
-            this.gboxFichas.Size = new System.Drawing.Size(85, 159);
+            this.gboxFichas.Size = new System.Drawing.Size(85, 157);
             this.gboxFichas.TabIndex = 32;
             this.gboxFichas.TabStop = false;
+            this.gboxFichas.Text = "   Fichas";
             this.gboxFichas.Visible = false;
             // 
             // lblCantAzules
             // 
             this.lblCantAzules.AutoSize = true;
-            this.lblCantAzules.Location = new System.Drawing.Point(20, 122);
+            this.lblCantAzules.Location = new System.Drawing.Point(20, 118);
             this.lblCantAzules.Name = "lblCantAzules";
             this.lblCantAzules.Size = new System.Drawing.Size(0, 20);
             this.lblCantAzules.TabIndex = 33;
@@ -430,7 +421,7 @@ namespace Juego_de_la_Plaga
             // lblCantRojas
             // 
             this.lblCantRojas.AutoSize = true;
-            this.lblCantRojas.Location = new System.Drawing.Point(18, 56);
+            this.lblCantRojas.Location = new System.Drawing.Point(20, 56);
             this.lblCantRojas.Name = "lblCantRojas";
             this.lblCantRojas.Size = new System.Drawing.Size(0, 20);
             this.lblCantRojas.TabIndex = 32;
@@ -439,7 +430,7 @@ namespace Juego_de_la_Plaga
             // 
             this.lblAzul.AutoSize = true;
             this.lblAzul.ForeColor = System.Drawing.Color.Blue;
-            this.lblAzul.Location = new System.Drawing.Point(18, 90);
+            this.lblAzul.Location = new System.Drawing.Point(20, 88);
             this.lblAzul.Name = "lblAzul";
             this.lblAzul.Size = new System.Drawing.Size(52, 20);
             this.lblAzul.TabIndex = 31;
@@ -449,7 +440,7 @@ namespace Juego_de_la_Plaga
             // 
             this.lblRojo.AutoSize = true;
             this.lblRojo.ForeColor = System.Drawing.Color.Red;
-            this.lblRojo.Location = new System.Drawing.Point(18, 23);
+            this.lblRojo.Location = new System.Drawing.Point(20, 23);
             this.lblRojo.Name = "lblRojo";
             this.lblRojo.Size = new System.Drawing.Size(45, 20);
             this.lblRojo.TabIndex = 30;
@@ -458,7 +449,7 @@ namespace Juego_de_la_Plaga
             // lblTurno2
             // 
             this.lblTurno2.AutoSize = true;
-            this.lblTurno2.Location = new System.Drawing.Point(294, 9);
+            this.lblTurno2.Location = new System.Drawing.Point(472, 294);
             this.lblTurno2.Name = "lblTurno2";
             this.lblTurno2.Size = new System.Drawing.Size(0, 20);
             this.lblTurno2.TabIndex = 41;
@@ -467,7 +458,8 @@ namespace Juego_de_la_Plaga
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(220, 9);
+            this.label7.ForeColor = System.Drawing.Color.Blue;
+            this.label7.Location = new System.Drawing.Point(466, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 20);
             this.label7.TabIndex = 40;
@@ -476,7 +468,7 @@ namespace Juego_de_la_Plaga
             // lblTurno1
             // 
             this.lblTurno1.AutoSize = true;
-            this.lblTurno1.Location = new System.Drawing.Point(136, 9);
+            this.lblTurno1.Location = new System.Drawing.Point(472, 213);
             this.lblTurno1.Name = "lblTurno1";
             this.lblTurno1.Size = new System.Drawing.Size(0, 20);
             this.lblTurno1.TabIndex = 39;
@@ -485,7 +477,8 @@ namespace Juego_de_la_Plaga
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(66, 9);
+            this.label6.ForeColor = System.Drawing.Color.Red;
+            this.label6.Location = new System.Drawing.Point(472, 176);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 20);
             this.label6.TabIndex = 38;
@@ -528,7 +521,7 @@ namespace Juego_de_la_Plaga
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
-            this.Controls.Add(this.pnlMsjInicial);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblJuega);
             this.Controls.Add(this.ahrJuega);
             this.Controls.Add(this.btnGuardarP);
@@ -565,8 +558,6 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.btnGO)).EndInit();
             this.gboxDimensiones.ResumeLayout(false);
             this.gboxDimensiones.PerformLayout();
-            this.pnlMsjInicial.ResumeLayout(false);
-            this.pnlMsjInicial.PerformLayout();
             this.gboxFichas.ResumeLayout(false);
             this.gboxFichas.PerformLayout();
             this.ResumeLayout(false);
@@ -617,6 +608,5 @@ namespace Juego_de_la_Plaga
         private System.Windows.Forms.Label ahrJuega;
         private System.Windows.Forms.Label lblJuega;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel pnlMsjInicial;
     }
 }
