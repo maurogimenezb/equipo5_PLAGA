@@ -204,13 +204,26 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
+        public void ValoresIA(ref int n, ref int m) // Agarra los valores del click
+        {
+            int ntxt = int.Parse(txtX.Text);
+            int mtxt = int.Parse(txtY.Text);
+            Random aleatorio = new Random();
+
+            n = aleatorio.Next(1, 5);
+            m = aleatorio.Next(1, 5);
+        }
+
         //Metodo que controla los movimientos del jugador -> Humano
         public void playerInput_Click(object sender, EventArgs e)
         {
             int x = 0;
             int y = 0;
+            int n = 0;
+            int m = 0;
             bool movimiento = false;
             Valores(sender, ref x, ref y);
+            ValoresIA(ref n, ref m);
 
             //PINTAR ADYACENTE
             if (turno == 0)
@@ -299,17 +312,95 @@ namespace Juego_de_la_Plaga
             // JUGADOR 2    -> Computadora IA
             else
             {
-                
+                if (btn[n, m].BackColor == Color.DarkGray)
+                {
+                    // BOTON DERECHO
+                    if (btn[n + 1, m] == null)
+                    {
+                    }
+                    else if (btn[n + 1, m].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON IZQUIERDO
+                    if (btn[n - 1, m] == btn[0, m])
+                    {
+                    }
+                    else if (btn[n - 1, m].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON ARRIBA
+                    if (btn[n, m - 1] == btn[n, 0])
+                    {
+                    }
+                    else if (btn[n, m - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON ABAJO
+                    if (btn[n, m + 1] == null)
+                    {
+                    }
+                    else if (btn[n, m + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON SUPERIOR IZQUIERDO
+                    if (btn[n - 1, m - 1] == btn[0, 0])
+                    {
+                    }
+                    else if (btn[n - 1, m - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON SUPERIOR DERECHO
+                    if (btn[n + 1, m - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[n + 1, m - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON INFERIOR IZQUIERDO
+                    if (btn[n - 1, m + 1] == btn[0, m])
+                    {
+                    }
+                    else if (btn[n - 1, m + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    // BOTON INFERIOR DERECHO
+                    if (btn[n + 1, m + 1] == null)
+                    {
+                    }
+                    else if (btn[n + 1, m + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
+
+                    //Hacemos visible el turno del jugador 1
+                    //lblJuega.Text = txtJ1.Text;
+                }
             }
 
             //
             if (movimiento == true)
             {
-                Jugadas(x, y, ref turno);
+                Jugadas(x, y, ref turno, n, m);
             }
 
         }
 
+        
+        
         //Metodo que pinta las casillas que se encuentran alrededor de la ficha anteriormente escogida siguiendo las reglas 
         public void PintarAdyacente(int x, int y, int turno)
         {
@@ -405,13 +496,108 @@ namespace Juego_de_la_Plaga
             {
                 // JUGADOR 2    -> Computadora IA
 
-                
+                // PINTA BOTON DERECHO
+                if (btn[x + 1, y] == null)
+                {
+                }
+                else if (btn[x + 1, y].BackColor == Color.Red)
+                {
+                   // SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
 
-            }
+                    btn[x + 1, y].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON IZQUIERDO
+                if (btn[x - 1, y] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y].BackColor == Color.Red)
+                {
+                  //  SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x - 1, y].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON ARRIBA
+                if (btn[x, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x, y - 1].BackColor == Color.Red)
+                {
+                   // SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x, y - 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON ABAJO
+                if (btn[x, y + 1] == null)
+                {
+                }
+                else if (btn[x, y + 1].BackColor == Color.Red)
+                {
+                  //  SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x, y + 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON SUPERIOR IZQUIERDO
+                if (btn[x - 1, y - 1] == btn[0, 0])
+                {
+                }
+                else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                {
+                   // SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x - 1, y - 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON SUPERIOR DERECHO
+                if (btn[x + 1, y - 1] == btn[x, 0])
+                {
+                }
+                else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                {
+                    //SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x + 1, y - 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON INFERIOR IZQUIERDO
+                if (btn[x - 1, y + 1] == btn[0, y])
+                {
+                }
+                else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                {
+                   // SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x - 1, y + 1].BackColor = Color.Blue;
+                }
+
+                // PINTA BOTON INFERIOR DERECHO
+                if (btn[x + 1, y + 1] == null)
+                {
+                }
+                else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                {
+                    //SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son3.wav");
+                   // sonido.Play();
+
+                    btn[x + 1, y + 1].BackColor = Color.Blue;
+                }
+            
+
+        }
         }
 
         //
-        public void Jugadas(int x, int y, ref int turno)
+        public void Jugadas(int x, int y, ref int turno, int n, int m)
         {
             if (turno == 0)
             {
@@ -421,8 +607,8 @@ namespace Juego_de_la_Plaga
             }
             else
             {
-                btn[x, y].BackColor = Color.Blue;
-                PintarAdyacente(x, y, turno);
+                btn[n, m].BackColor = Color.Blue;
+                PintarAdyacente(n, m, turno);
                 turno = 0;
             }
         }
