@@ -506,6 +506,10 @@ namespace Juego_de_la_Plaga
 
                         }
 
+                        SoundPlayer son = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/bites-ta-da-winner.wav");
+                        son.Play();
+
+
                         MessageBox.Show("Piezas Rojas:"+piezasRojas);
                         MessageBox.Show("Piezas Azules:" + piezasAzules);
 
