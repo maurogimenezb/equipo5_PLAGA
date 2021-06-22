@@ -46,7 +46,6 @@ namespace Juego_de_la_Plaga
             this.Hide();
             MenuPrincipal menu = new MenuPrincipal();
             menu.Show();
-
         }
 
 
@@ -70,7 +69,6 @@ namespace Juego_de_la_Plaga
         {
             //Se desactiva el mensaje inicial 
             Iniciar();
-
         }
 
         //Hace las validaciones correspondiente, sobre los textboxs y radiobuttons de cada jugador
@@ -79,6 +77,7 @@ namespace Juego_de_la_Plaga
             if (txtJug.Text == "" && txtIA.Text == "")
             {
                 MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
@@ -90,9 +89,14 @@ namespace Juego_de_la_Plaga
                 {
                     MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                if (txtJug.Text == txtIA.Text)
+                {
+                    MessageBox.Show("Ambos jugadores no pueden llamarse igual!", "Vuelva a Ingresar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
-            if (txtJug.Text != "" && txtIA.Text != "")
+
+            if ((txtJug.Text != "") && (txtIA.Text != "") && (txtJug.Text != txtIA.Text))
             {
                 if (rbtnJR.Checked && rbtnIAA.Checked)
                 {
@@ -101,7 +105,6 @@ namespace Juego_de_la_Plaga
                     rbtnJA.Enabled = false;
                     rbtnIAR.Enabled = false;
                     PlayGame();
-
                 }
                 if (rbtnJA.Checked && rbtnIAR.Checked)
                 {
@@ -114,17 +117,14 @@ namespace Juego_de_la_Plaga
                 if (rbtnJR.Checked && rbtnIAR.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 if (rbtnJA.Checked && rbtnIAA.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 if (rbtnJR.Checked == false && rbtnJA.Checked == false || rbtnIAR.Checked == false && rbtnIAA.Checked == false)
                 {
                     MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }
@@ -180,7 +180,7 @@ namespace Juego_de_la_Plaga
             }
             else
             {
-                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\n Vuelva a introducir de vuelta", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\nVuelva a introducir de vuelta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtX.Text = "";
                 txtY.Text = "";
             }
@@ -632,35 +632,12 @@ namespace Juego_de_la_Plaga
 
         }
 
-        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
-        private void txtJug_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
-        private void txtIA_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                e.Handled = true;
-                return;
-            }
-        }
-
         //Detecta cual de los dos jugadores es el ganador 
         public void detectWin()
         {
             //Hacemos las validaciones si ambos tienen la misma cantidad de piezas, seria un empate 
             //Si hay mas  fichas del jugador que escogio el color rojo como ficha, entonces gana ese jugador 
             //Si hay mas fichas del jugador que escogio el color azul como ficha, entonces gana ese jugador
-
         }
 
         //Se guardan los datos del jugador y su partida
@@ -715,6 +692,48 @@ namespace Juego_de_la_Plaga
             
         }
 
-        
+        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
+        private void txtJug_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo letras y no numeros
+        private void txtIA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo numeros y no letras
+        private void txtX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <=255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo numeros y no letras
+        private void txtY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }

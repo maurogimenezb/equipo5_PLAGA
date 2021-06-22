@@ -345,6 +345,7 @@ namespace Juego_de_la_Plaga
             this.txtX.Name = "txtX";
             this.txtX.Size = new System.Drawing.Size(71, 25);
             this.txtX.TabIndex = 29;
+            this.txtX.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtX_KeyPress);
             // 
             // btnAgregar
             // 
@@ -386,6 +387,7 @@ namespace Juego_de_la_Plaga
             this.txtY.Name = "txtY";
             this.txtY.Size = new System.Drawing.Size(71, 25);
             this.txtY.TabIndex = 16;
+            this.txtY.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtY_KeyPress);
             // 
             // gboxFichas
             // 

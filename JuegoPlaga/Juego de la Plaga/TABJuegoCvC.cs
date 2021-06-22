@@ -71,6 +71,7 @@ namespace Juego_de_la_Plaga
             if (txtIA1.Text == "" && txtIA2.Text == "")
             {
                 MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
@@ -82,9 +83,14 @@ namespace Juego_de_la_Plaga
                 {
                     MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                if (txtIA1.Text == txtIA2.Text)
+                {
+                    MessageBox.Show("Ambos jugadores no pueden llamarse igual!", "Vuelva a Ingresar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
-            if (txtIA1.Text != "" && txtIA2.Text != "")
+
+            if ((txtIA1.Text != "") && (txtIA2.Text != "") && (txtIA1.Text != txtIA2.Text))
             {
                 if (rbtnIA1R.Checked && rbtnIA2A.Checked)
                 {
@@ -93,7 +99,6 @@ namespace Juego_de_la_Plaga
                     rbtnIA1A.Enabled = false;
                     rbtnIA2R.Enabled = false;
                     PlayGame();
-
                 }
                 if (rbtnIA1A.Checked && rbtnIA2R.Checked)
                 {
@@ -106,17 +111,14 @@ namespace Juego_de_la_Plaga
                 if (rbtnIA1R.Checked && rbtnIA2R.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 if (rbtnIA1A.Checked && rbtnIA2A.Checked)
                 {
                     MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
                 if (rbtnIA1R.Checked == false && rbtnIA1A.Checked == false || rbtnIA2R.Checked == false && rbtnIA2A.Checked == false)
                 {
                     MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                 }
             }
         }
@@ -169,7 +171,7 @@ namespace Juego_de_la_Plaga
             }
             else
             {
-                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\n Vuelva a introducir de vuelta", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\nVuelva a introducir de vuelta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //Se hace visible el turno del jugador
@@ -259,7 +261,7 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }
@@ -270,7 +272,29 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo numeros y no letras
+        private void txtX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("No ha ingresado un número!\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo numeros y no letras
+        private void txtY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("No ha ingresado un número!\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }

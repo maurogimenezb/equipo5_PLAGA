@@ -23,10 +23,6 @@ namespace Juego_de_la_Plaga
         string jugador1 = " ";
         string jugador2 = " ";
 
-        //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
-        //int piezasRojas = 0;
-        //int piezasAzules = 0;
-
         public TABJuegoHvH()
         { 
             InitializeComponent(); 
@@ -55,7 +51,6 @@ namespace Juego_de_la_Plaga
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
-            
             this.Hide();
             Modos modo = new Modos();
             modo.Show();
@@ -133,11 +128,7 @@ namespace Juego_de_la_Plaga
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         private void btnGO_Click(object sender, EventArgs e)
         {
-            //Se desactiva el mensaje inicial 
-            //gboxMsjInicial.Visible = false;
-
             Iniciar();
-
         }
 
         //Metodo que valida los txt de cada jugador y los radiobuttons de seleccion de color 
@@ -146,6 +137,7 @@ namespace Juego_de_la_Plaga
             if (txtJ1.Text == "" && txtJ2.Text == "")
             {
                 MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
@@ -157,9 +149,14 @@ namespace Juego_de_la_Plaga
                 {
                     MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                if (txtJ1.Text == txtJ2.Text)
+                {
+                    MessageBox.Show("Ambos jugadores no pueden llamarse igual!", "Vuelva a Ingresar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
             }
-            if (txtJ1.Text != "" && txtJ2.Text != "")
+
+            if ((txtJ1.Text != "") && (txtJ2.Text != "") && (txtJ1.Text != txtJ2.Text))
             {
                 if (rbtnJ1R.Checked && rbtnJ2A.Checked)
                 {
@@ -202,13 +199,11 @@ namespace Juego_de_la_Plaga
             gboxMarcador.Text = "Marcador";
             gboxFichas.Visible = true;
             gboxDimensiones.Visible = true;
-            
         }
 
         //Metodo que agrega botones en forma de un arreglo bidimensional
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
             int Xtxt = int.Parse(txtX.Text);
             int Ytxt = int.Parse(txtY.Text);
 
@@ -241,7 +236,7 @@ namespace Juego_de_la_Plaga
             }
             else
             {
-                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\n Vuelva a introducir de vuelta","Atención!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\nVuelva a introducir de vuelta","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //Se hace visible el turno del jugador
@@ -275,8 +270,6 @@ namespace Juego_de_la_Plaga
            Valores(sender, ref x, ref y);
 
             //Columna ->    X , Fila ->    Y
-
-            //while () contorlar con un ciclo while. mientras las casillas no sean rojas o azules hacer o un uf silas casillas no estan pintadas e  roojo o azuln
 
             //PINTAR ADYACENTE
 
@@ -475,7 +468,85 @@ namespace Juego_de_la_Plaga
                 {
                     Jugadas(x, y, ref turno);
                 }
-            
+                else
+                {
+
+                    //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
+                    int piezasRojas = 0;
+                    int piezasAzules = 0;
+
+                    if (movimiento == false)
+                    {
+                        SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/game-over-1-gameover.wav");
+                        sonido.Play();
+
+                        MessageBox.Show("Se acabaron tus movimientos!","Oh Ohhh", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        int Xtxt = int.Parse(txtX.Text);
+                        int Ytxt = int.Parse(txtY.Text);
+
+                        // Recorremos la matriz y vamos recolectando la cantidad de fichas rojas y azules  
+                        for (int i = 1; i <= Xtxt; i++)
+                        {
+                            for (int j = 1; j <= Ytxt; j++)
+                            {
+                                if(btn[x,y].BackColor == Color.Red)
+                                {
+                                    piezasRojas = piezasRojas+1;
+                                }
+                                else
+                                {
+                                if (btn[x, y].BackColor == Color.Blue)
+                                    {
+                                        piezasAzules = piezasAzules+1;
+                                    }
+                                }
+
+                            }
+
+                        }
+
+                        MessageBox.Show("Piezas Rojas:"+piezasRojas);
+                        MessageBox.Show("Piezas Azules:" + piezasAzules);
+
+                        //Vamos verificando cual es el jugador con mayor piezas 
+                        /*for (int i = 1; i <= Xtxt; i++)
+                        {
+                            for (int j = 1; j <= Ytxt; j++)
+                            {
+                                if(piezasRojas == piezasAzules)
+                                {
+                                    //Empate
+                                    MessageBox.Show("¡Es un empate!");
+                                }
+                                else
+                                {
+                                    if (piezasRojas > piezasAzules)
+                                    {
+                                        //Gana el Jugador con Fichas Rojas 
+                                        MessageBox.Show("¡ !");
+                                    }
+                                    else
+                                    {
+                                        if(piezasAzules > piezasRojas)
+                                        {
+                                            //Gana el jugador con Fichas Azules
+                                            MessageBox.Show("¡ !");
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }*/
+
+                    }
+                }
+
+            /*if ((btn[x + 1, y].BackColor != Color.Red) && (btn[x - 1, y].BackColor != Color.Red) && (btn[x, y - 1].BackColor != Color.Red) && (btn[x, y + 1].BackColor != Color.Red) && (btn[x - 1, y - 1].BackColor == Color.Red) && (btn[x + 1, y - 1].BackColor == Color.Red) && (btn[x - 1, y + 1].BackColor == Color.Red) && (btn[x + 1, y + 1].BackColor == Color.Red))
+            {
+
+            }*/
         }
 
         //Metodo que come fichas del contrario si estan a su alcance
@@ -748,10 +819,21 @@ namespace Juego_de_la_Plaga
             //Hacemos las validaciones si ambos tienen la misma cantidad de piezas, seria un empate 
             //Si hay mas fichas del jugador que escogio el color rojo como ficha, entonces gana ese jugador 
             //Si hay mas fichas del jugador que escogio el color azul como ficha, entonces gana ese jugador
+        }
 
-
-
+        //
+        void jugadores()
+        {
             
+        }
+
+        // Metodo que da una condicion de stop al juego
+        void stopGame()
+        {
+            /*if ((btn[x + 1, y] == null))
+            {
+                
+            }*/
         }
 
         // Inicializa el juego
@@ -765,7 +847,7 @@ namespace Juego_de_la_Plaga
         {
             if((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }
@@ -776,11 +858,32 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Nombre ingresado no válido.\nVuelva a Ingresar", "Atención!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!",MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }
         }
 
+        //Valida que lo que se ingrese por teclado sea solo numeros y no letras
+        private void txtX_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("No ha ingresado un número!\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //Valida que lo que se ingrese por teclado sea solo numeros y no letras
+        private void txtY_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("No ha ingresado un número!\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true;
+                return;
+            }
+        }
     }
 }
