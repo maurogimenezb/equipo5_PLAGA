@@ -98,7 +98,7 @@ namespace Juego_de_la_Plaga
             // btnMP
             // 
             this.btnMP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMP.Location = new System.Drawing.Point(185, 525);
+            this.btnMP.Location = new System.Drawing.Point(187, 516);
             this.btnMP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMP.Name = "btnMP";
             this.btnMP.Size = new System.Drawing.Size(148, 32);
@@ -169,7 +169,7 @@ namespace Juego_de_la_Plaga
             // btnAtras
             // 
             this.btnAtras.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAtras.Location = new System.Drawing.Point(18, 525);
+            this.btnAtras.Location = new System.Drawing.Point(20, 516);
             this.btnAtras.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAtras.Name = "btnAtras";
             this.btnAtras.Size = new System.Drawing.Size(148, 32);
@@ -351,7 +351,7 @@ namespace Juego_de_la_Plaga
             // btnReiniciar
             // 
             this.btnReiniciar.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReiniciar.Location = new System.Drawing.Point(18, 565);
+            this.btnReiniciar.Location = new System.Drawing.Point(20, 556);
             this.btnReiniciar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReiniciar.Name = "btnReiniciar";
             this.btnReiniciar.Size = new System.Drawing.Size(148, 32);
@@ -489,7 +489,7 @@ namespace Juego_de_la_Plaga
             // btnGuardarP
             // 
             this.btnGuardarP.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnGuardarP.Location = new System.Drawing.Point(185, 565);
+            this.btnGuardarP.Location = new System.Drawing.Point(187, 556);
             this.btnGuardarP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardarP.Name = "btnGuardarP";
             this.btnGuardarP.Size = new System.Drawing.Size(148, 32);
