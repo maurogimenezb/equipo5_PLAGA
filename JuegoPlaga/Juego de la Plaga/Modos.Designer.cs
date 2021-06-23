@@ -32,11 +32,11 @@ namespace Juego_de_la_Plaga
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Modos));
             this.btnCvH = new System.Windows.Forms.Button();
             this.btnHvH = new System.Windows.Forms.Button();
-            this.btnCvC = new System.Windows.Forms.Button();
             this.minimizar = new System.Windows.Forms.PictureBox();
             this.salir = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnATR = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).BeginInit();
             this.SuspendLayout();
@@ -44,7 +44,7 @@ namespace Juego_de_la_Plaga
             // btnCvH
             // 
             this.btnCvH.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCvH.Location = new System.Drawing.Point(424, 261);
+            this.btnCvH.Location = new System.Drawing.Point(419, 328);
             this.btnCvH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCvH.Name = "btnCvH";
             this.btnCvH.Size = new System.Drawing.Size(355, 45);
@@ -55,7 +55,7 @@ namespace Juego_de_la_Plaga
             // 
             // btnHvH
             // 
-            this.btnHvH.Location = new System.Drawing.Point(424, 323);
+            this.btnHvH.Location = new System.Drawing.Point(419, 236);
             this.btnHvH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnHvH.Name = "btnHvH";
             this.btnHvH.Size = new System.Drawing.Size(355, 45);
@@ -63,17 +63,6 @@ namespace Juego_de_la_Plaga
             this.btnHvH.Text = "Humano vs Humano";
             this.btnHvH.UseVisualStyleBackColor = true;
             this.btnHvH.Click += new System.EventHandler(this.btnHvH_Click);
-            // 
-            // btnCvC
-            // 
-            this.btnCvC.Location = new System.Drawing.Point(424, 384);
-            this.btnCvC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnCvC.Name = "btnCvC";
-            this.btnCvC.Size = new System.Drawing.Size(355, 45);
-            this.btnCvC.TabIndex = 3;
-            this.btnCvC.Text = "Computadora vs Computadora";
-            this.btnCvC.UseVisualStyleBackColor = true;
-            this.btnCvC.Click += new System.EventHandler(this.btnCvC_Click_1);
             // 
             // minimizar
             // 
@@ -119,16 +108,26 @@ namespace Juego_de_la_Plaga
             this.btnATR.UseVisualStyleBackColor = true;
             this.btnATR.Click += new System.EventHandler(this.btnATR_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(483, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(223, 23);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Modalidad del Juego";
+            // 
             // Modos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnATR);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.minimizar);
             this.Controls.Add(this.salir);
-            this.Controls.Add(this.btnCvC);
             this.Controls.Add(this.btnHvH);
             this.Controls.Add(this.btnCvH);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -140,6 +139,7 @@ namespace Juego_de_la_Plaga
             ((System.ComponentModel.ISupportInitialize)(this.minimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.salir)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,10 +147,10 @@ namespace Juego_de_la_Plaga
 
         private System.Windows.Forms.Button btnCvH;
         private System.Windows.Forms.Button btnHvH;
-        private System.Windows.Forms.Button btnCvC;
         private System.Windows.Forms.PictureBox minimizar;
         private System.Windows.Forms.PictureBox salir;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnATR;
+        private System.Windows.Forms.Label label1;
     }
 }

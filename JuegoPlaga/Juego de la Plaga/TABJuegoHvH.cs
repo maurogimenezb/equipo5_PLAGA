@@ -18,16 +18,16 @@ namespace Juego_de_la_Plaga
 
         // PARA TRABAJAR CON LOS BOTONES CREADOS
         //Designa un turno a cada jugador
-        int turno = 0; 
+        int turno = 0;
 
         string jugador1 = " ";
         string jugador2 = " ";
 
         public TABJuegoHvH()
-        { 
-            InitializeComponent(); 
+        {
+            InitializeComponent();
         }
-   
+
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -124,7 +124,7 @@ namespace Juego_de_la_Plaga
             }
 
         }
-        
+
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         private void btnGO_Click(object sender, EventArgs e)
         {
@@ -136,18 +136,18 @@ namespace Juego_de_la_Plaga
         {
             if (txtJ1.Text == "" && txtJ2.Text == "")
             {
-                MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
             {
                 if (txtJ1.Text == "")
                 {
-                    MessageBox.Show("El nombre del jugador 1 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El nombre del jugador 1 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (txtJ2.Text == "")
                 {
-                    MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (txtJ1.Text == txtJ2.Text)
                 {
@@ -176,15 +176,15 @@ namespace Juego_de_la_Plaga
                 }
                 if (rbtnJ1R.Checked && rbtnJ2R.Checked)
                 {
-                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if (rbtnJ1A.Checked && rbtnJ2A.Checked)
                 {
-                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if (rbtnJ1R.Checked == false && rbtnJ1A.Checked == false || rbtnJ2R.Checked == false && rbtnJ2A.Checked == false)
                 {
-                    MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -236,7 +236,7 @@ namespace Juego_de_la_Plaga
             }
             else
             {
-                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\nVuelva a introducir de vuelta","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Los rangos introducidos para las dimensiones del tablero de juego no son aceptables.\nVuelva a introducir de vuelta", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             //Se hace visible el turno del jugador
@@ -267,7 +267,7 @@ namespace Juego_de_la_Plaga
             int y = 0;
             bool movimiento = false;
 
-           Valores(sender, ref x, ref y);
+            Valores(sender, ref x, ref y);
 
             //Columna ->    X , Fila ->    Y
 
@@ -280,92 +280,92 @@ namespace Juego_de_la_Plaga
                 if (btn[x, y].BackColor == Color.DarkGray)
                 {
 
-                   // BOTON DERECHO
-                   if (btn[x + 1, y] == null)
-                   {
-                   }
-                   else if (btn[x + 1, y].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON DERECHO
+                    if (btn[x + 1, y] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON IZQUIERDO
-                   if (btn[x - 1, y] == btn[0, y])
-                   {
-                   }
-                   else if (btn[x - 1, y].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON IZQUIERDO
+                    if (btn[x - 1, y] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON ARRIBA
-                   if (btn[x, y - 1] == btn[x, 0])
-                   {
-                   }
-                   else if (btn[x, y - 1].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON ARRIBA
+                    if (btn[x, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON ABAJO
-                   if (btn[x, y + 1] == null)
-                   {
-                   }
-                   else if (btn[x, y + 1].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON ABAJO
+                    if (btn[x, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON SUPERIOR IZQUIERDO
-                   if (btn[x - 1, y - 1] == btn[0, 0])
-                   {
-                   }
-                   else if (btn[x - 1, y - 1].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON SUPERIOR IZQUIERDO
+                    if (btn[x - 1, y - 1] == btn[0, 0])
+                    {
+                    }
+                    else if (btn[x - 1, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON SUPERIOR DERECHO
-                   if (btn[x + 1, y - 1] == btn[x, 0])
-                   {
-                   }
-                   else if (btn[x + 1, y - 1].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON SUPERIOR DERECHO
+                    if (btn[x + 1, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x + 1, y - 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON INFERIOR IZQUIERDO
-                   if (btn[x - 1, y + 1] == btn[0, y])
-                   {
-                   }
-                   else if (btn[x - 1, y + 1].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON INFERIOR IZQUIERDO
+                    if (btn[x - 1, y + 1] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
-                   // BOTON INFERIOR DERECHO
-                   if (btn[x + 1, y + 1] == null)
-                   {
-                   }
-                   else if (btn[x + 1, y + 1].BackColor == Color.Red)
-                   {
-                     movimiento = true;
-                   }
+                    // BOTON INFERIOR DERECHO
+                    if (btn[x + 1, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y + 1].BackColor == Color.Red)
+                    {
+                        movimiento = true;
+                    }
 
                     //Hacemos visible el turno del jugador 2
                     lblJuega.Text = txtJ2.Text;
                 }
                 else
                 {
-                    
-                   if (btn[x, y].BackColor == Color.Red || btn[x, y].BackColor == Color.Blue)
-                   {
+
+                    if (btn[x, y].BackColor == Color.Red || btn[x, y].BackColor == Color.Blue)
+                    {
                         SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
                         sonido.Play();
 
                         //SystemSounds.Exclamation.Play();
                         MessageBox.Show("La celda seleccionada ya está ocupada!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                   }
+                    }
                 }
 
             }
@@ -373,186 +373,105 @@ namespace Juego_de_la_Plaga
             else
             {
 
-               if (btn[x, y].BackColor == Color.DarkGray)
-               {
-                  // BOTON DERECHO
-                  if (btn[x + 1, y] == null)
-                  {
-                  }
-                  else if (btn[x + 1, y].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                if (btn[x, y].BackColor == Color.DarkGray)
+                {
+                    // BOTON DERECHO
+                    if (btn[x + 1, y] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON IZQUIERDO
-                  if (btn[x - 1, y] == btn[0, y])
-                  {
-                  }
-                  else if (btn[x - 1, y].BackColor == Color.Blue)
-                  {
-                     movimiento = true;
-                  }
+                    // BOTON IZQUIERDO
+                    if (btn[x - 1, y] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON ARRIBA
-                  if (btn[x, y - 1] == btn[x, 0])
-                  {
-                  }
-                  else if (btn[x, y - 1].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                    // BOTON ARRIBA
+                    if (btn[x, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x, y - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON ABAJO
-                  if (btn[x, y + 1] == null)
-                  {
-                  }
-                  else if (btn[x, y + 1].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                    // BOTON ABAJO
+                    if (btn[x, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x, y + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON SUPERIOR IZQUIERDO
-                  if (btn[x - 1, y - 1] == btn[0, 0])
-                  {
-                  }
-                  else if (btn[x - 1, y - 1].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                    // BOTON SUPERIOR IZQUIERDO
+                    if (btn[x - 1, y - 1] == btn[0, 0])
+                    {
+                    }
+                    else if (btn[x - 1, y - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON SUPERIOR DERECHO
-                  if (btn[x + 1, y - 1] == btn[x, 0])
-                  {
-                  }
-                  else if (btn[x + 1, y - 1].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                    // BOTON SUPERIOR DERECHO
+                    if (btn[x + 1, y - 1] == btn[x, 0])
+                    {
+                    }
+                    else if (btn[x + 1, y - 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON INFERIOR IZQUIERDO
-                  if (btn[x - 1, y + 1] == btn[0, y])
-                  {
-                  }
-                  else if (btn[x - 1, y + 1].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                    // BOTON INFERIOR IZQUIERDO
+                    if (btn[x - 1, y + 1] == btn[0, y])
+                    {
+                    }
+                    else if (btn[x - 1, y + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
-                  // BOTON INFERIOR DERECHO
-                  if (btn[x + 1, y + 1] == null)
-                  {
-                  }
-                  else if (btn[x + 1, y + 1].BackColor == Color.Blue)
-                  {
-                    movimiento = true;
-                  }
+                    // BOTON INFERIOR DERECHO
+                    if (btn[x + 1, y + 1] == null)
+                    {
+                    }
+                    else if (btn[x + 1, y + 1].BackColor == Color.Blue)
+                    {
+                        movimiento = true;
+                    }
 
                     //Hacemos visible el turno del jugador 1
                     lblJuega.Text = txtJ1.Text;
                 }
-               else
-               {
-                   if(btn[x , y].BackColor == Color.Red || btn[x , y].BackColor == Color.Blue)
-                   {
-                      SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
-                      sonido.Play();
-
-                      //SystemSounds.Exclamation.Play();
-                      MessageBox.Show("La celda seleccionada ya está ocupada!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                   }
-               }
-            }
-           
-                //Si movimiento es igual a "true" entonces llamamos al metodo "Jugadas"
-                if (movimiento == true)
-                {
-                    Jugadas(x, y, ref turno);
-                }
                 else
                 {
-
-                    //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
-                    int piezasRojas = 0;
-                    int piezasAzules = 0;
-
-                    if (movimiento == false)
+                    if (btn[x, y].BackColor == Color.Red || btn[x, y].BackColor == Color.Blue)
                     {
-                        SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/game-over-1-gameover.wav");
+                        SoundPlayer sonido = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
                         sonido.Play();
 
-                        MessageBox.Show("Se acabaron tus movimientos!","Oh Ohhh", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                        int Xtxt = int.Parse(txtX.Text);
-                        int Ytxt = int.Parse(txtY.Text);
-
-                        // Recorremos la matriz y vamos recolectando la cantidad de fichas rojas y azules  
-                        for (int i = 1; i <= Xtxt; i++)
-                        {
-                            for (int j = 1; j <= Ytxt; j++)
-                            {
-                                if(btn[x,y].BackColor == Color.Red)
-                                {
-                                    piezasRojas = piezasRojas+1;
-                                }
-                                else
-                                {
-                                if (btn[x, y].BackColor == Color.Blue)
-                                    {
-                                        piezasAzules = piezasAzules+1;
-                                    }
-                                }
-
-                            }
-
-                        }
-
-                        SoundPlayer son = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/bites-ta-da-winner.wav");
-                        son.Play();
-
-
-                        MessageBox.Show("Piezas Rojas:"+piezasRojas);
-                        MessageBox.Show("Piezas Azules:" + piezasAzules);
-
-                        //Vamos verificando cual es el jugador con mayor piezas 
-                        /*for (int i = 1; i <= Xtxt; i++)
-                        {
-                            for (int j = 1; j <= Ytxt; j++)
-                            {
-                                if(piezasRojas == piezasAzules)
-                                {
-                                    //Empate
-                                    MessageBox.Show("¡Es un empate!");
-                                }
-                                else
-                                {
-                                    if (piezasRojas > piezasAzules)
-                                    {
-                                        //Gana el Jugador con Fichas Rojas 
-                                        MessageBox.Show("¡ !");
-                                    }
-                                    else
-                                    {
-                                        if(piezasAzules > piezasRojas)
-                                        {
-                                            //Gana el jugador con Fichas Azules
-                                            MessageBox.Show("¡ !");
-                                        }
-                                    }
-                                }
-
-                            }
-
-                        }*/
-
+                        //SystemSounds.Exclamation.Play();
+                        MessageBox.Show("La celda seleccionada ya está ocupada!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
+            }
 
-            /*if ((btn[x + 1, y].BackColor != Color.Red) && (btn[x - 1, y].BackColor != Color.Red) && (btn[x, y - 1].BackColor != Color.Red) && (btn[x, y + 1].BackColor != Color.Red) && (btn[x - 1, y - 1].BackColor == Color.Red) && (btn[x + 1, y - 1].BackColor == Color.Red) && (btn[x - 1, y + 1].BackColor == Color.Red) && (btn[x + 1, y + 1].BackColor == Color.Red))
+            //Si movimiento es igual a "true" entonces llamamos al metodo "Jugadas"
+            if (movimiento == true)
             {
+                Jugadas(x, y, ref turno);
+            }
 
-            }*/
+
         }
-
+        
         //Metodo que come fichas del contrario si estan a su alcance
         void PintarAdyacente(int x, int y, int turno)
         {
@@ -758,7 +677,7 @@ namespace Juego_de_la_Plaga
             }
         }
 
-        //
+        //Metodo que dependiendo el turno de cada jugador le asigna su respectiva ficha de color y le habilita los movimientos
         void Jugadas(int x, int y, ref int turno)
         {
             if (turno == 0)
@@ -873,7 +792,7 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("No ha ingresado un número!\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado un número!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }
@@ -884,7 +803,7 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("No ha ingresado un número!\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado un número!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }

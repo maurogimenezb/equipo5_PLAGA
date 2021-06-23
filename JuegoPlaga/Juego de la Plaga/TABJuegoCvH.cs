@@ -67,7 +67,6 @@ namespace Juego_de_la_Plaga
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         public void btnGO_Click(object sender, EventArgs e)
         {
-            //Se desactiva el mensaje inicial 
             Iniciar();
         }
 
@@ -76,18 +75,18 @@ namespace Juego_de_la_Plaga
         {
             if (txtJug.Text == "" && txtIA.Text == "")
             {
-                MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("El nombre de los Jugadores no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             else
             {
                 if (txtJug.Text == "")
                 {
-                    MessageBox.Show("El nombre del jugador 1 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El nombre del jugador 1 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (txtIA.Text == "")
                 {
-                    MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("El nombre del jugador 2 no debe estar vacío", "Nombre no válido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 if (txtJug.Text == txtIA.Text)
                 {
@@ -116,15 +115,15 @@ namespace Juego_de_la_Plaga
                 }
                 if (rbtnJR.Checked && rbtnIAR.Checked)
                 {
-                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if (rbtnJA.Checked && rbtnIAA.Checked)
                 {
-                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Ambos jugadores no pueden escoger la misma opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 if (rbtnJR.Checked == false && rbtnJA.Checked == false || rbtnIAR.Checked == false && rbtnIAA.Checked == false)
                 {
-                    MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cada jugador puede escoger una opción", "Vuelva a escoger", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }
@@ -139,14 +138,12 @@ namespace Juego_de_la_Plaga
             gboxMarcador.Text = "Marcador";
             gboxFichas.Visible = true;
             gboxDimensiones.Visible = true;
-
         }
 
         //Metodo que agrega los botones en forma de un arreglo bidimensional, segun la cantidad de filas y columnas
         //que el jugador ingresa por teclado 
         public void btnAgregar_Click_1(object sender, EventArgs e)
         {
-
             int Xtxt = int.Parse(txtX.Text);
             int Ytxt = int.Parse(txtY.Text);
 
@@ -719,7 +716,7 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <=255))
             {
-                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado un número!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }
@@ -730,10 +727,12 @@ namespace Juego_de_la_Plaga
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
             {
-                MessageBox.Show("Nombre ingresado no válido.\n Vuelva a Ingresar", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado un número!", "Atención!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Handled = true;
                 return;
             }
         }
+
+        
     }
 }
