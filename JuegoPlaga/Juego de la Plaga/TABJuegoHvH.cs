@@ -23,23 +23,22 @@ namespace Juego_de_la_Plaga
         string jugador1 = " ";
         string jugador2 = " ";
 
+        /*--------------------------------------------BOTONES GENERALES EN EL TABLERO---------------------------------------------------------*/
+       
         public TABJuegoHvH()
         {
             InitializeComponent();
         }
-
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
 
         private void btnMP_Click_1(object sender, EventArgs e)
         {
@@ -47,7 +46,6 @@ namespace Juego_de_la_Plaga
             MenuPrincipal menu = new MenuPrincipal();
             menu.Show();
         }
-
 
         private void btnAtras_Click(object sender, EventArgs e)
         {
@@ -124,6 +122,8 @@ namespace Juego_de_la_Plaga
             }
 
         }
+
+        /*-----------------------------------------------------INICIALIZACION----------------------------------------------------------------*/
 
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         private void btnGO_Click(object sender, EventArgs e)
@@ -696,6 +696,8 @@ namespace Juego_de_la_Plaga
             }
         }
 
+        /*--------------------------------------------------TURNO DE LOS JUGADORES------------------------------------------------------------*/
+
         //Metodo que hace visible el nombre del jugador que juega en el tablero 
         void quienJuega()
         {
@@ -764,6 +766,8 @@ namespace Juego_de_la_Plaga
         {
             
         }
+
+        /*--------------------------------------VALIDACION DE LO INTRODUCIDO POR LOS TEXTBOXS-------------------------------------------------*/
 
         //Valida que lo que se ingrese por teclado sea solo letras y no numeros
         private void txtJ1_KeyPress(object sender, KeyPressEventArgs e)

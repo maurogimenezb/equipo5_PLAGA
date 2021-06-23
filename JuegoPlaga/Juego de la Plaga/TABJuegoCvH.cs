@@ -11,18 +11,21 @@ namespace Juego_de_la_Plaga
 {
     public partial class TABJuegoCvH : Form
     {
+        //Crea el arreglo Bidimensional de botones 
         Button[,] btn = new Button[50, 50];
+
+        // PARA TRABAJAR CON LOS BOTONES CREADOS
+        //Designa un turno a cada jugador
         int turno = 0;
 
         string jugador1 = " ";
         string jugador2 = " ";
 
-        //Boolean playerF;
-
         //Contadores que van guardando la cantidad de piezas de cada jugador, para a partir de eso definir el ganador 
         //int piezasRojas = 0;
         //int piezasAzules = 0;
 
+        /*-------------------------------------------BOTONES GENERALES EN EL TABLERO----------------------------------------------------------*/
         public TABJuegoCvH()
         {
             InitializeComponent();
@@ -63,6 +66,54 @@ namespace Juego_de_la_Plaga
             TABJuegoCvH tablero = new TABJuegoCvH();
             tablero.Show();
         }
+
+        //Se guardan los datos del jugador y su partida
+        private void btnGuardarP_Click(object sender, EventArgs e)
+        {
+            StreamWriter escribir = new StreamWriter(@"C:\Users\User\source\repos\equipo5_PLAGA\jugadasHvC.txt", true);
+
+            try
+            {
+                //Nombre de ambos jugadores 
+                escribir.WriteLine("Nombre Jugador 1: " + txtJug.Text);
+                escribir.WriteLine("Nombre Jugador 2: " + txtIA.Text);
+
+                //Turno de cada jugador 
+                if (rbtnJR.Checked && rbtnIAA.Checked)
+                {
+                    escribir.WriteLine("Turno 1: " + rbtnJR.Text);
+                    escribir.WriteLine("Turno 2: " + rbtnIAA.Text);
+                }
+                else
+                {
+                    if (rbtnIAR.Checked && rbtnJA.Checked)
+                    {
+                        escribir.WriteLine("Turno 1: " + rbtnIAR.Text);
+                        escribir.WriteLine("Turno 2: " + rbtnJA.Text);
+                    }
+                }
+
+                //Cantidad de fichas Rojas
+
+                //Cantidad de fichas Azules 
+
+
+                escribir.WriteLine();
+
+                MessageBox.Show("Partida Guardada!");
+
+            }
+            catch
+            {
+                MessageBox.Show("Error!");
+            }
+            finally
+            {
+                escribir.Close();
+            }
+        }
+
+        /*-----------------------------------------------------INICIALIZACION-----------------------------------------------------------------*/
 
         //Metodo en el cual ambos jugadores ingresan sus respectivos nombres y turos, y se hace posteriormente las validaciones
         public void btnGO_Click(object sender, EventArgs e)
@@ -201,6 +252,7 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
+        //
         public void ValoresIA(ref int n, ref int m) // Agarra los valores del click
         {
             int ntxt = int.Parse(txtX.Text);
@@ -211,8 +263,9 @@ namespace Juego_de_la_Plaga
             m = aleatorio.Next(1, 5);
         }
 
-        //Metodo que controla los movimientos del jugador -> Humano
-        public void playerInput_Click(object sender, EventArgs e)
+        //Metodo que hace las verificaciones correspondientes acerca de las posiciones en donde el jugador puede pintar su celda,
+        //Arriba,Abajo,Derecha,Izquierda,Btn Superior Derecho,Btn Superior Izquierdo,Btn Inferior Derecho,Btn Inferior Izquierdo
+        public void button_Click(object sender, EventArgs e)
         {
             int x = 0;
             int y = 0;
@@ -396,9 +449,7 @@ namespace Juego_de_la_Plaga
 
         }
 
-        
-        
-        //Metodo que pinta las casillas que se encuentran alrededor de la ficha anteriormente escogida siguiendo las reglas 
+        //Metodo que come fichas del contrario si estan a su alcance 
         public void PintarAdyacente(int x, int y, int turno)
         {
             //piezasRojas = 0;
@@ -593,7 +644,7 @@ namespace Juego_de_la_Plaga
         }
         }
 
-        //
+        //Metodo que dependiendo el turno de cada jugador le asigna su respectiva ficha de color y le habilita los movimientos
         public void Jugadas(int x, int y, ref int turno, int n, int m)
         {
             if (turno == 0)
@@ -609,6 +660,8 @@ namespace Juego_de_la_Plaga
                 turno = 0;
             }
         }
+
+        /*---------------------------------------------------TURNO DE LOS JUGADORES-----------------------------------------------------------*/
 
         //Hace visible en el tablero cual es el turno de cada jugador 
         public void turnoJug()
@@ -637,57 +690,13 @@ namespace Juego_de_la_Plaga
             //Si hay mas fichas del jugador que escogio el color azul como ficha, entonces gana ese jugador
         }
 
-        //Se guardan los datos del jugador y su partida
-        private void btnGuardarP_Click(object sender, EventArgs e)
-        {
-            StreamWriter escribir = new StreamWriter(@"C:\Users\User\source\repos\equipo5_PLAGA\jugadasHvC.txt", true);
-
-            try
-            {
-                //Nombre de ambos jugadores 
-                escribir.WriteLine("Nombre Jugador 1: " + txtJug.Text);
-                escribir.WriteLine("Nombre Jugador 2: " + txtIA.Text);
-
-                //Turno de cada jugador 
-                if (rbtnJR.Checked && rbtnIAA.Checked)
-                {
-                    escribir.WriteLine("Turno 1: " + rbtnJR.Text);
-                    escribir.WriteLine("Turno 2: " + rbtnIAA.Text);
-                }
-                else
-                {
-                    if (rbtnIAR.Checked && rbtnJA.Checked)
-                    {
-                        escribir.WriteLine("Turno 1: " + rbtnIAR.Text);
-                        escribir.WriteLine("Turno 2: " + rbtnJA.Text);
-                    }
-                }
-
-                //Cantidad de fichas Rojas
-
-                //Cantidad de fichas Azules 
-
-
-                escribir.WriteLine();
-
-                MessageBox.Show("Partida Guardada!");
-
-            }
-            catch
-            {
-                MessageBox.Show("Error!");
-            }
-            finally
-            {
-                escribir.Close();
-            }
-        }
-
         //
         void playerInput()
         {
             
         }
+
+        /*-------------------------------------------VALIDACION DE LO INTRODUCIDO POR LOS TEXTBOXS--------------------------------------------*/
 
         //Valida que lo que se ingrese por teclado sea solo letras y no numeros
         private void txtJug_KeyPress(object sender, KeyPressEventArgs e)
