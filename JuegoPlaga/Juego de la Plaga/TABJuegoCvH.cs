@@ -253,7 +253,7 @@ namespace Juego_de_la_Plaga
             y = Convert.ToInt32(split[1]);
         }
 
-        //
+        //Metodo que coloca de forma random las fichas de la computadora 
         public void ValoresIA(ref int n, ref int m) // Agarra los valores del click
         {
             int ntxt = int.Parse(txtX.Text);
