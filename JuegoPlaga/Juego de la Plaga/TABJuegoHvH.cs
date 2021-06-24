@@ -244,6 +244,7 @@ namespace Juego_de_la_Plaga
 
             //Hacemos visible el turno del jugador 1
             lblJuega.Text = txtJ1.Text;
+            //quienJuega();
 
         }
 
@@ -354,6 +355,7 @@ namespace Juego_de_la_Plaga
 
                     //Hacemos visible el turno del jugador 2
                     lblJuega.Text = txtJ2.Text;
+                    //quienJuega();
                 }
                 else
                 {
@@ -449,6 +451,7 @@ namespace Juego_de_la_Plaga
 
                     //Hacemos visible el turno del jugador 1
                     lblJuega.Text = txtJ1.Text;
+                    //quienJuega();
                 }
                 else
                 {
@@ -468,7 +471,6 @@ namespace Juego_de_la_Plaga
             {
                 Jugadas(x, y, ref turno);
             }
-
 
         }
         
@@ -699,7 +701,7 @@ namespace Juego_de_la_Plaga
         /*--------------------------------------------------TURNO DE LOS JUGADORES------------------------------------------------------------*/
 
         //Metodo que hace visible el nombre del jugador que juega en el tablero 
-        void quienJuega()
+        /*void quienJuega()
         {
             //Hacemos visible el turno del jugador 1
             lblJuega.Text = txtJ2.Text;
@@ -717,7 +719,7 @@ namespace Juego_de_la_Plaga
                 turno = 0;
             }
 
-        }
+        }*/
 
         //A traves de este metodo se hace visible el turno respectivo de cada jugador 
         private void turnoJug()
@@ -736,35 +738,6 @@ namespace Juego_de_la_Plaga
                 }
             }
 
-        }
-
-        //Metodo que detecta cual de los dos jugadores es el ganador
-        public void detectWin()
-        {
-            //Hacemos las validaciones si ambos tienen la misma cantidad de piezas, seria un empate 
-            //Si hay mas fichas del jugador que escogio el color rojo como ficha, entonces gana ese jugador 
-            //Si hay mas fichas del jugador que escogio el color azul como ficha, entonces gana ese jugador
-        }
-
-        //
-        void jugadores()
-        {
-            
-        }
-
-        // Metodo que da una condicion de stop al juego
-        void stopGame()
-        {
-            /*if ((btn[x + 1, y] == null))
-            {
-                
-            }*/
-        }
-
-        // Inicializa el juego
-        public void startGame()
-        {
-            
         }
 
         /*--------------------------------------VALIDACION DE LO INTRODUCIDO POR LOS TEXTBOXS-------------------------------------------------*/

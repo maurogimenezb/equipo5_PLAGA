@@ -121,7 +121,6 @@ namespace Juego_de_la_Plaga
             this.Name = "ComoJugar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ComoJugar";
-            this.Load += new System.EventHandler(this.ComoJugar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.salirCJ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizarCJ)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

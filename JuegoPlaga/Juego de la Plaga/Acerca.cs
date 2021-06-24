@@ -28,7 +28,6 @@ namespace Juego_de_la_Plaga
         private void btnATR_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             MenuPrincipal principal = new MenuPrincipal();
             principal.Show();
         }

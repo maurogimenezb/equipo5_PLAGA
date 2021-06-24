@@ -23,20 +23,13 @@ namespace Juego_de_la_Plaga
         private void minimizarCJ_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
-
         }
 
         private void btnNJ_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             MenuPrincipal princ = new MenuPrincipal();
             princ.Show();
-        }
-
-        private void ComoJugar_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
