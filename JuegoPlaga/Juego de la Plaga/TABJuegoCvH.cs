@@ -442,10 +442,16 @@ namespace Juego_de_la_Plaga
                 }
             }
 
-            //
             if (movimiento == true)
             {
                 Jugadas(x, y, ref turno, n, m);
+            }
+            else
+            {
+                SoundPlayer sound = new SoundPlayer("C:/Users/User/source/repos/equipo5_PLAGA/JuegoPlaga/Juego de la Plaga/bin/Debug/Sonidos/son2.wav");
+                sound.Play();
+
+                MessageBox.Show("La ficha escogida esta fuera de su alcance!", "Oh Ohhh", MessageBoxButtons.OK);
             }
 
         }
